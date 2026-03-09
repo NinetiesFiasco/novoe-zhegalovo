@@ -1,0 +1,15 @@
+:root {
+  --color-grey: rgba(109, 109, 109, 0.7);
+  --color-grey-accent: rgba(109, 109, 109, 1);
+  --color-blue-secondary: rgba(97, 184, 238, 0.54);
+  --color-blue: rgba(97, 184, 238, 1);
+  --color-blue-opacity: rgba(97, 184, 238, 0.75);
+  --color-white: rgba(255, 255, 255, 1);
+}
+:root {
+  --radius-md: 40px;
+}
+:root {
+  --font-size-md: 30px;
+  --font-size-md-adaptive: clamp(7px, 1.4vw, 30px);
+}
