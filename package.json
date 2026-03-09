@@ -6,9 +6,10 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "generate:github": "npx nuxi generate --dotenv .env.github",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "generate:github": "npx nuxi generate --dotenv .env.github",
+    "deploy:github": "gh-pages -d .output/public"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.14.0",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.3.3",
+    "gh-pages": "^6.3.0",
     "sass": "^1.97.3"
   }
 }
