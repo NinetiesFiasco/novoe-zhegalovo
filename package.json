@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "generate:github": "npx nuxi generate --dotenv .env.github",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

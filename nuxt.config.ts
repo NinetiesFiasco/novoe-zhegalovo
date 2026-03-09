@@ -1,11 +1,13 @@
 import { defineNuxtConfig } from "nuxt/config"
 
-import { fileURLToPath } from "url"
-
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
 
   devtools: { enabled: true },
+
+  app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || "/",
+  },
 
   srcDir: "src/",
   modules: ["@pinia/nuxt", "@nuxt/fonts"],
