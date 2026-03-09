@@ -9,7 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "generate:github": "npx nuxi generate --dotenv .env.github",
-    "deploy:github": "gh-pages -d .output/public"
+    "deploy:github": "gh-pages -d dist"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.14.0",
