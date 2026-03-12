@@ -5,6 +5,8 @@ import {
   MainInfo,
   ApartmentSelector,
   MainMenu,
+  DroneVideo,
+  AboutCompany,
 } from "~/widgets"
 </script>
 
@@ -23,6 +25,12 @@ import {
     <AppSection id="choose-flat">
       <ApartmentSelector />
     </AppSection>
+    <AppSection>
+      <DroneVideo />
+    </AppSection>
+    <AppSection>
+      <AboutCompany />
+    </AppSection>
   </main>
 </template>
 
@@ -32,5 +40,6 @@ import {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  color: var(--color-grey-accent);
 }
 </style>
