@@ -1,1 +1,2 @@
-export * as default from "./ui"
+export * as ui from "./ui"
+export * as api from "./api"

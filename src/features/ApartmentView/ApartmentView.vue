@@ -1,10 +1,20 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useSectionsStore } from "~/entities"
+
+const sectionsStore = useSectionsStore()
+
+const { currentFlat } = storeToRefs(sectionsStore)
+</script>
 
 <template>
-  <div class="apartment-container">
-    <h3>2-комнатная квартира</h3>
+  <div v-if="currentFlat" class="apartment-container">
+    <h3>{{ currentFlat.rooms }}-комнатная квартира</h3>
     <div class="floor-plan">
-      <img src="/images/floor-plan/floor-plan.png" />
+      <img
+        class="img-plan"
+        :src="`/images/floor-plan/${currentFlat.plan}.jpg`"
+        :alt="`Планировка квартиры ${currentFlat.number}`"
+      />
     </div>
     <table class="params">
       <thead>
@@ -17,21 +27,29 @@
       </thead>
       <tbody>
         <tr>
-          <td>65,8 м<sup>2</sup></td>
-          <td>1</td>
-          <td>8</td>
-          <td>чистовая</td>
+          <td>{{ currentFlat.totalArea }} м<sup>2</sup></td>
+          <td>{{ sectionsStore.currentSection }}</td>
+          <td>{{ sectionsStore.currentFloor }}</td>
+          <td>
+            {{ currentFlat.priceMeter > 150000 ? "чистовая" : "черновая" }}
+          </td>
         </tr>
       </tbody>
     </table>
     <div>
-      <h4>Цена: 7 000 000 ₽</h4>
-      <p>Цена за метр: 106 382,98 ₽ за м<sup>2</sup></p>
+      <h4>Цена: {{ currentFlat.priceTotal }} ₽</h4>
+      <p>Цена за метр: {{ currentFlat.priceMeter }} ₽ за м<sup>2</sup></p>
     </div>
     <hr />
     <div class="additional-features">
       <h4>Дополнительные характеристики</h4>
-      <p>Пример чистовой отделки</p>
+      <p>
+        {{
+          currentFlat.priceMeter > 150000
+            ? "Пример чистовой отделки"
+            : "Пример черновой отделки"
+        }}
+      </p>
     </div>
   </div>
 </template>
@@ -41,6 +59,10 @@
   padding: 20px;
   border: 2px solid var(--color-grey-bright);
   border-radius: var(--radius-md);
+
+  & .img-plan {
+    height: 300px;
+  }
 
   & > h3 {
     color: var(--color-blue);

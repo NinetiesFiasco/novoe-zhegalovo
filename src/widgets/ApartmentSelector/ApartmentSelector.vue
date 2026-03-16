@@ -1,6 +1,19 @@
 <script lang="ts" setup>
 import { ApartmentView } from "~/features"
-const floors: number = 18
+import { useSectionsStore } from "~/entities"
+import type { SectionNames } from "~/shared/api"
+
+const sectionsStore = useSectionsStore()
+sectionsStore.loadSections()
+
+const sectionUI = (section: SectionNames): string => {
+  const ui: Record<SectionNames, string> = {
+    section1: "Подъезд 1",
+    section2: "Подъезд 2",
+    section3: "Подъезд 3",
+  }
+  return ui[section]
+}
 </script>
 
 <template>
@@ -8,17 +21,35 @@ const floors: number = 18
     <div class="apartment-selector">
       <p class="head-p">доступные</p>
       <h2>планировки квартир</h2>
-      <fieldset>
-        <legend>Подъезд</legend>
-
-        <label><input type="radio" name="apartment" value="1" />1</label>
-        <label><input type="radio" name="apartment" value="2" />2</label>
-        <label><input type="radio" name="apartment" value="3" />3</label>
-      </fieldset>
-      <h2>Этажи</h2>
-      <div class="all-apartments">
-        <div v-for="floor in 19" :key="floor">{{ floor }}</div>
+      <div class="sections">
+        <div v-for="section of sectionsStore.availableSections" :key="section">
+          <h4>{{ sectionUI(section) }}</h4>
+          <div
+            class="floor"
+            v-for="floor of sectionsStore.getFloors(section)"
+            :key="floor"
+          >
+            {{ floor }}
+            <div
+              class="flat"
+              v-for="flat of sectionsStore.sections[section][Number(floor)]"
+              :key="flat.number"
+              @click="sectionsStore.selectFlat(section, Number(floor), flat)"
+            >
+              <div
+                :class="{
+                  box: true,
+                  finished: flat.priceMeter > 150000,
+                  unfinished: flat.priceMeter < 150000,
+                }"
+              >
+                {{ flat.rooms }}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div class="color-description">
         <div class="box unrenovated"></div>
         - без ремонта
@@ -39,26 +70,36 @@ const floors: number = 18
   display: flex;
   width: 100%;
 
-  .all-apartments {
-    & > div {
-      border-bottom: 1px solid black;
+  & .apartment-selector {
+    & .sections {
+      display: flex;
+    }
+    & .floor {
+      display: flex;
+    }
+    & .flat {
+      width: 15px;
+      margin: 2px 12px;
+      height: 15px;
+      cursor: pointer;
     }
   }
+
   .color-description {
     display: flex;
-    .box {
-      width: 23px;
-      height: 23px;
-    }
-    .unrenovated {
-      background: var(--color-unrenovated);
-    }
-    .unfinished {
-      background: var(--color-unfinished);
-    }
-    .finished {
-      background: var(--color-fully-finished);
-    }
+  }
+  .box {
+    width: 23px;
+    height: 23px;
+  }
+  .unrenovated {
+    background: var(--color-unrenovated);
+  }
+  .unfinished {
+    background: var(--color-unfinished);
+  }
+  .finished {
+    background: var(--color-fully-finished);
   }
 
   .apartment-view {
