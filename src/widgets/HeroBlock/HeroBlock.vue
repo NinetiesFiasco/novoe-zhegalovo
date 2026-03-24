@@ -12,7 +12,7 @@
 .hero-block {
   @include bg-picture;
 
-  background-image: url("/images/HeroBG.png");
+  background-image: url("/images/HeroBG.webp");
   width: inherit;
   height: inherit;
   position: relative;

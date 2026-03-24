@@ -68,9 +68,13 @@ const onMouseOut = () => {
 
   & .choose-benefit {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 -10px;
+
+    & > * {
+      margin: 0 5px;
+    }
   }
 }
 </style>

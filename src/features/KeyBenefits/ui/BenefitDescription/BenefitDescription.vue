@@ -30,8 +30,8 @@ const props = defineProps<{ state: TBenefits }>()
 
   & li {
     color: var(--color-grey-accent);
-    margin-top: clamp(2px, 5px, 10px);
-    font-size: clamp(10px, 1.5vw, 15px);
+    margin-top: 6px;
+    font-size: 15px;
   }
 }
 .fade-enter-active,

@@ -19,16 +19,16 @@ import {
         </template>
       </HeroBlock>
     </AppSection>
-    <AppSection>
+    <AppSection padding id="main-info">
       <MainInfo />
     </AppSection>
-    <AppSection id="choose-flat">
+    <AppSection padding id="choose-flat">
       <ApartmentSelector />
     </AppSection>
     <AppSection>
       <DroneVideo />
     </AppSection>
-    <AppSection>
+    <AppSection id="about-company">
       <AboutCompany />
     </AppSection>
   </main>

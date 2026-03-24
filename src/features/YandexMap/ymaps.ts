@@ -1,9 +1,20 @@
-const createPlaceMarks = (): any => {
-  const base = new window.ymaps.Placemark([55.906946, 37.981561], {
-    balloonContent: "Наш офис",
-    hintContent: "Нажмите для информации",
-  })
+const defaultPlacemark = (coords: Array<number>, hint: string, balloon: string, icon: string): any => {
+  return new window.ymaps.Placemark(
+    coords,
+    {
+      hintContent: hint,
+      balloonContent: balloon,
+    },
+    {
+      iconLayout: "default#image",
+      iconImageHref: `/icons/yandex/${icon}`,
+      iconImageSize: [32, 32],
+      iconImageOffset: [-16, -32],
+    }
+  )
+}
 
+const createPlaceMarks = (): any => {
   const building = new window.ymaps.Placemark(
     [55.906946, 37.981561],
     {
@@ -12,13 +23,55 @@ const createPlaceMarks = (): any => {
     },
     {
       iconLayout: "default#image",
-      iconImageHref: "/icons/building.png", // путь к картинке
-      iconImageSize: [64, 64], // размер иконки
-      iconImageOffset: [-32, -64], // якорь (центр по X, низ по Y)
+      iconImageHref: "/icons/building.png",
+      iconImageSize: [64, 64],
+      iconImageOffset: [-32, -64],
     },
   )
 
-  return [base, building]
+  const school = defaultPlacemark([55.906133, 37.98451], "Школа", 
+    `<a href="https://sch16-schel.edumsko.ru/" target="_blank">Средняя образовательная школа №16</a>`,
+    "school.svg")
+
+  const tbank = defaultPlacemark([55.907397, 37.982459], "Т-Банк", "Банкомат Т-Банк", "tbank.svg")
+
+  const diksy = defaultPlacemark([55.907391, 37.98295], "Дикси", "Супермаркет дикси", "diksy.svg")
+
+  const sdek = defaultPlacemark([55.904887, 37.984828], "СДЕК", "Пункт выдачи CDEK", "sdek.svg")
+
+  const five = defaultPlacemark([55.905257, 37.98816], "Пятерочка", "Супермаркет пятерочка", "5x.svg")
+
+  const sad = defaultPlacemark([55.903439, 37.984418], "Детский сад", "Детский сад Щелкунчик", "kidPlayGround.svg")
+  const sad2 = defaultPlacemark([55.907145, 37.987078], "Детский сад", "Детский сад Щелкунчик", "kidPlayGround.svg")
+
+  const ozon1 = defaultPlacemark([55.907436, 37.982956], "OZON", "Пункт выдачи заказов OZON", "ozon.svg")
+  const ozon2 = defaultPlacemark([55.905739, 37.981791], "OZON", "Пункт выдачи заказов OZON", "ozon.svg")
+  const ozon3 = defaultPlacemark([55.904446, 37.985297], "OZON", "Пункт выдачи заказов OZON", "ozon.svg")
+
+
+  const busStop = defaultPlacemark([55.903279, 37.987172], "Автобусная остановка", 
+    "Автобусная остановка, 5 минут пешком от дома, <a href='https://yandex.ru/maps/10765/shelkovo/stops/stop__9676724/?ll=37.987953%2C55.902818&sctx=ZAAAAAgBEAAaKAoSCbNF0m70%2FUJAEemdCrjn80tAEhIJY0Z4exACkj8RcVRuopbmdj8iBgABAgMEBSgKOABAjVRIAWoCcnWdAc3MzD2gAQCoAQC9ATN9JXqCAhnQr9C90LTQtdC60YEg0LzQsNGA0LrQtdGCigIAkgIAmgIMZGVza3RvcC1tYXBzqgIMMTM5NzIyMjgxMTE5sAIB&sll=37.987953%2C55.902818&sspn=0.005050%2C0.001606&tab=overview&z=18.11' target='_blank'>Расписание</a>",
+  "busStop.png")
+
+  const JDStation = defaultPlacemark([55.919120, 37.973975], "ЖД станция Воронок", 
+    "ЖД станция Воронок, 10 минут пешком от дома, <a href='https://www.tutu.ru/station.php?nnst=49107' target='_blank'>Расписание</a>",
+  "JDStation.png")
+
+  return [
+    building,
+    tbank,
+    diksy,
+    school,
+    sdek,
+    five,
+    sad,
+    sad2,
+    ozon1,
+    ozon2,
+    ozon3,
+    busStop,
+    JDStation
+  ]
 }
 
 export { createPlaceMarks }

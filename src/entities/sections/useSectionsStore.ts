@@ -21,13 +21,12 @@ export const useSectionsStore = defineStore("sections", () => {
 
     try {
       sections.value = await getSections()
+      currentFlat.value = sections.value.section1[2]?.[0] ?? null
     } catch (e) {
       error.value = "Ошибка загрузки информации о квартирах"
     } finally {
       loading.value = false
     }
-
-    getFirstFlat()
   }
 
   const availableSections = computed(() => {
@@ -36,20 +35,6 @@ export const useSectionsStore = defineStore("sections", () => {
 
   const getFloors = (section: SectionNames) => {
     return Object.keys(sections.value[section])
-  }
-
-  const getFirstFlat = (): void => {
-    const section1 = sections.value.section1
-    const firstFloor: number | undefined = Number(Object.keys(section1)[0])
-
-    currentSection.value = 1
-    currentFloor.value = Number(firstFloor)
-
-    const flat: FlatDTO | null =
-      firstFloor !== undefined ? (section1[firstFloor]?.[0] ?? null) : null
-    if (flat) {
-      currentFlat.value = flat
-    }
   }
 
   const selectFlat = (
@@ -82,7 +67,6 @@ export const useSectionsStore = defineStore("sections", () => {
     currentSection,
     loadSections,
     getFloors,
-    getFirstFlat,
     selectFlat,
   }
 })

@@ -19,9 +19,20 @@ onMounted(async () => {
       controls: ["fullscreenControl"],
     })
 
-    createPlaceMarks().forEach((placemark: any) => {
-      map.geoObjects.add(placemark)
+    map.events.add("sizechange", () => {
+      map.container.fitToViewport()
     })
+
+    const clusterer = new ymaps.Clusterer({
+      preset: "islands#invertedBlueClusterIcons",
+      groupByCoordinates: false,
+    })
+
+    createPlaceMarks().forEach((placemark: any) => {
+      clusterer.add(placemark)
+    })
+    map.geoObjects.add(clusterer)
+
     map.geoObjects.add(new window.ymaps.Placemark([55.751244, 37.618423]))
   })
 })
@@ -30,22 +41,16 @@ onMounted(async () => {
 <template>
   <div>
     <div ref="mapEl" class="ya-map" />
-    <div class="toggle-button">Посмотреть на карте</div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .ya-map {
   width: 100%;
-  height: 200px;
+  height: 175px;
   min-width: 0;
   min-height: 0;
-}
-
-.toggle-button {
-  color: var(--color-blue-secondary);
-  cursor: pointer;
-  text-align: center;
-  user-select: none;
+  border-radius: 20px;
+  overflow: hidden;
 }
 </style>
