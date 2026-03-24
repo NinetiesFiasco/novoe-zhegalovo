@@ -8,7 +8,8 @@
         "priceMeter": 155000,
         "priceTotal": 11826500,
         "rooms": 2,
-        "plan": "plan1"
+        "plan": "plan1",
+        "position": 1
       },
       {
         "number": 12,
@@ -17,7 +18,8 @@
         "priceMeter": 155000,
         "priceTotal": 12198500,
         "rooms": 2,
-        "plan": "plan2"
+        "plan": "plan2",
+        "position": 2
       }
     ],
     "3": [
@@ -28,7 +30,8 @@
         "priceMeter": 155000,
         "priceTotal": 11749000,
         "rooms": 2,
-        "plan": "plan1"
+        "plan": "plan1",
+        "position": 1
       },
       {
         "number": 18,
@@ -37,7 +40,8 @@
         "priceMeter": 155000,
         "priceTotal": 12198500,
         "rooms": 2,
-        "plan": "plan2"
+        "plan": "plan2",
+        "position": 2
       }
     ],
     "5": [
@@ -48,7 +52,8 @@
         "priceMeter": 130000,
         "priceTotal": 10218000,
         "rooms": 2,
-        "plan": "plan2"
+        "plan": "plan2",
+        "position": 2
       }
     ],
     "6": [
@@ -60,7 +65,8 @@
         "priceTotal": 11764500,
         "floor": 6,
         "rooms": 2,
-        "plan": "plan1"
+        "plan": "plan1",
+        "position": 1
       },
       {
         "number": 36,
@@ -70,7 +76,8 @@
         "priceTotal": 12198500,
         "floor": 6,
         "rooms": 2,
-        "plan": "plan2"
+        "plan": "plan2",
+        "position": 2
       }
     ],
     "9": [
@@ -81,7 +88,8 @@
         "priceMeter": 155000,
         "priceTotal": 11718000,
         "rooms": 2,
-        "plan": "plan1"
+        "plan": "plan1",
+        "position": 1
       },
       {
         "number": 54,
@@ -90,7 +98,8 @@
         "priceMeter": 155000,
         "priceTotal": 12183000,
         "rooms": 2,
-        "plan": "plan2"
+        "plan": "plan2",
+        "position": 2
       }
     ],
     "10": [
@@ -101,7 +110,8 @@
         "priceMeter": 155000,
         "priceTotal": 12136500,
         "rooms": 2,
-        "plan": "plan2"
+        "plan": "plan2",
+        "position": 2
       }
     ]
   },
@@ -114,7 +124,8 @@
         "priceMeter": 145000,
         "priceTotal": 9570000,
         "rooms": 2,
-        "plan": "plan3"
+        "plan": "plan3",
+        "position": 1
       }
     ],
     "11": [
@@ -125,7 +136,8 @@
         "priceMeter": 145000,
         "priceTotal": 9555500,
         "rooms": 2,
-        "plan": "plan3"
+        "plan": "plan3",
+        "position": 1
       },
       {
         "number": 146,
@@ -134,7 +146,8 @@
         "priceMeter": 145000,
         "priceTotal": 9541000,
         "rooms": 2,
-        "plan": "plan4"
+        "plan": "plan4",
+        "position": 2
       }
     ],
     "12": [
@@ -145,7 +158,8 @@
         "priceMeter": 145000,
         "priceTotal": 9410500,
         "rooms": 2,
-        "plan": "plan3"
+        "plan": "plan3",
+        "position": 1
       }
     ],
     "13": [
@@ -157,7 +171,8 @@
         "priceTotal": 9483000,
         "floor": 13,
         "rooms": 2,
-        "plan": "plan3"
+        "plan": "plan3",
+        "position": 1
       },
       {
         "number": 154,
@@ -167,7 +182,8 @@
         "priceTotal": 9526000,
         "floor": 13,
         "rooms": 2,
-        "plan": "plan4"
+        "plan": "plan4",
+        "position": 2
       }
     ],
     "15": [
@@ -179,7 +195,8 @@
         "priceTotal": 9541000,
         "floor": 15,
         "rooms": 2,
-        "plan": "plan4"
+        "plan": "plan4",
+        "position": 2
       }
     ]
   },
