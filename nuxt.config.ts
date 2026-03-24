@@ -44,6 +44,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       yandexMapsKey: process.env.YANDEX_MAPS_API_KEY,
+      baseURL: process.env.NUXT_APP_BASE_URL || "/",
     },
   },
 })

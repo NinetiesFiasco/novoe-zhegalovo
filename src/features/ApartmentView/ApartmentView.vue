@@ -2,6 +2,9 @@
 import { useSectionsStore } from "~/entities"
 import { PictureViewer } from "~/shared/ui"
 
+const config = useRuntimeConfig()
+const baseURL = config.public.baseURL
+
 const FINISHED_INTERIOR_PRICE = 150000
 
 const isPictures = ref<boolean>(false)
@@ -15,30 +18,30 @@ const isFinished = computed(() => {
 })
 
 const finishedPictures = [
-  "/images/interior/finished/1.jpg",
-  "/images/interior/finished/2.jpg",
-  "/images/interior/finished/3.jpg",
-  "/images/interior/finished/4.jpg",
-  "/images/interior/finished/5.jpg",
-  "/images/interior/finished/6.jpg",
-  "/images/interior/finished/7.jpg",
-  "/images/interior/finished/8.jpg",
-  "/images/interior/finished/9.jpg",
-  "/images/interior/finished/10.jpg",
-  "/images/interior/finished/11.jpg",
-  "/images/interior/finished/12.jpg",
-  "/images/interior/finished/13.jpg",
+  `${baseURL}images/interior/finished/1.jpg`,
+  `${baseURL}images/interior/finished/2.jpg`,
+  `${baseURL}images/interior/finished/3.jpg`,
+  `${baseURL}images/interior/finished/4.jpg`,
+  `${baseURL}images/interior/finished/5.jpg`,
+  `${baseURL}images/interior/finished/6.jpg`,
+  `${baseURL}images/interior/finished/7.jpg`,
+  `${baseURL}images/interior/finished/8.jpg`,
+  `${baseURL}images/interior/finished/9.jpg`,
+  `${baseURL}images/interior/finished/10.jpg`,
+  `${baseURL}images/interior/finished/11.jpg`,
+  `${baseURL}images/interior/finished/12.jpg`,
+  `${baseURL}images/interior/finished/13.jpg`,
 ]
 const preFinishedPictures = [
-  "/images/interior/prefinished/1.jpg",
-  "/images/interior/prefinished/2.jpg",
-  "/images/interior/prefinished/3.jpg",
-  "/images/interior/prefinished/4.jpg",
-  "/images/interior/prefinished/5.jpg",
-  "/images/interior/prefinished/6.jpg",
-  "/images/interior/prefinished/7.jpg",
-  "/images/interior/prefinished/8.jpg",
-  "/images/interior/prefinished/9.jpg",
+  `${baseURL}images/interior/prefinished/1.jpg`,
+  `${baseURL}images/interior/prefinished/2.jpg`,
+  `${baseURL}images/interior/prefinished/3.jpg`,
+  `${baseURL}images/interior/prefinished/4.jpg`,
+  `${baseURL}images/interior/prefinished/5.jpg`,
+  `${baseURL}images/interior/prefinished/6.jpg`,
+  `${baseURL}images/interior/prefinished/7.jpg`,
+  `${baseURL}images/interior/prefinished/8.jpg`,
+  `${baseURL}images/interior/prefinished/9.jpg`,
 ]
 </script>
 
@@ -48,7 +51,7 @@ const preFinishedPictures = [
     <div class="floor-plan">
       <img
         class="img-plan"
-        :src="`/images/floor-plan/${currentFlat.plan}.jpg`"
+        :src="`${baseURL}images/floor-plan/${currentFlat.plan}.jpg`"
         :alt="`Планировка квартиры ${currentFlat.number}`"
       />
     </div>

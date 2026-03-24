@@ -1,3 +1,6 @@
+const config = useRuntimeConfig()
+const baseURL = config.public.baseURL
+
 const defaultPlacemark = (coords: Array<number>, hint: string, balloon: string, icon: string): any => {
   return new window.ymaps.Placemark(
     coords,
@@ -7,7 +10,7 @@ const defaultPlacemark = (coords: Array<number>, hint: string, balloon: string, 
     },
     {
       iconLayout: "default#image",
-      iconImageHref: `/icons/yandex/${icon}`,
+      iconImageHref: `${baseURL}icons/yandex/${icon}`,
       iconImageSize: [32, 32],
       iconImageOffset: [-16, -32],
     }
@@ -23,7 +26,7 @@ const createPlaceMarks = (): any => {
     },
     {
       iconLayout: "default#image",
-      iconImageHref: "/icons/building.png",
+      iconImageHref: `${baseURL}icons/building.png`,
       iconImageSize: [64, 64],
       iconImageOffset: [-32, -64],
     },
