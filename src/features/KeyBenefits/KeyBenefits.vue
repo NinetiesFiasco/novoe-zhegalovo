@@ -5,7 +5,7 @@ import { Benefits, BenefitsUI, isBenefit } from "./const/Benefits"
 import type { TBenefits } from "./const/Benefits"
 import BenefitDescription from "./ui/BenefitDescription"
 
-const state = ref<TBenefits>(Benefits.Comfort)
+const state = ref<TBenefits>(Benefits.Main)
 
 let index = 0
 const benefitValues = Object.values(Benefits) as TBenefits[]
@@ -55,7 +55,11 @@ const onMouseOut = () => {
       </template>
     </div>
     <BenefitDescription :state="state" />
-    <PageLinkButton text="Выбрать квартиру" link="choose-flat" />
+    <PageLinkButton
+      class="choose-flat"
+      text="Выбрать квартиру"
+      link="choose-flat"
+    />
   </div>
 </template>
 
@@ -65,6 +69,8 @@ const onMouseOut = () => {
   border-radius: var(--radius-md);
   height: 370px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 
   & .choose-benefit {
     display: flex;
@@ -75,6 +81,11 @@ const onMouseOut = () => {
     & > * {
       margin: 0 5px;
     }
+  }
+
+  & .choose-flat {
+    width: 200px;
+    margin-top: auto;
   }
 }
 </style>

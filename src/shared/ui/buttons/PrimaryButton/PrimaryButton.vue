@@ -1,14 +1,9 @@
-<script lang="ts" setup>
-type Props = {
-  text: string
-}
-const props = defineProps<Props>()
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div>
-    <button class="primary-button" type="button">{{ props.text }}</button>
-  </div>
+  <button class="primary-button" type="button">
+    <slot>{{ props.text }}</slot>
+  </button>
 </template>
 
 <style scoped>
@@ -20,5 +15,8 @@ const props = defineProps<Props>()
   color: var(--color-white);
   outline: none;
   cursor: pointer;
+}
+.primary-button:hover {
+  background: var(--color-blue-opacity);
 }
 </style>

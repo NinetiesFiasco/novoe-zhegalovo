@@ -1,5 +1,5 @@
 const Benefits = {
-  Comfort: "comfort",
+  Main: "main",
   Infrastructure: "infrastructure",
   Environment: "environment",
   Parking: "parking",
@@ -9,7 +9,7 @@ const Benefits = {
 type TBenefits = (typeof Benefits)[keyof typeof Benefits]
 
 const BenefitsUI: Record<TBenefits, string> = {
-  comfort: "Комфорт",
+  main: "Основное",
   infrastructure: "Инфраструктура",
   environment: "Природа",
   parking: "Парковки",
@@ -27,17 +27,9 @@ interface Description {
 type TBenefitDescription = Record<TBenefits, Description>
 
 const BenefitDescription: TBenefitDescription = {
-  comfort: {
-    head: "Комфортная и гармоничная среда для жизни",
-    paragraphs: [
-      "Тихий и комфортный район для жизни",
-      "Станция Воронок рядом — удобный путь до Москвы",
-      "Быстрый выезд на Щёлковское шоссе",
-      "Озеро, поля и лес в пешей доступности",
-      "Чистый воздух и природное окружение",
-      "Идеально для прогулок, спорта и отдыха",
-      "Баланс природы и городской доступности",
-    ],
+  main: {
+    head: " Жилой комплекс «Новое Жегалово»",
+    paragraphs: [],
   },
   infrastructure: {
     head: "Развитая инфраструктура рядом с домом",

@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { ref } from "vue"
 import { createPlaceMarks } from "./ymaps"
+import { getBaseURL } from "~/shared/utils"
+const baseURL = getBaseURL()
 
 const mapEl = ref<HTMLElement | null>(null)
 
@@ -28,7 +30,7 @@ onMounted(async () => {
       groupByCoordinates: false,
     })
 
-    createPlaceMarks().forEach((placemark: any) => {
+    createPlaceMarks(baseURL).forEach((placemark: any) => {
       clusterer.add(placemark)
     })
     map.geoObjects.add(clusterer)

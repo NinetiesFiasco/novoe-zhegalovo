@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { useSectionsStore } from "~/entities"
 import { PictureViewer } from "~/shared/ui"
+import { getBaseURL } from "~/shared/utils"
+import { PrimaryButton } from "~/shared/ui"
 
-const config = useRuntimeConfig()
-const baseURL = config.public.baseURL
+const baseURL = getBaseURL()
 
 const FINISHED_INTERIOR_PRICE = 150000
 
@@ -18,30 +19,30 @@ const isFinished = computed(() => {
 })
 
 const finishedPictures = [
-  `${baseURL}images/interior/finished/1.jpg`,
-  `${baseURL}images/interior/finished/2.jpg`,
-  `${baseURL}images/interior/finished/3.jpg`,
-  `${baseURL}images/interior/finished/4.jpg`,
-  `${baseURL}images/interior/finished/5.jpg`,
-  `${baseURL}images/interior/finished/6.jpg`,
-  `${baseURL}images/interior/finished/7.jpg`,
-  `${baseURL}images/interior/finished/8.jpg`,
-  `${baseURL}images/interior/finished/9.jpg`,
-  `${baseURL}images/interior/finished/10.jpg`,
-  `${baseURL}images/interior/finished/11.jpg`,
-  `${baseURL}images/interior/finished/12.jpg`,
-  `${baseURL}images/interior/finished/13.jpg`,
+  `1.jpg`,
+  `2.jpg`,
+  `3.jpg`,
+  `4.jpg`,
+  `5.jpg`,
+  `6.jpg`,
+  `7.jpg`,
+  `8.jpg`,
+  `9.jpg`,
+  `10.jpg`,
+  `11.jpg`,
+  `12.jpg`,
+  `13.jpg`,
 ]
 const preFinishedPictures = [
-  `${baseURL}images/interior/prefinished/1.jpg`,
-  `${baseURL}images/interior/prefinished/2.jpg`,
-  `${baseURL}images/interior/prefinished/3.jpg`,
-  `${baseURL}images/interior/prefinished/4.jpg`,
-  `${baseURL}images/interior/prefinished/5.jpg`,
-  `${baseURL}images/interior/prefinished/6.jpg`,
-  `${baseURL}images/interior/prefinished/7.jpg`,
-  `${baseURL}images/interior/prefinished/8.jpg`,
-  `${baseURL}images/interior/prefinished/9.jpg`,
+  `1.jpg`,
+  `2.jpg`,
+  `3.jpg`,
+  `4.jpg`,
+  `5.jpg`,
+  `6.jpg`,
+  `7.jpg`,
+  `8.jpg`,
+  `9.jpg`,
 ]
 </script>
 
@@ -81,12 +82,20 @@ const preFinishedPictures = [
     </div>
     <hr />
     <div class="additional-features">
-      <p @click="isPictures = true">
-        {{ isFinished ? "Пример чистовой отделки" : "Пример черновой отделки" }}
-      </p>
+      <PrimaryButton @click="isPictures = true">{{
+        isFinished ? "Пример чистовой отделки" : "Пример черновой отделки"
+      }}</PrimaryButton>
       <PictureViewer
         v-if="isPictures"
         @close="isPictures = false"
+        :title="
+          isFinished ? 'Пример чистовой отделки' : 'Пример черновой отделки'
+        "
+        :url="
+          isFinished
+            ? `${baseURL}images/interior/finished/`
+            : `${baseURL}images/interior/prefinished/`
+        "
         :pictures="isFinished ? finishedPictures : preFinishedPictures"
       />
     </div>
@@ -114,6 +123,10 @@ const preFinishedPictures = [
     & th {
       color: var(--color-blue);
     }
+  }
+
+  & .additional-features {
+    margin-top: 15px;
   }
 }
 </style>

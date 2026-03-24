@@ -1,5 +1,4 @@
-const config = useRuntimeConfig()
-const baseURL = config.public.baseURL
+let baseURL;
 
 const defaultPlacemark = (coords: Array<number>, hint: string, balloon: string, icon: string): any => {
   return new window.ymaps.Placemark(
@@ -17,7 +16,8 @@ const defaultPlacemark = (coords: Array<number>, hint: string, balloon: string, 
   )
 }
 
-const createPlaceMarks = (): any => {
+const createPlaceMarks = (_baseURL: string): any => {
+  baseURL = _baseURL;
   const building = new window.ymaps.Placemark(
     [55.906946, 37.981561],
     {

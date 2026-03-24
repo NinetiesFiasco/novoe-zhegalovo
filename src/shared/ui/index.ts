@@ -1,3 +1,4 @@
-export * as buttons from "./buttons"
-export * as links from "./links"
+export * from "./buttons"
+export * from "./links"
 export { default as PictureViewer } from "./PictureViewer"
+export { default as AppSection } from "./AppSection"

@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import { BenefitDescription } from "../../const/Benefits"
+import JKComfort from "./JKComfort"
+import JKInfrastructure from "./JKInfrastructure"
 import type { TBenefits } from "../../const/Benefits"
 
 const props = defineProps<{ state: TBenefits }>()
@@ -10,7 +12,13 @@ const props = defineProps<{ state: TBenefits }>()
     <Transition name="fade" mode="out-in">
       <div :key="state">
         <h2>{{ BenefitDescription[state].head }}</h2>
-        <ul>
+        <template v-if="state === 'main'">
+          <JKComfort />
+        </template>
+        <template v-if="state === 'infrastructure'">
+          <JKInfrastructure />
+        </template>
+        <ul v-else>
           <li v-for="desc of BenefitDescription[state].paragraphs">
             {{ desc }}
           </li>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import { AppSection } from "~/shared/ui"
 import {
-  AppSection,
   HeroBlock,
   MainInfo,
   ApartmentSelector,
