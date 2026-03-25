@@ -13,13 +13,13 @@ const props = defineProps<{ state: TBenefits }>()
     <Transition name="fade" mode="out-in">
       <div :key="state">
         <h2>{{ BenefitDescription[state].head }}</h2>
-        <template v-show="state === 'main'">
+        <template v-if="state === 'main'">
           <JKComfort />
         </template>
-        <template v-show="state === 'infrastructure'">
+        <template v-if="state === 'infrastructure'">
           <JKInfrastructure />
         </template>
-        <template v-show="state === 'environment'">
+        <template v-if="state === 'environment'">
           <JKEnvironment />
         </template>
       </div>
