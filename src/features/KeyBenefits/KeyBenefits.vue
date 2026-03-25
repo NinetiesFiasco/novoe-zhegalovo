@@ -76,7 +76,7 @@ const onMouseOut = () => {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 -10px;
+    margin-bottom: 5px;
 
     & > * {
       margin: 0 5px;

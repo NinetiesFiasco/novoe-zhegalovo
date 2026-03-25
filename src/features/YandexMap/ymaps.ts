@@ -26,7 +26,7 @@ const createPlaceMarks = (_baseURL: string): any => {
     },
     {
       iconLayout: "default#image",
-      iconImageHref: `${baseURL}icons/building.png`,
+      iconImageHref: `${baseURL}icons/yandex/building.png`,
       iconImageSize: [64, 64],
       iconImageOffset: [-32, -64],
     },
@@ -53,11 +53,11 @@ const createPlaceMarks = (_baseURL: string): any => {
 
 
   const busStop = defaultPlacemark([55.903279, 37.987172], "Автобусная остановка", 
-    "Автобусная остановка, 5 минут пешком от дома, <a href='https://yandex.ru/maps/10765/shelkovo/stops/stop__9676724/?ll=37.987953%2C55.902818&sctx=ZAAAAAgBEAAaKAoSCbNF0m70%2FUJAEemdCrjn80tAEhIJY0Z4exACkj8RcVRuopbmdj8iBgABAgMEBSgKOABAjVRIAWoCcnWdAc3MzD2gAQCoAQC9ATN9JXqCAhnQr9C90LTQtdC60YEg0LzQsNGA0LrQtdGCigIAkgIAmgIMZGVza3RvcC1tYXBzqgIMMTM5NzIyMjgxMTE5sAIB&sll=37.987953%2C55.902818&sspn=0.005050%2C0.001606&tab=overview&z=18.11' target='_blank'>Расписание</a>",
+    "Автобусная остановка, 5 минут пешком от дома, <a href='https://yandex.com/maps/10765/shelkovo/stops/stop__9676724/?ll=37.987953%2C55.902818&tab=overview&z=18' target='_blank'>Расписание</a>",
   "busStop.png")
 
   const JDStation = defaultPlacemark([55.919120, 37.973975], "ЖД станция Воронок", 
-    "ЖД станция Воронок, 10 минут пешком от дома, <a href='https://www.tutu.ru/station.php?nnst=49107' target='_blank'>Расписание</a>",
+    "ЖД станция Воронок, 10 минут пешком от дома, <a href='https://www.tutu.ru/station.php?nnst=49107&date=all' target='_blank'>Расписание</a>",
   "JDStation.png")
 
   return [

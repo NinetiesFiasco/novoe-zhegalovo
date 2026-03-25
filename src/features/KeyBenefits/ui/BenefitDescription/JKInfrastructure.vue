@@ -5,7 +5,7 @@ const baseURL = getBaseURL()
 
 const isParkingPhoto = ref<boolean>(false)
 
-const parkingPictures = [`1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`, `5.jpg`]
+const parkingPictures = [`1.webp`, `2.webp`, `3.webp`, `4.webp`, `5.webp`]
 </script>
 
 <template>

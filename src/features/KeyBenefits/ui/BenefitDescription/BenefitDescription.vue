@@ -2,6 +2,7 @@
 import { BenefitDescription } from "../../const/Benefits"
 import JKComfort from "./JKComfort"
 import JKInfrastructure from "./JKInfrastructure"
+import JKEnvironment from "./JKEnvironment"
 import type { TBenefits } from "../../const/Benefits"
 
 const props = defineProps<{ state: TBenefits }>()
@@ -18,11 +19,9 @@ const props = defineProps<{ state: TBenefits }>()
         <template v-if="state === 'infrastructure'">
           <JKInfrastructure />
         </template>
-        <ul v-else>
-          <li v-for="desc of BenefitDescription[state].paragraphs">
-            {{ desc }}
-          </li>
-        </ul>
+        <template v-if="state === 'environment'">
+          <JKEnvironment />
+        </template>
       </div>
     </Transition>
   </div>
@@ -30,6 +29,8 @@ const props = defineProps<{ state: TBenefits }>()
 
 <style lang="scss" scoped>
 .benefit-description {
+  overflow-y: auto;
+
   & h2 {
     white-space: nowrap;
     font-size: var(--font-size-md-adaptive);

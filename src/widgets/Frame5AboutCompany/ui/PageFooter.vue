@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { PageLink } from "~/shared/ui/links"
+</script>
 
 <template>
   <footer>
@@ -18,10 +20,10 @@
     </div>
 
     <div class="links">
-      <div>Квартиры</div>
-      <div>Преимущества</div>
-      <div>О нас</div>
-      <div>Контакты</div>
+      <div><PageLink text="Квартиры" link="choose-flat" /></div>
+      <div><PageLink text="Преимущества" link="main-info" /></div>
+      <div><PageLink text="О нас" link="about-company" /></div>
+      <div><PageLink text="Контакты" link="choose-flat" /></div>
     </div>
   </footer>
 </template>
