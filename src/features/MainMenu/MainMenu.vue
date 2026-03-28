@@ -6,8 +6,9 @@ import { PageLink } from "~/shared/ui/links"
     <div class="background"></div>
     <ul class="links font-default">
       <li><PageLink text="Квартиры" link="choose-flat" /></li>
+      <li><PageLink text="Генплан" link="gen-plan" /></li>
       <li><PageLink text="Преимущества" link="main-info" /></li>
-      <li><PageLink text="О нас" link="about-company" /></li>
+      <li><PageLink text="О компании" link="about-company" /></li>
       <li><PageLink text="Контакты" link="choose-flat" /></li>
     </ul>
   </div>
@@ -19,7 +20,7 @@ import { PageLink } from "~/shared/ui/links"
   top: 60px;
   right: 25px;
   width: 287px;
-  height: 217px;
+  height: 250px;
   align-items: center;
   white-space: nowrap;
   caret-color: transparent;

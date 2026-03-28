@@ -23,7 +23,7 @@ import {
     <AppSection>
       <BuildingBack />
     </AppSection>
-    <AppSection>
+    <AppSection id="gen-plan">
       <GenPlan />
     </AppSection>
     <AppSection padding id="main-info">

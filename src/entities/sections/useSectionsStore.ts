@@ -25,8 +25,6 @@ export const useSectionsStore = defineStore("sections", () => {
 
       const _sections: SectionsDTO = await getSections(baseURL)
       setSections(_sections)
-
-      currentFlat.value = sections.value.section1[2]?.[0] ?? null
     } catch (e) {
       error.value = "Ошибка загрузки информации о квартирах"
     } finally {
@@ -36,6 +34,7 @@ export const useSectionsStore = defineStore("sections", () => {
 
   const setSections = (_sections: SectionsDTO) => {
     sections.value = _sections
+    selectFirstFlat()
   }
 
   const availableSections = computed(() => {
@@ -64,6 +63,27 @@ export const useSectionsStore = defineStore("sections", () => {
             : 0
     currentFloor.value = _floor
     currentFlat.value = flat
+  }
+
+  const selectFirstFlat = (): void => {
+    let isFound = false
+    for (const sectionKey in sections.value) {
+      const key = sectionKey as keyof typeof sections.value
+      const section = sections.value[key]
+
+      for (const floorKey in section) {
+        const flats = section[floorKey]
+
+        if (Array.isArray(flats) && flats.length > 0) {
+          if (flats[0]) {
+            selectFlat(key, Number(floorKey), flats[0])
+            isFound = true
+            break
+          }
+        }
+      }
+      if (isFound) break
+    }
   }
 
   return {
