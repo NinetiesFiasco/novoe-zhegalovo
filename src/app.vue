@@ -1,23 +1,30 @@
 <script lang="ts" setup>
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+
 import { AppSection } from "~/shared/ui"
 import {
   HeroBlock,
+  BuildingBack,
   MainInfo,
   ApartmentSelector,
-  MainMenu,
   DroneVideo,
   AboutCompany,
+  GenPlan,
 } from "~/widgets"
 </script>
 
 <template>
   <main class="app-main">
     <AppSection>
-      <HeroBlock>
-        <template #main-menu>
-          <MainMenu />
-        </template>
-      </HeroBlock>
+      <HeroBlock />
+    </AppSection>
+    <AppSection>
+      <BuildingBack />
+    </AppSection>
+    <AppSection>
+      <GenPlan />
     </AppSection>
     <AppSection padding id="main-info">
       <MainInfo />

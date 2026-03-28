@@ -1,10 +1,21 @@
 <script lang="ts" setup>
 import { ApartmentInEntrance, ApartmentView } from "~/features"
 import { useSectionsStore } from "~/entities"
+import { getSections, type SectionsDTO } from "~/shared/api"
+import { getBaseURL } from "~/shared/utils"
 import LevelOfFinish from "~/features/LevelOfFinish/LevelOfFinish.vue"
 
 const sectionsStore = useSectionsStore()
-sectionsStore.loadSections()
+
+const baseURL = getBaseURL()
+const { data } = await useAsyncData("sections", () => getSections(baseURL))
+if (data.value) {
+  sectionsStore.setSections(data.value)
+}
+onMounted(async () => {
+  const data: SectionsDTO = await getSections(baseURL)
+  sectionsStore.setSections(data)
+})
 </script>
 
 <template>
@@ -15,9 +26,7 @@ sectionsStore.loadSections()
 
       <div class="sections">
         <div v-for="section of sectionsStore.availableSections" :key="section">
-          <template v-if="section !== 'section3'">
-            <ApartmentInEntrance :section="section" />
-          </template>
+          <ApartmentInEntrance :section="section" />
         </div>
       </div>
 

@@ -5,7 +5,6 @@
 .font-default {
   font-family: Golos Text;
   font-weight: 400;
-  font-style: Regular;
   font-size: 20px;
   line-height: 100%;
   letter-spacing: 0%;
@@ -13,7 +12,6 @@
 .font-medium {
   font-family: Golos Text;
   font-weight: 500;
-  font-style: Medium;
   font-size: 25px;
   line-height: 100%;
   letter-spacing: 0%;
@@ -22,15 +20,12 @@
 .font-bold {
   font-family: Golos Text;
   font-weight: 700;
-  font-style: Bold;
-  font-size: 30px;
   line-height: 100%;
   letter-spacing: 0%;
 }
 .font-extra-bold {
   font-family: Golos Text;
   font-weight: 900;
-  font-size: 40px;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: justify;
@@ -40,8 +35,6 @@
 .font-body {
   font-family: Golos Text;
   font-weight: 400;
-  font-style: Regular;
-  font-size: 39px;
   line-height: 133%;
   letter-spacing: 0%;
 }

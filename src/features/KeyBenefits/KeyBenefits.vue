@@ -18,21 +18,21 @@ const setActiveState = (activeValue: string): void => {
   }
 }
 
-let intervalId: ReturnType<typeof setInterval> | undefined
-onMounted(() => {
-  intervalId = setInterval(() => {
-    if (!isSliderBlocked.value) {
-      index = (index + 1) % benefitValues.length
-      state.value = benefitValues[index]!
-    }
-  }, 5000)
-})
+// let intervalId: ReturnType<typeof setInterval> | undefined
+// onMounted(() => {
+//   intervalId = setInterval(() => {
+//     if (!isSliderBlocked.value) {
+//       index = (index + 1) % benefitValues.length
+//       state.value = benefitValues[index]!
+//     }
+//   }, 5000)
+// })
 
-onUnmounted(() => {
-  if (intervalId) {
-    clearInterval(intervalId)
-  }
-})
+// onUnmounted(() => {
+//   if (intervalId) {
+//     clearInterval(intervalId)
+//   }
+// })
 
 const onMouseOver = () => {
   isSliderBlocked.value = true
@@ -55,11 +55,9 @@ const onMouseOut = () => {
       </template>
     </div>
     <BenefitDescription :state="state" />
-    <PageLinkButton
-      class="choose-flat"
-      text="Выбрать квартиру"
-      link="choose-flat"
-    />
+    <div class="choose-flat">
+      <PageLinkButton text="Выбрать квартиру" link="choose-flat" />
+    </div>
   </div>
 </template>
 
@@ -86,6 +84,8 @@ const onMouseOut = () => {
   & .choose-flat {
     width: 200px;
     margin-top: auto;
+    display: flex;
+    height: 30px;
   }
 }
 </style>

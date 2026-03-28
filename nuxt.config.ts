@@ -18,6 +18,7 @@ export default defineNuxtConfig({
         name: "Golos-Text",
         provider: "local",
         fallbacks: ["Arial"],
+        weights: [400, 500, 700, 900],
       },
     ],
   },

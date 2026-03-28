@@ -38,7 +38,7 @@
         "totalArea": 78.7,
         "livingArea": 74.5,
         "priceMeter": 155000,
-        "priceTotal": 12198500,
+        "priceTotal": 12198000,
         "rooms": 2,
         "plan": "plan2",
         "position": 2
@@ -200,5 +200,720 @@
       }
     ]
   },
-  "section3": {}
+  "section3": {
+    "1": [
+      {
+        "number": 171,
+        "totalArea": 67.3,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 172,
+        "totalArea": 42.6,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 173,
+        "totalArea": 42.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 174,
+        "totalArea": 65.4,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "2": [
+      {
+        "number": 175,
+        "totalArea": 65.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 176,
+        "totalArea": 43.1,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 177,
+        "totalArea": 43.5,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 178,
+        "totalArea": 65.1,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "3": [
+      {
+        "number": 179,
+        "totalArea": 65.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 180,
+        "totalArea": 42.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 181,
+        "totalArea": 42.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 182,
+        "totalArea": 65.2,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "4": [
+      {
+        "number": 183,
+        "totalArea": 65.4,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 184,
+        "totalArea": 42.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 185,
+        "totalArea": 42.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 186,
+        "totalArea": 65.2,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "5": [
+      {
+        "number": 187,
+        "totalArea": 66.3,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 188,
+        "totalArea": 42.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 189,
+        "totalArea": 43.0,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 190,
+        "totalArea": 64.6,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "6": [
+      {
+        "number": 191,
+        "totalArea": 65.6,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 192,
+        "totalArea": 42.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 193,
+        "totalArea": 42.6,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 194,
+        "totalArea": 64.5,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "7": [
+      {
+        "number": 195,
+        "totalArea": 66.0,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 196,
+        "totalArea": 43.1,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 197,
+        "totalArea": 42.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 198,
+        "totalArea": 64.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "8": [
+      {
+        "number": 199,
+        "totalArea": 65.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 200,
+        "totalArea": 43.1,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 201,
+        "totalArea": 42.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 202,
+        "totalArea": 64.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "9": [
+      {
+        "number": 203,
+        "totalArea": 65.2,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 204,
+        "totalArea": 43.1,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 205,
+        "totalArea": 42.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 206,
+        "totalArea": 64.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "10": [
+      {
+        "number": 207,
+        "totalArea": 65.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 208,
+        "totalArea": 42.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 209,
+        "totalArea": 42.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 210,
+        "totalArea": 64.4,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "11": [
+      {
+        "number": 211,
+        "totalArea": 65.6,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 212,
+        "totalArea": 42.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 213,
+        "totalArea": 42.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 214,
+        "totalArea": 64.4,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "12": [
+      {
+        "number": 215,
+        "totalArea": 65.4,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 216,
+        "totalArea": 42.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 217,
+        "totalArea": 42.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 218,
+        "totalArea": 64.6,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "13": [
+      {
+        "number": 219,
+        "totalArea": 65.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 220,
+        "totalArea": 43.0,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 221,
+        "totalArea": 42.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 222,
+        "totalArea": 64.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "14": [
+      {
+        "number": 223,
+        "totalArea": 65.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 224,
+        "totalArea": 42.7,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 225,
+        "totalArea": 43.0,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 226,
+        "totalArea": 64.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "15": [
+      {
+        "number": 227,
+        "totalArea": 65.5,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 228,
+        "totalArea": 42.6,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 229,
+        "totalArea": 43.3,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 230,
+        "totalArea": 64.8,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "16": [
+      {
+        "number": 231,
+        "totalArea": 65.6,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 232,
+        "totalArea": 43.4,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 233,
+        "totalArea": 43.0,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 234,
+        "totalArea": 64.9,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ],
+    "17": [
+      {
+        "number": 235,
+        "totalArea": 130.6,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan5",
+        "position": 1
+      },
+      {
+        "number": 236,
+        "totalArea": 92.1,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan6",
+        "position": 2
+      },
+      {
+        "number": 237,
+        "totalArea": 90.4,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 1,
+        "plan": "plan7",
+        "position": 3
+      },
+      {
+        "number": 238,
+        "totalArea": 129.2,
+        "livingArea": 0,
+        "priceMeter": 0,
+        "priceTotal": 10000000,
+        "rooms": 2,
+        "plan": "plan8",
+        "position": 4
+      }
+    ]
+  }
 }

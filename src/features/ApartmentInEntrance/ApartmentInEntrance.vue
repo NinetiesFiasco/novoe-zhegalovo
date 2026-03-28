@@ -4,7 +4,6 @@ import { useSectionsStore } from "~/entities"
 import FloorUI from "./ui/FloorUI.vue"
 
 const sectionsStore = useSectionsStore()
-sectionsStore.loadSections()
 
 type Props = {
   section: SectionNames

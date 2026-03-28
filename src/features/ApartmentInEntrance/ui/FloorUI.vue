@@ -4,7 +4,6 @@ import { useSectionsStore } from "~/entities"
 import FlatUI from "./FlatUI.vue"
 
 const sectionsStore = useSectionsStore()
-sectionsStore.loadSections()
 
 type Props = {
   floor: number
@@ -14,18 +13,22 @@ type Props = {
 
 const props = defineProps<Props>()
 
-const flatOne = sectionsStore.sections[props.section][
-  Number(props.floor)
-]?.find((f) => f.position === 1)
-const flatTwo = sectionsStore.sections[props.section][
-  Number(props.floor)
-]?.find((f) => f.position === 2)
+const flats: Array<FlatDTO | undefined> = []
+
+for (let i = 0; i < 4; i++) {
+  flats.push(
+    sectionsStore.sections[props.section][Number(props.floor)]?.find(
+      (f) => f.position === i + 1,
+    ),
+  )
+}
 </script>
 
 <template>
   <div class="floor-number">{{ floor }}</div>
-  <FlatUI :flat="flatOne" :floor="floor" :section="section" />
-  <FlatUI :flat="flatTwo" :floor="floor" :section="section" />
+  <template v-for="(flat, index) of flats" :key="index">
+    <FlatUI :flat="flat" :floor="floor" :section="section" />
+  </template>
 </template>
 
 <style lang="scss" scoped>

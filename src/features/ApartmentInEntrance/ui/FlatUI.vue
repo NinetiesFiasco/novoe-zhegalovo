@@ -3,7 +3,6 @@ import type { FlatDTO, SectionNames } from "~/shared/api"
 import { useSectionsStore } from "~/entities"
 
 const sectionsStore = useSectionsStore()
-sectionsStore.loadSections()
 
 type Props = {
   flat: FlatDTO | undefined

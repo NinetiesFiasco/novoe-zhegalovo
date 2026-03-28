@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 type Props = {
-  text: string
+  text?: string
   link: string
 }
 const props = defineProps<Props>()
@@ -9,7 +9,7 @@ const scrollToSection = () => {}
 </script>
 
 <template>
-  <a :href="`#${props.link}`" class="link"> {{ props.text }} </a>
+  <a :href="`#${props.link}`" class="link"><slot /> {{ props.text }} </a>
 </template>
 
 <style lang="scss" scoped>

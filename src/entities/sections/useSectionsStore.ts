@@ -22,13 +22,20 @@ export const useSectionsStore = defineStore("sections", () => {
 
     try {
       const baseURL = getBaseURL()
-      sections.value = await getSections(baseURL)
+
+      const _sections: SectionsDTO = await getSections(baseURL)
+      setSections(_sections)
+
       currentFlat.value = sections.value.section1[2]?.[0] ?? null
     } catch (e) {
       error.value = "Ошибка загрузки информации о квартирах"
     } finally {
       loading.value = false
     }
+  }
+
+  const setSections = (_sections: SectionsDTO) => {
+    sections.value = _sections
   }
 
   const availableSections = computed(() => {
@@ -70,5 +77,6 @@ export const useSectionsStore = defineStore("sections", () => {
     loadSections,
     getFloors,
     selectFlat,
+    setSections,
   }
 })

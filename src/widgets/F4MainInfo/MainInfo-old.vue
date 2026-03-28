@@ -85,7 +85,7 @@ import { YandexMap, KeyBenefits } from "~/features"
       font-size: clamp(20px, 2.5vw, 35px);
       line-height: 35px;
       text-align: end;
-      margin-bottom: 5px;
+      margin-bottom: 30px;
     }
 
     & .bottom-info-container {

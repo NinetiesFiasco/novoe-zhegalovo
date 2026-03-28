@@ -12,7 +12,7 @@
       <ul>
         <li>17км до МКАД можно проехать за 20 минут на машине</li>
         <li>
-          5 минут пешком до Фряновского шоссе с сообщением с Москвой
+          5 минут пешком до автобусной остановки и маршрутного такси
           <a
             target="_blank"
             href="https://yandex.ru/maps/10765/shelkovo/stops/stop__9676724/?ll=37.987953%2C55.902818&sctx=ZAAAAAgBEAAaKAoSCbNF0m70%2FUJAEemdCrjn80tAEhIJY0Z4exACkj8RcVRuopbmdj8iBgABAgMEBSgKOABAjVRIAWoCcnWdAc3MzD2gAQCoAQC9ATN9JXqCAhnQr9C90LTQtdC60YEg0LzQsNGA0LrQtdGCigIAkgIAmgIMZGVza3RvcC1tYXBzqgIMMTM5NzIyMjgxMTE5sAIB&sll=37.987953%2C55.902818&sspn=0.005050%2C0.001606&tab=overview&z=18.11"
@@ -21,7 +21,7 @@
           </a>
         </li>
         <li>
-          2км пешком до станции Воронок, или 10 минут на такси.
+          15 минут пешком до станции Воронок.
           <a target="_blank" href="https://www.tutu.ru/station.php?nnst=49107">
             Расписание Электричек
           </a>

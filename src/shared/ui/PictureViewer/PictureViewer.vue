@@ -1,17 +1,12 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from "swiper/vue"
 
-// стили обязательно!
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-
 import { Navigation, Pagination } from "swiper/modules"
 
 const modules = [Navigation, Pagination]
 
 type Props = {
-  title: string
+  title?: string
   url: string
   pictures: Array<string>
 }
@@ -58,7 +53,8 @@ const props = defineProps<Props>()
 
   & .close {
     @include bg-picture;
-    background-image: url("/icons/close.png");
+    background-image: url("/icons/close.svg");
+    color: var(--color-grey-accent);
     position: absolute;
     right: 20px;
     top: 20px;
