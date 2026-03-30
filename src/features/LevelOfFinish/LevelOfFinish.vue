@@ -2,8 +2,8 @@
 
 <template>
   <div class="color-description">
-    <div class="box unrenovated"></div>
-    - без ремонта<br />
+    <!-- <div class="box unrenovated"></div>
+    - без ремонта<br /> -->
     <div class="box unfinished"></div>
     - черновая<br />
     <div class="box finished"></div>

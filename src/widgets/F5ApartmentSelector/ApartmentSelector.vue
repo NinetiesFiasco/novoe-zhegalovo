@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { ApartmentInEntrance, ApartmentView } from "~/features"
+import { ApartmentInEntrance, ApartmentView, LevelOfFinish } from "~/features"
 import { useSectionsStore } from "~/entities"
 import { getSections, type SectionsDTO } from "~/shared/api"
 import { getBaseURL } from "~/shared/utils"
-import LevelOfFinish from "~/features/LevelOfFinish/LevelOfFinish.vue"
 
 const sectionsStore = useSectionsStore()
 

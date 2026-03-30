@@ -41,7 +41,7 @@ const { currentFlat } = storeToRefs(sectionsStore)
       </tbody>
     </table>
     <div>
-      <h4>Цена: {{ currentFlat.priceTotal }} ₽</h4>
+      <h4 class="price-total">Цена: {{ currentFlat.priceTotal }} ₽</h4>
       <p>Цена за метр: {{ currentFlat.priceMeter }} ₽ за м<sup>2</sup></p>
     </div>
     <hr />
@@ -68,6 +68,10 @@ const { currentFlat } = storeToRefs(sectionsStore)
     margin-top: 25px;
   }
 
+  & .price-total {
+    font-size: 30px;
+  }
+
   & .params {
     border-spacing: 50px 15px;
     & th {
@@ -77,6 +81,11 @@ const { currentFlat } = storeToRefs(sectionsStore)
 
   & .additional-features {
     margin-top: 15px;
+    display: flex;
+
+    & > * {
+      margin-left: 5px;
+    }
   }
 }
 </style>
