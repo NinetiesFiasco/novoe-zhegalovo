@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import { PageLink } from "~/shared/ui/links"
+import { useContactsStore } from "~/entities"
+
+const contacts = useContactsStore()
 </script>
 
 <template>
@@ -13,17 +16,17 @@ import { PageLink } from "~/shared/ui/links"
     </div>
 
     <div class="contacts">
-      <div class="font-medium">+7 (ХХХ) ХХ-ХХ-ХХ</div>
-      <div>Email:</div>
-      <div>Адрес:</div>
-      <div>(Пн-Вс с 10:00 до 21:00)</div>
+      <div class="font-medium">{{ contacts.phone }}</div>
+      <div>Email: {{ contacts.email }}</div>
+      <div>Адрес: {{ contacts.address }}</div>
+      <div>{{ contacts.workTime }}</div>
     </div>
 
     <div class="links">
+      <div><PageLink text="В начало" link="hero-block" /></div>
       <div><PageLink text="Квартиры" link="choose-flat" /></div>
       <div><PageLink text="Преимущества" link="main-info" /></div>
-      <div><PageLink text="О нас" link="about-company" /></div>
-      <div><PageLink text="Контакты" link="choose-flat" /></div>
+      <div><PageLink text="Генплан" link="gen-plan" /></div>
     </div>
   </footer>
 </template>

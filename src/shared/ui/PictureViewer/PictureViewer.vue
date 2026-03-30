@@ -24,23 +24,29 @@ const props = defineProps<Props>()
 
 <template>
   <div class="picture-viewer">
-    <ClientOnly>
-      <swiper
-        :modules="modules"
-        :slides-per-view="1"
-        :space-between="20"
-        :loop="true"
-        :pagination="{ clickable: true }"
-        :navigation="true"
-      >
-        <swiper-slide v-for="picture in props.pictures" :key="picture">
-          <div class="slide">
-            <img :src="`${props.url}${picture}`" />
-          </div>
-        </swiper-slide>
-      </swiper>
-    </ClientOnly>
-    <div class="close" @click="close"></div>
+    <div class="background" @click="close" />
+
+    <swiper
+      :modules="modules"
+      :slides-per-view="1"
+      :space-between="20"
+      :loop="true"
+      :pagination="{ clickable: true }"
+      :navigation="{
+        prevEl: '.prev-el',
+        nextEl: '.next-el',
+      }"
+    >
+      <swiper-slide v-for="picture in props.pictures" :key="picture">
+        <div class="slide">
+          <img :src="`${props.url}${picture}`" />
+        </div>
+      </swiper-slide>
+
+      <div class="next-el nav-button"><div class="arrow"></div></div>
+      <div class="prev-el nav-button"><div class="arrow"></div></div>
+      <div class="close" @click="close">X</div>
+    </swiper>
   </div>
 </template>
 
@@ -48,31 +54,68 @@ const props = defineProps<Props>()
 .picture-viewer {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
+
+  & .background {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
 
   & .close {
-    @include bg-picture;
-    background-image: url("/icons/close.svg");
-    color: var(--color-grey-accent);
     position: absolute;
-    right: 20px;
-    top: 20px;
-    width: 100px;
-    height: 100px;
-    color: black;
-    font-size: 50px;
+    font-size: 100px;
+    top: 0px;
+    line-height: 100%;
+    right: 190px;
+    height: 50px;
+    width: 50px;
+    color: var(--color-grey);
+    z-index: 11000;
+    user-select: none;
     cursor: pointer;
-    z-index: 1000;
   }
 
   & .slide {
-    height: calc(100dvh - 40px);
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #eee;
     font-size: 24px;
+
+    & > img {
+      object-fit: cover;
+    }
+  }
+
+  .swiper {
+    border-radius: var(--radius-swiper);
+    margin: 50px 100px;
+    height: calc(100% - 100px);
+    z-index: 100;
+  }
+  .nav-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 100;
+    width: 150px;
+    cursor: pointer;
+    background-color: var(--color-grey);
+  }
+  .next-el {
+    right: 0;
+  }
+  .prev-el {
+    left: 0;
+  }
+  .arrow {
+    background-image: url("/icon/arrow.svg");
+    width: 50px;
+    height: 50px;
+    z-index: 200;
+    position: absolute;
   }
 }
 </style>

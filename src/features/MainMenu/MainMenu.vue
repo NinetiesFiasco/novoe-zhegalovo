@@ -9,7 +9,6 @@ import { PageLink } from "~/shared/ui/links"
       <li><PageLink text="Генплан" link="gen-plan" /></li>
       <li><PageLink text="Преимущества" link="main-info" /></li>
       <li><PageLink text="О компании" link="about-company" /></li>
-      <li><PageLink text="Контакты" link="choose-flat" /></li>
     </ul>
   </div>
 </template>

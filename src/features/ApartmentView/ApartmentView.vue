@@ -1,49 +1,13 @@
 <script lang="ts" setup>
 import { useSectionsStore } from "~/entities"
-import { PictureViewer } from "~/shared/ui"
 import { getBaseURL } from "~/shared/utils"
-import { PrimaryButton } from "~/shared/ui"
+import { ApartmentFinishing, UndergroundParking } from "./ui"
 
 const baseURL = getBaseURL()
-
-const FINISHED_INTERIOR_PRICE = 150000
-
-const isPictures = ref<boolean>(false)
 
 const sectionsStore = useSectionsStore()
 
 const { currentFlat } = storeToRefs(sectionsStore)
-
-const isFinished = computed(() => {
-  return (currentFlat.value?.priceMeter ?? 0) > FINISHED_INTERIOR_PRICE
-})
-
-const finishedPictures = [
-  `1.webp`,
-  `2.webp`,
-  `3.webp`,
-  `4.webp`,
-  `5.webp`,
-  `6.webp`,
-  `7.webp`,
-  `8.webp`,
-  `9.webp`,
-  `10.webp`,
-  `11.webp`,
-  `12.webp`,
-  `13.webp`,
-]
-const preFinishedPictures = [
-  `1.webp`,
-  `2.webp`,
-  `3.webp`,
-  `4.webp`,
-  `5.webp`,
-  `6.webp`,
-  `7.webp`,
-  `8.webp`,
-  `9.webp`,
-]
 </script>
 
 <template>
@@ -71,7 +35,7 @@ const preFinishedPictures = [
           <td>{{ sectionsStore.currentSection }}</td>
           <td>{{ sectionsStore.currentFloor }}</td>
           <td>
-            {{ isFinished ? "чистовая" : "черновая" }}
+            {{ sectionsStore.isFinished ? "чистовая" : "черновая" }}
           </td>
         </tr>
       </tbody>
@@ -82,22 +46,8 @@ const preFinishedPictures = [
     </div>
     <hr />
     <div class="additional-features">
-      <PrimaryButton @click="isPictures = true">{{
-        isFinished ? "Пример чистовой отделки" : "Пример черновой отделки"
-      }}</PrimaryButton>
-      <PictureViewer
-        v-if="isPictures"
-        @close="isPictures = false"
-        :title="
-          isFinished ? 'Пример чистовой отделки' : 'Пример черновой отделки'
-        "
-        :url="
-          isFinished
-            ? `${baseURL}images/interior/finished/`
-            : `${baseURL}images/interior/prefinished/`
-        "
-        :pictures="isFinished ? finishedPictures : preFinishedPictures"
-      />
+      <ApartmentFinishing />
+      <UndergroundParking />
     </div>
   </div>
 </template>

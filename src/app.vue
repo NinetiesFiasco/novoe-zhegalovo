@@ -17,7 +17,7 @@ import {
 
 <template>
   <main class="app-main">
-    <AppSection>
+    <AppSection id="hero-block">
       <HeroBlock />
     </AppSection>
     <AppSection>

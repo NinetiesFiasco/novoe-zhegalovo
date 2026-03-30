@@ -4,6 +4,8 @@ import { getSections } from "~/shared/api"
 import type { SectionsDTO, SectionNames, FlatDTO } from "~/shared/api"
 import { getBaseURL } from "~/shared/utils"
 
+const FINISHED_INTERIOR_PRICE = 150000
+
 export const useSectionsStore = defineStore("sections", () => {
   const sections = ref<SectionsDTO>({
     section1: {},
@@ -15,6 +17,10 @@ export const useSectionsStore = defineStore("sections", () => {
   const currentFlat = ref<FlatDTO | null>(null)
   const currentSection = ref<number>(0)
   const currentFloor = ref<number>(0)
+
+  const isFinished = computed(() => {
+    return (currentFlat.value?.priceMeter ?? 0) > FINISHED_INTERIOR_PRICE
+  })
 
   async function loadSections() {
     loading.value = true
@@ -94,6 +100,7 @@ export const useSectionsStore = defineStore("sections", () => {
     currentFlat,
     currentFloor,
     currentSection,
+    isFinished,
     loadSections,
     getFloors,
     selectFlat,

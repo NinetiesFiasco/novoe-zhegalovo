@@ -1,15 +1,24 @@
 <script lang="ts" setup>
-import { PageLink } from "~/shared/ui/links"
+import { PageLink, OpacityLink } from "~/shared/ui/links"
 import { SectionSelector } from "~/shared/ui"
+import { useDevice } from "~/shared/utils"
+const { isMobile } = useDevice()
 </script>
 
 <template>
   <div class="building-back">
     <div class="background"></div>
     <h2>Цены от застройщика!</h2>
-    <PageLink link="choose-flat">
-      <section-selector class="selector" />
-    </PageLink>
+    <template v-if="isMobile">
+      <OpacityLink class="mobile-link" link="choose-flat">
+        Выбрать недвижимость
+      </OpacityLink>
+    </template>
+    <template v-else>
+      <PageLink link="choose-flat">
+        <section-selector class="selector" />
+      </PageLink>
+    </template>
   </div>
 </template>
 
@@ -17,7 +26,8 @@ import { SectionSelector } from "~/shared/ui"
 .building-back {
   @include bg-picture;
 
-  background-image: url("/images/GenPlan.png");
+  background: url("/images/GenPlan.png") 80% center / cover no-repeat;
+
   width: inherit;
   height: inherit;
   position: relative;
@@ -52,7 +62,12 @@ import { SectionSelector } from "~/shared/ui"
 
   & .selector {
     bottom: 40%;
-    left: 50%;
+    right: 25%;
+  }
+  & .mobile-link {
+    position: absolute;
+    bottom: 150px;
+    right: 25px;
   }
 }
 </style>

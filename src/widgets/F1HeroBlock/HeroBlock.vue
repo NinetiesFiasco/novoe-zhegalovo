@@ -1,10 +1,14 @@
 <script lang="ts" setup>
-import { PageLink } from "~/shared/ui/links"
+import { PageLink, OpacityLink } from "~/shared/ui"
 import { EntranceSelector } from "~/shared/ui"
 import { MainMenu } from "~/features"
+import { useContactsStore } from "~/entities"
+import { useDevice } from "~/shared/utils"
 
+const contacts = useContactsStore()
 const isLoaded = ref(false)
 const isUI = ref(false)
+const { isMobile } = useDevice()
 
 onMounted(() => {
   window.setTimeout(() => {
@@ -21,24 +25,32 @@ onMounted(() => {
     <div
       :class="{
         'logo-image': true,
-        'logo-image-loaded': isLoaded,
+        'logo-image-loaded': isLoaded && !isMobile,
+        'logo-image-loaded-mobile': isLoaded && isMobile,
       }"
     />
     <template v-if="isUI">
-      <PageLink link="choose-flat">
-        <entrance-selector class="entrance1" :entrance="1" />
-      </PageLink>
-      <PageLink link="choose-flat">
-        <entrance-selector class="entrance2" :entrance="2" />
-      </PageLink>
-      <PageLink link="choose-flat">
-        <entrance-selector class="entrance3" :entrance="3" />
-      </PageLink>
+      <template v-if="isMobile">
+        <OpacityLink class="mobile-link" link="choose-flat">
+          Выбрать недвижимость
+        </OpacityLink>
+      </template>
+      <template v-else>
+        <PageLink link="choose-flat">
+          <entrance-selector class="entrance1" :entrance="1" />
+        </PageLink>
+        <PageLink link="choose-flat">
+          <entrance-selector class="entrance2" :entrance="2" />
+        </PageLink>
+        <PageLink link="choose-flat">
+          <entrance-selector class="entrance3" :entrance="3" />
+        </PageLink>
+      </template>
 
       <MainMenu />
 
       <div class="contact-phone font-bold">
-        <div>+7 (ХХХ) ХХ-ХХ-ХХ</div>
+        <div>{{ contacts.phone }}</div>
       </div>
     </template>
   </div>
@@ -64,14 +76,18 @@ onMounted(() => {
     transform: scale(2);
 
     transition:
+      top 1s ease-out,
       left 1s ease-out,
       transform 1s ease-out;
   }
   & .logo-image-loaded {
-    @include bg-picture;
-    background-image: url("/images/Logo.svg");
     left: 20px;
     transform: scale(1);
+  }
+  & .logo-image-loaded-mobile {
+    left: 0px;
+    top: 0px;
+    transform: scale(0.5);
   }
 
   & .entrance1,
@@ -80,6 +96,7 @@ onMounted(() => {
     position: absolute;
     cursor: pointer;
     caret-color: transparent;
+    width: clamp(150px, 16vw, 200px);
   }
 
   & .entrance1 {
@@ -103,6 +120,12 @@ onMounted(() => {
     right: 25px;
     font-size: 30px;
     color: var(--color-white);
+  }
+
+  & .mobile-link {
+    position: absolute;
+    bottom: 150px;
+    right: 25px;
   }
 }
 </style>
