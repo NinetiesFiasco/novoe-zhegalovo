@@ -6,12 +6,12 @@ import { getBaseURL } from "~/shared/utils"
 const baseURL = getBaseURL()
 
 const sectionsStore = useSectionsStore()
-const { isFinished } = sectionsStore
+const { isFinished } = storeToRefs(sectionsStore)
 
 const isPictures = ref<boolean>(false)
 
-const finishedPictures = Array.from({ length: 13 }, (_, i) => `${i + 1}.webp`)
-const preFinishedPictures = Array.from({ length: 9 }, (_, i) => `${i + 1}.webp`)
+const finishedPictures = Array.from({ length: 7 }, (_, i) => `${i + 1}.webp`)
+const preFinishedPictures = Array.from({ length: 4 }, (_, i) => `${i + 1}.webp`)
 </script>
 
 <template>

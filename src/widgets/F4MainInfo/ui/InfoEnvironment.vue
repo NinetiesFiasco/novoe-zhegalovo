@@ -45,7 +45,7 @@
 <style lang="scss" scoped>
 .info-environment {
   width: 100%;
-  height: 80%;
+  height: 100%;
   font-size: 20px;
   margin-bottom: 30px;
   display: flex;
