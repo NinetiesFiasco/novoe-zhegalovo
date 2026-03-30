@@ -44,7 +44,7 @@ onMounted(async () => {
   width: 100%;
 
   & .apartment-selector {
-    margin-right: 200px;
+    margin-right: 100px;
 
     & .head-p {
       color: var(--color-blue);

@@ -62,7 +62,7 @@ const { isMobile } = useDevice()
 
   & .selector {
     bottom: 40%;
-    right: 25%;
+    right: 23%;
   }
   & .mobile-link {
     position: absolute;

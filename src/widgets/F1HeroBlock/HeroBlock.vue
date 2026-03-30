@@ -16,7 +16,7 @@ onMounted(() => {
     window.setTimeout(() => {
       isUI.value = true
     }, 500)
-  }, 1000)
+  }, 300)
 })
 </script>
 

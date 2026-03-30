@@ -26,18 +26,24 @@ const sectionUI = (section: SectionNames): string => {
 <template>
   <div class="apartment-in-entrance">
     <h2>{{ sectionUI(section) }}</h2>
-    <div
-      class="floor"
-      v-for="floor of sectionsStore.getFloors(section).reverse()"
-      :key="floor"
-    >
-      <FloorUI
-        :flats="sectionsStore.sections[section][Number(floor)]"
-        :floor="Number(floor)"
-        :section="section"
-      />
-    </div>
-    <div class="floor-sign">этаж</div>
+    <template v-if="section !== 'section3'">
+      <div
+        class="floor"
+        v-for="floor of sectionsStore.getFloors(section).reverse()"
+        :key="floor"
+      >
+        <FloorUI
+          :flats="sectionsStore.sections[section][Number(floor)]"
+          :floor="Number(floor)"
+          :section="section"
+        />
+      </div>
+
+      <div class="floor-sign">этаж</div>
+    </template>
+    <template v-else>
+      <h3 class="soon-for-sale">Скоро в продаже!</h3>
+    </template>
   </div>
 </template>
 
@@ -45,6 +51,7 @@ const sectionUI = (section: SectionNames): string => {
 .apartment-in-entrance {
   & > h2 {
     color: var(--color-grey-accent);
+    white-space: nowrap;
   }
 
   & .floor {
@@ -55,6 +62,13 @@ const sectionUI = (section: SectionNames): string => {
   & .floor-sign {
     writing-mode: sideways-lr;
     margin-left: -5px;
+  }
+
+  & .soon-for-sale {
+    font-size: 30px;
+    writing-mode: sideways-lr;
+    height: 175px;
+    text-align: center;
   }
 }
 </style>
