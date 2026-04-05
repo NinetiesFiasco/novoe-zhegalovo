@@ -33,7 +33,7 @@ const { isMobile } = useDevice()
 .building-back {
   @include bg-picture;
 
-  background-image: url("/images/BuildingBack.png");
+  background-image: url("/images/BuildingBack.webp");
   width: inherit;
   height: inherit;
   position: relative;

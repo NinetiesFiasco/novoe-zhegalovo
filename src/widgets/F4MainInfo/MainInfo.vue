@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import {
   AboutInfrastructure,
-  AppMap,
+  // AppMap,
   InfoEnvironment,
   InfoTransport,
+  YandexMap,
 } from "./ui"
 
 import { Swiper, SwiperSlide } from "swiper/vue"
@@ -25,7 +26,8 @@ const SwiperStyle = computed(() => ({
       :loop="true"
       :pagination="{ clickable: true }"
     >
-      <swiper-slide> <AppMap /> </swiper-slide>
+      <swiper-slide> <YandexMap /> </swiper-slide>
+      <!-- <swiper-slide> <AppMap /> </swiper-slide> -->
       <swiper-slide> <InfoTransport /> </swiper-slide>
       <swiper-slide> <AboutInfrastructure /> </swiper-slide>
       <swiper-slide> <InfoEnvironment /> </swiper-slide>
@@ -47,5 +49,8 @@ const SwiperStyle = computed(() => ({
 .info-swiper .swiper-pagination-bullet-active {
   width: 25px;
   height: 25px;
+}
+.swiper-slide {
+  padding-bottom: 50px;
 }
 </style>

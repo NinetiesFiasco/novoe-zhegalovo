@@ -6,7 +6,7 @@ const baseURL = getBaseURL()
 
 const isPictures = ref<boolean>(false)
 
-const pictures = Array.from({ length: 3 }, (_, i) => `${i + 1}.png`)
+const pictures = Array.from({ length: 3 }, (_, i) => `${i + 1}.webp`)
 </script>
 
 <template>

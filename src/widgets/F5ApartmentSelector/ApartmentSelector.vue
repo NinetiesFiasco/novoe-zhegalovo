@@ -3,6 +3,9 @@ import { ApartmentInEntrance, ApartmentView, LevelOfFinish } from "~/features"
 import { useSectionsStore } from "~/entities"
 import { getSections, type SectionsDTO } from "~/shared/api"
 import { getBaseURL } from "~/shared/utils"
+import { useDevice } from "~/shared/utils"
+
+const { isMobile } = useDevice()
 
 const sectionsStore = useSectionsStore()
 
@@ -18,7 +21,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="apartments">
+  <div
+    class="apartments"
+    :style="{ flexDirection: isMobile ? 'column' : 'row' }"
+  >
     <div class="apartment-selector">
       <p class="head-p">доступные</p>
       <h2>планировки квартир</h2>

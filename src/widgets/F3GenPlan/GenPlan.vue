@@ -26,7 +26,7 @@ const { isMobile } = useDevice()
 .building-back {
   @include bg-picture;
 
-  background: url("/images/GenPlan.png") 80% center / cover no-repeat;
+  background: url("/images/GenPlan.webp") 80% center / cover no-repeat;
 
   width: inherit;
   height: inherit;

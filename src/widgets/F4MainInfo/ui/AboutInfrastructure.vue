@@ -51,7 +51,7 @@
   }
 
   & .school {
-    background: url("/images/school.jpg") center 75% / cover no-repeat;
+    background: url("/images/school.webp") center 75% / cover no-repeat;
     height: 50%;
   }
 }

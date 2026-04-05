@@ -94,7 +94,7 @@ import { YandexMap, KeyBenefits } from "~/features"
       & .bottom-info-picture {
         @include bg-picture;
 
-        background-image: url("/images/ViewFromLake.png");
+        background-image: url("/images/ViewFromLake.webp");
         height: 370px;
         flex: 1;
         flex-shrink: 1;

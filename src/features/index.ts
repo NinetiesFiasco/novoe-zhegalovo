@@ -1,4 +1,5 @@
 export { default as YandexMap } from "./YandexMap"
+export { default as YandexMapRegion } from "./YandexMapRegion"
 export { default as KeyBenefits } from "./KeyBenefits"
 export { default as ApartmentView } from "./ApartmentView"
 export { default as ApartmentInEntrance } from "./ApartmentInEntrance"

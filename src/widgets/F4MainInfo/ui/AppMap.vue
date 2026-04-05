@@ -3,7 +3,7 @@
 <template>
   <div class="app-map">
     <div class="positioner">
-      <img src="/images/map.png" alt="Карта проезда к Москве" />
+      <!-- <img src="/images/map.png" alt="Карта проезда к Москве" /> -->
       <h2 class="jk">ЖК "Новое Жегалово"</h2>
     </div>
     <div class="pedestrian">

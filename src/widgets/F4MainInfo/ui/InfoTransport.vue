@@ -41,7 +41,7 @@
   font-size: 20px;
 
   & .voronok {
-    background: url("/images/voronok.jpg") center center / cover no-repeat;
+    background: url("/images/voronok.webp") center center / cover no-repeat;
     height: 50%;
   }
 

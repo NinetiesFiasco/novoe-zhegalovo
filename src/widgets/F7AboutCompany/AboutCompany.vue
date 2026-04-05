@@ -26,7 +26,7 @@ import PageFooter from "./ui/PageFooter.vue"
   & .left-info-picture {
     @include bg-picture;
 
-    background-image: url("/images/AboutCompany.png");
+    background-image: url("/images/AboutCompany.webp");
     height: 370px;
     border-radius: var(--radius-md);
     grid-area: picture;
