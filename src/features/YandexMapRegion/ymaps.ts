@@ -12,14 +12,14 @@ const defaultPlacemark = (
     {
       hintContent: hint,
       balloonContent: balloon,
-      iconContent: hint,
+      iconContent: zoom === 11 ? hint : "",
     },
     {
       iconLayout: "default#imageWithContent",
       iconImageHref: `/icons/${icon}`,
       iconImageSize: [32 * scale, 32 * scale],
       iconImageOffset: [-16 * scale, -32 * scale],
-      ...(zoom === 1 && {
+      ...(zoom === 11 && {
         iconContentLayout: window.ymaps.templateLayoutFactory.createClass(
           `
           <div style="
@@ -160,12 +160,12 @@ const createYaMapObjects = (_zoom: number): any => {
   )
 
   const busIcon = defaultPlacemark(
-    [55.825, 37.9],
+    [55.825, 37.88],
     "На автобусе до станции метро Щелковская 20 минут",
     "На автобусе до станции метро Щелковская 20 минут",
     "bus.svg",
-    2,
-    "bottom: 0; right: -35px;",
+    2.5,
+    "bottom: -10px; right: -35px;",
   )
 
   const trainIcon = defaultPlacemark(
