@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/vue"
 
 import { Navigation, Pagination } from "swiper/modules"
 
+const { isMobile } = useDevice()
+
 const modules = [Navigation, Pagination]
 
 type Props = {
@@ -23,7 +25,12 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <div class="picture-viewer">
+  <div
+    :class="{
+      'picture-viewer': true,
+      'picture-viewer-mobile': isMobile,
+    }"
+  >
     <div class="background" @click="close" />
 
     <swiper
@@ -54,6 +61,7 @@ const props = defineProps<Props>()
 .picture-viewer {
   position: fixed;
   inset: 0;
+  user-select: none;
 
   & .background {
     position: fixed;
@@ -116,6 +124,21 @@ const props = defineProps<Props>()
     height: 50px;
     z-index: 200;
     position: absolute;
+  }
+}
+
+.picture-viewer-mobile {
+  .swiper {
+    border-radius: 0;
+    margin: 0;
+    height: 100%;
+  }
+  .nav-button {
+    display: none;
+  }
+  .close {
+    top: 10px;
+    right: 20px;
   }
 }
 </style>

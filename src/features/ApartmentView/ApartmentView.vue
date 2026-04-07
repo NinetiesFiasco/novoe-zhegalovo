@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 import { useSectionsStore } from "~/entities"
-import { getBaseURL } from "~/shared/utils"
 import { ApartmentFinishing, UndergroundParking } from "./ui"
-
-const baseURL = getBaseURL()
 
 const sectionsStore = useSectionsStore()
 
@@ -16,7 +13,7 @@ const { currentFlat } = storeToRefs(sectionsStore)
     <div class="floor-plan">
       <img
         class="img-plan"
-        :src="`${baseURL}images/floor-plan/${currentFlat.plan}.webp`"
+        :src="`images/floor-plan/${currentFlat.plan}.webp`"
         :alt="`Планировка квартиры ${currentFlat.number}`"
       />
     </div>
@@ -40,9 +37,15 @@ const { currentFlat } = storeToRefs(sectionsStore)
         </tr>
       </tbody>
     </table>
-    <div>
-      <h4 class="price-total">Цена: {{ currentFlat.priceTotal }} ₽</h4>
-      <p>Цена за метр: {{ currentFlat.priceMeter }} ₽ за м<sup>2</sup></p>
+    <div class="prices">
+      <h4 class="price-total">
+        Цена: <strong>{{ currentFlat.priceTotal }}</strong> ₽
+      </h4>
+      <p>
+        Цена за метр: <strong>{{ currentFlat.priceMeter }}</strong> ₽ за м<sup
+          >2</sup
+        >
+      </p>
     </div>
     <hr />
     <div class="additional-features">
@@ -65,26 +68,40 @@ const { currentFlat } = storeToRefs(sectionsStore)
   & > h3 {
     color: var(--color-blue);
     font-size: 25px;
-    margin-top: 25px;
+    margin-top: 10px;
   }
 
-  & .price-total {
-    font-size: 30px;
+  & .prices {
+    margin: 10px 0;
+
+    & .price-total {
+      font-size: 30px;
+    }
+    & > p {
+      font-size: 20px;
+    }
   }
 
   & .params {
-    border-spacing: 50px 15px;
+    border-spacing: clamp(5px, 2vw, 40px) 8px;
+    margin: 5px 0 5px 0;
     & th {
       color: var(--color-blue);
+      font-size: clamp(10px, 2vw, 25px);
+      text-wrap: nowrap;
+    }
+    & td {
+      font-size: clamp(10px, 2vw, 25px);
     }
   }
 
   & .additional-features {
     margin-top: 15px;
     display: flex;
+    flex-wrap: wrap;
 
     & > * {
-      margin-left: 5px;
+      margin: 5px 0 0 5px;
     }
   }
 }

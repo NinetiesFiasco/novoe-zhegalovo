@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import { PrimaryButton, PictureViewer } from "~/shared/ui"
-import { getBaseURL } from "~/shared/utils"
-const baseURL = getBaseURL()
 
 const isParkingPhoto = ref<boolean>(false)
 
@@ -42,7 +40,7 @@ const parkingPictures = [`1.webp`, `2.webp`, `3.webp`, `4.webp`, `5.webp`]
     <PictureViewer
       v-if="isParkingPhoto"
       @close="isParkingPhoto = false"
-      :url="`${baseURL}images/parking/`"
+      :url="`/images/parking/`"
       :pictures="parkingPictures"
     />
   </div>

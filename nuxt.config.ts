@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || "/",
+    baseURL: "/",
   },
 
   srcDir: "src/",
@@ -45,7 +45,17 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       yandexMapsKey: process.env.YANDEX_MAPS_API_KEY,
-      baseURL: process.env.NUXT_APP_BASE_URL || "/",
+      baseURL: "/",
     },
+  },
+
+  typescript: {
+    tsConfig: {
+      include: ["types/*.d.ts"],
+    },
+  },
+
+  imports: {
+    dirs: ["shared/composables"],
   },
 })

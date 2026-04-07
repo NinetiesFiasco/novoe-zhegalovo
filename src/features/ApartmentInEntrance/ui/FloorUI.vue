@@ -15,7 +15,8 @@ const props = defineProps<Props>()
 
 const flats: Array<FlatDTO | undefined> = []
 
-for (let i = 0; i < 4; i++) {
+const len = props.section === "section3" ? 4 : 2
+for (let i = 0; i < len; i++) {
   flats.push(
     sectionsStore.sections[props.section][Number(props.floor)]?.find(
       (f) => f.position === i + 1,

@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { PageLink, OpacityLink, EntranceSelector } from "~/shared/ui"
 
-import { useDevice } from "~/shared/utils"
-
 const { isMobile } = useDevice()
 </script>
 

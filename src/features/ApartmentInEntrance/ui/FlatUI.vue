@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { FlatDTO, SectionNames } from "~/shared/api"
 import { useSectionsStore } from "~/entities"
+const { isMobile } = useDevice()
 
 const sectionsStore = useSectionsStore()
 
@@ -11,13 +12,21 @@ type Props = {
 }
 
 const props = defineProps<Props>()
+
+const handleClick = () => {
+  if (props.flat) {
+    sectionsStore.selectFlat(props.section, Number(props.floor), props.flat)
+    if (isMobile.value && document) {
+      document.getElementById("current-flat")?.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+  }
+}
 </script>
 
 <template>
-  <div
-    v-if="flat"
-    @click="sectionsStore.selectFlat(section, Number(floor), flat)"
-  >
+  <div v-if="flat" @click="handleClick">
     <div
       :class="{
         box: true,

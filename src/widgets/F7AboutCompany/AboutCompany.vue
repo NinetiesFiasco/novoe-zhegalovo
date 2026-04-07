@@ -1,13 +1,29 @@
 <script lang="ts" setup>
-import CompanyInfo from "./ui/CompanyInfo.vue"
-import PageFooter from "./ui/PageFooter.vue"
+import {
+  CompanyInfo,
+  CompanyInfoMobile,
+  PageFooter,
+  PageFooterMobile,
+} from "./ui"
+const { isMobile } = useDevice()
 </script>
 
 <template>
-  <div class="about-company">
-    <div class="left-info-picture" />
-    <CompanyInfo />
-    <PageFooter />
+  <div
+    :class="{
+      'about-company': true,
+      'about-company-mobile': isMobile,
+    }"
+  >
+    <div v-if="!isMobile" class="left-info-picture" />
+    <template v-if="isMobile">
+      <CompanyInfoMobile />
+      <PageFooterMobile />
+    </template>
+    <template v-else>
+      <CompanyInfo />
+      <PageFooter />
+    </template>
   </div>
 </template>
 
@@ -31,6 +47,19 @@ import PageFooter from "./ui/PageFooter.vue"
     border-radius: var(--radius-md);
     grid-area: picture;
     margin: 0 40px 0 20px;
+  }
+}
+
+.about-company-mobile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & > .left-info-picture {
+    height: 250px;
+    min-height: 250px;
+    margin: 0;
+    width: 100%;
   }
 }
 </style>

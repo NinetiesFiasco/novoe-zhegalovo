@@ -1,5 +1,3 @@
-let baseURL;
-
 const defaultPlacemark = (coords: Array<number>, hint: string, balloon: string, icon: string): any => {
   return new window.ymaps.Placemark(
     coords,
@@ -9,15 +7,14 @@ const defaultPlacemark = (coords: Array<number>, hint: string, balloon: string, 
     },
     {
       iconLayout: "default#image",
-      iconImageHref: `${baseURL}icons/yandex/${icon}`,
+      iconImageHref: `/icons/yandex/${icon}`,
       iconImageSize: [32, 32],
       iconImageOffset: [-16, -32],
     }
   )
 }
 
-const createPlaceMarks = (_baseURL: string): any => {
-  baseURL = _baseURL;
+const createPlaceMarks = (): any => {
   const building = new window.ymaps.Placemark(
     [55.906946, 37.981561],
     {
@@ -26,7 +23,7 @@ const createPlaceMarks = (_baseURL: string): any => {
     },
     {
       iconLayout: "default#image",
-      iconImageHref: `${baseURL}icons/yandex/building.png`,
+      iconImageHref: `/icons/yandex/building.png`,
       iconImageSize: [64, 64],
       iconImageOffset: [-32, -64],
     },

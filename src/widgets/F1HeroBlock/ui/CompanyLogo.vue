@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useDevice } from "~/shared/utils"
-
 const { isMobile } = useDevice()
 const { isLoaded } = defineProps<{ isLoaded: boolean }>()
 </script>
@@ -9,7 +7,8 @@ const { isLoaded } = defineProps<{ isLoaded: boolean }>()
   <div
     :class="{
       'logo-image': true,
-      'logo-image-loaded': isLoaded && !isMobile,
+      'logo-image-unloaded': !isLoaded,
+      'logo-image-loaded-desktop': isLoaded && !isMobile,
       'logo-image-loaded-mobile': isLoaded && isMobile,
     }"
   />
@@ -20,24 +19,43 @@ const { isLoaded } = defineProps<{ isLoaded: boolean }>()
   @include bg-picture;
   background-image: url("/images/Logo.svg");
   position: absolute;
-  top: calc(50% - 112px);
-  left: calc(50% - 121px);
-  height: 225px;
-  width: 242px;
-  transform: scale(2);
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 53px;
 
   transition:
     top 1s ease-out,
     left 1s ease-out,
     transform 1s ease-out;
 }
-.logo-image-loaded {
-  left: 20px;
+.logo-image-unloaded {
+  top: calc(50% - 50px);
+  left: calc(50% - 60px);
+  transform: scale(6);
+}
+@media (max-width: 768px) {
+  .logo-image-unloaded {
+    top: calc(50% - 25px);
+    left: calc(50% - 30px);
+    transform: scale(3);
+  }
+}
+.logo-image-unloaded-mobile {
+  top: calc(50% - 50px);
+  left: calc(50% - 20px);
   transform: scale(1);
 }
+.logo-image-loaded-desktop {
+  left: 120px;
+  top: calc(50% - 60px);
+  transform: scale(4);
+}
 .logo-image-loaded-mobile {
-  left: 0px;
-  top: 0px;
-  transform: scale(0.5);
+  left: 20px;
+  top: 20px;
+  width: 100px;
+  height: 100px;
+  transform: scale(1);
 }
 </style>

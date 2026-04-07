@@ -2,12 +2,12 @@
 
 <template>
   <div class="company-info font-default">
-    <h2 class="font-extra-bold">застройщик</h2>
     <div class="sm-logo" />
+
     <p>
-      ООО "Строймонтаж" работает с 2005 года в Московской области и
-      специализируется на строительстве жилых, промышленных и административных
-      зданий. 
+      <strong>Застройщик</strong> ООО "Строймонтаж" работает с 2005 года в
+      Московской области и специализируется на строительстве жилых, промышленных
+      и административных зданий. 
     </p>
     <p>
       За плечами застройщика — десятки реализованных проектов: административные
@@ -29,8 +29,7 @@
 <style lang="scss" scoped>
 .company-info {
   grid-area: content;
-  margin-right: 40px;
-  font-size: clamp(15px, 2vw, 20px);
+  padding: 5px;
 
   & > p {
     margin-top: 10px;
@@ -44,10 +43,10 @@
 
   & .sm-logo {
     @include bg-picture;
-    float: right;
     width: 226px;
     height: 159px;
-    margin: 0 0 10px 10px;
+    margin: auto;
+    margin-bottom: 20px;
 
     background-image: url("/images/SMLogo.webp");
   }

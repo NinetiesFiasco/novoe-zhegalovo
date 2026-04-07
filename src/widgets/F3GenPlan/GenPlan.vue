@@ -1,18 +1,15 @@
 <script lang="ts" setup>
-import { PageLink, OpacityLink } from "~/shared/ui/links"
+import { PageLink } from "~/shared/ui/links"
+import { GoToFlats, GoodPrices } from "~/features"
 import { SectionSelector } from "~/shared/ui"
-import { useDevice } from "~/shared/utils"
 const { isMobile } = useDevice()
 </script>
 
 <template>
   <div class="building-back">
-    <div class="background"></div>
-    <h2>Цены от застройщика!</h2>
+    <GoodPrices />
     <template v-if="isMobile">
-      <OpacityLink class="mobile-link" link="choose-flat">
-        Выбрать недвижимость
-      </OpacityLink>
+      <GoToFlats />
     </template>
     <template v-else>
       <PageLink link="choose-flat">
@@ -32,28 +29,6 @@ const { isMobile } = useDevice()
   height: inherit;
   position: relative;
 
-  & > .background {
-    background: white;
-    width: 500px;
-    height: 60px;
-    position: absolute;
-    right: 30px;
-    top: 20px;
-    opacity: 0.2;
-    z-index: 90;
-    border-radius: var(--radius-md);
-  }
-
-  & > h2 {
-    position: absolute;
-    top: 20px;
-    right: 50px;
-    color: white;
-    font-size: 40px;
-    z-index: 100;
-    user-select: none;
-  }
-
   & .selector {
     position: absolute;
     cursor: pointer;
@@ -63,11 +38,6 @@ const { isMobile } = useDevice()
   & .selector {
     bottom: 40%;
     right: 23%;
-  }
-  & .mobile-link {
-    position: absolute;
-    bottom: 150px;
-    right: 25px;
   }
 }
 </style>

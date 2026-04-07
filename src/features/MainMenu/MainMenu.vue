@@ -1,8 +1,16 @@
 <script lang="ts" setup>
 import { PageLink } from "~/shared/ui/links"
+const { isMobile } = useDevice()
+const isClosed = ref<boolean>(false)
 </script>
 <template>
-  <div class="main-menu">
+  <div
+    :class="{
+      'main-menu': true,
+      'main-menu-mobile': isMobile,
+      'main-menu-closed': isClosed,
+    }"
+  >
     <div class="background"></div>
     <ul class="links font-default">
       <li><PageLink text="Квартиры" link="choose-flat" /></li>
@@ -61,5 +69,31 @@ import { PageLink } from "~/shared/ui/links"
       margin-top: 6px;
     }
   }
+}
+
+.main-menu-mobile {
+  top: 20px;
+  right: 10px;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+
+  & .links {
+    position: absolute;
+    font-size: 18px;
+    z-index: 100;
+
+    & li {
+      height: 36px;
+    }
+
+    & li + li {
+      margin-top: 3px;
+    }
+  }
+}
+.main-menu-closed {
+  width: 50px;
+  height: 50px;
 }
 </style>

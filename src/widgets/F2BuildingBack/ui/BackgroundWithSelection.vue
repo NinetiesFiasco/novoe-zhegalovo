@@ -75,41 +75,40 @@ const initSelectors = () => {
   <div ref="containerRef" class="bg-container">
     <img
       ref="imgRef"
-      src="/images/HeroBG.webp"
+      src="/images/BuildingBack.webp"
       @load="initSelectors"
       alt="Изображение здания"
     />
     <template v-if="isSelectors && !isMobile">
       <EntranceSelectionUI
-        :style="getStyle(42.5)"
+        :style="getStyle(61)"
         :entrance-number="1"
         :top="120"
         :entrance-adaptive="{
-          transform: 'skew(-3deg)',
-          left: '14px',
-          width: '72px',
+          left: '26px',
+          width: '47px',
+          height: '427px',
         }"
       />
       <EntranceSelectionUI
         :style="getStyle(53)"
         :entrance-number="2"
-        :top="90"
+        :top="95"
         :entrance-adaptive="{
-          transform: 'skew(-2deg)',
+          transform: 'skew(0deg)',
           height: '475px',
-          width: '70px',
-          left: '8px',
+          width: '45px',
+          left: '19px',
         }"
       />
       <EntranceSelectionUI
-        :style="getStyle(65)"
+        :style="getStyle(44)"
         :entrance-number="3"
-        :top="55"
+        :top="75"
         :entrance-adaptive="{
-          transform: 'skew(1deg)',
-          height: '515px',
-          left: '7px',
-          width: '88px',
+          height: '500px',
+          left: '29px',
+          width: '47px',
         }"
       />
     </template>

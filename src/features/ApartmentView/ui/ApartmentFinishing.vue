@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 import { PictureViewer, PrimaryButton } from "~/shared/ui"
 import { useSectionsStore } from "~/entities"
-import { getBaseURL } from "~/shared/utils"
-
-const baseURL = getBaseURL()
 
 const sectionsStore = useSectionsStore()
 const { isFinished } = storeToRefs(sectionsStore)
@@ -16,22 +13,24 @@ const preFinishedPictures = Array.from({ length: 4 }, (_, i) => `${i + 1}.webp`)
 
 <template>
   <div>
-    <PrimaryButton @click="isPictures = true">{{
-      isFinished ? "Пример чистовой отделки" : "Пример черновой отделки"
-    }}</PrimaryButton>
-    <PictureViewer
-      v-if="isPictures"
-      @close="isPictures = false"
-      :title="
-        isFinished ? 'Пример чистовой отделки' : 'Пример черновой отделки'
-      "
-      :url="
-        isFinished
-          ? `${baseURL}images/interior/finished/`
-          : `${baseURL}images/interior/prefinished/`
-      "
-      :pictures="isFinished ? finishedPictures : preFinishedPictures"
-    />
+    <template v-if="isFinished">
+      <PrimaryButton @click="isPictures = true"
+        >Пример чистовой отделки</PrimaryButton
+      >
+      <PictureViewer
+        v-if="isPictures"
+        @close="isPictures = false"
+        title="Пример чистовой отделки"
+        url="/images/interior/finished/"
+        :pictures="finishedPictures"
+      />
+    </template>
+    <template v-else>
+      <p>
+        Квартира в черновой отделке, выполнены все мокрые процессы, сделана
+        стяжка и штукатурка, выполнена электро разводка
+      </p>
+    </template>
   </div>
 </template>
 

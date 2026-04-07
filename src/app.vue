@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-
 import { AppSection } from "~/shared/ui"
 import {
   HeroBlock,
@@ -42,6 +38,10 @@ import {
 </template>
 
 <style>
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
 .app-main {
   height: 100dvh;
   overflow-y: scroll;

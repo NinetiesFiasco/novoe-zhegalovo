@@ -2,7 +2,6 @@ import { defineStore } from "pinia"
 import { ref } from "vue"
 import { getSections } from "~/shared/api"
 import type { SectionsDTO, SectionNames, FlatDTO } from "~/shared/api"
-import { getBaseURL } from "~/shared/utils"
 
 const FINISHED_INTERIOR_PRICE = 150000
 
@@ -27,9 +26,7 @@ export const useSectionsStore = defineStore("sections", () => {
     error.value = null
 
     try {
-      const baseURL = getBaseURL()
-
-      const _sections: SectionsDTO = await getSections(baseURL)
+      const _sections: SectionsDTO = await getSections()
       setSections(_sections)
     } catch (e) {
       error.value = "Ошибка загрузки информации о квартирах"

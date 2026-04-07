@@ -2,20 +2,17 @@
 import { ApartmentInEntrance, ApartmentView, LevelOfFinish } from "~/features"
 import { useSectionsStore } from "~/entities"
 import { getSections, type SectionsDTO } from "~/shared/api"
-import { getBaseURL } from "~/shared/utils"
-import { useDevice } from "~/shared/utils"
 
 const { isMobile } = useDevice()
 
 const sectionsStore = useSectionsStore()
 
-const baseURL = getBaseURL()
-const { data } = await useAsyncData("sections", () => getSections(baseURL))
+const { data } = await useAsyncData("sections", () => getSections())
 if (data.value) {
   sectionsStore.setSections(data.value)
 }
 onMounted(async () => {
-  const data: SectionsDTO = await getSections(baseURL)
+  const data: SectionsDTO = await getSections()
   sectionsStore.setSections(data)
 })
 </script>
@@ -38,6 +35,7 @@ onMounted(async () => {
       <LevelOfFinish />
     </div>
     <div class="apartment-view">
+      <div id="current-flat"></div>
       <ApartmentView />
     </div>
   </div>
@@ -49,16 +47,16 @@ onMounted(async () => {
   width: 100%;
 
   & .apartment-selector {
-    margin-right: 100px;
+    margin-right: clamp(10px, 5vw, 100px);
 
     & .head-p {
       color: var(--color-blue);
-      font-size: 43px;
+      font-size: clamp(30px, 3vw, 43px);
       line-height: 100%;
     }
 
     & > h2 {
-      font-size: 43px;
+      font-size: clamp(30px, 3vw, 43px);
       white-space: nowrap;
       line-height: 100%;
     }

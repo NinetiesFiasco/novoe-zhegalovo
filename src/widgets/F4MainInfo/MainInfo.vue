@@ -27,10 +27,11 @@ const SwiperStyle = computed(() => ({
       :pagination="{ clickable: true }"
     >
       <swiper-slide> <YandexMap /> </swiper-slide>
-      <!-- <swiper-slide> <AppMap /> </swiper-slide> -->
       <swiper-slide> <InfoTransport /> </swiper-slide>
       <swiper-slide> <AboutInfrastructure /> </swiper-slide>
       <swiper-slide> <InfoEnvironment /> </swiper-slide>
+
+      <!-- <swiper-slide> <AppMap /> </swiper-slide> -->
     </swiper>
   </div>
 </template>
@@ -50,7 +51,9 @@ const SwiperStyle = computed(() => ({
   width: 25px;
   height: 25px;
 }
-.swiper-slide {
+.info-swiper .swiper-slide {
   padding-bottom: 50px;
+  height: 100vh;
+  height: 100dvh;
 }
 </style>

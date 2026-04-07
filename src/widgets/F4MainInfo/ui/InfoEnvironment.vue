@@ -6,7 +6,7 @@
     <h2 class="font-default">
       Глоток <span class="font-bold">свежести</span> среди величия природы
     </h2>
-    <div class="text">
+    <div class="info-text">
       <p>
         <span></span>Жилой комплекс «Новое Жегалово» расположен в одном из самых
         зелёных и спокойных районов Щёлково. Здесь легко почувствовать баланс
@@ -53,18 +53,20 @@
 
   & .sivash {
     background: url("/images/ViewFromLake.webp") center 70% / cover no-repeat;
-    height: 50%;
+    flex: 1;
   }
 
   & > h2 {
     color: var(--color-blue);
-    font-size: 40px;
+    font-size: clamp(20px, 2.6vw, 40px);
     text-transform: uppercase;
     margin-top: 12px;
+    height: 50px;
   }
 
-  & .text {
+  & .info-text {
     overflow-y: auto;
+    flex: 1;
   }
 }
 </style>

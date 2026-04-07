@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const { isMobile } = useDevice()
+
 type Props = {
   padding?: boolean
 }
@@ -10,7 +12,8 @@ const props = defineProps<Props>()
     ref="frame"
     :class="{
       'app-section': true,
-      'section-padding': props.padding,
+      'desktop-specials': props.padding && !isMobile,
+      'mobile-specials': props.padding && isMobile,
     }"
   >
     <slot />
@@ -30,7 +33,11 @@ const props = defineProps<Props>()
   scroll-snap-align: start;
   overflow-y: auto;
 }
-.section-padding {
+.desktop-specials {
   padding: 0 40px;
+}
+.mobile-specials {
+  padding: 5px 5px;
+  height: auto;
 }
 </style>

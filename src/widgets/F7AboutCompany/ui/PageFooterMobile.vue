@@ -7,8 +7,6 @@ const contacts = useContactsStore()
 
 <template>
   <footer>
-    <img class="jk-logo" src="/images/Logo.svg" alt="Логотип ЖК" />
-
     <div class="socials">
       <img class="social" src="/icons/social-1.png" alt="" />
       <img class="social" src="/icons/social-email.png" alt="" />
@@ -16,7 +14,7 @@ const contacts = useContactsStore()
     </div>
 
     <div class="contacts">
-      <div class="font-medium">{{ contacts.phone }}</div>
+      <div class="phone">{{ contacts.phone }}</div>
       <div>Email: {{ contacts.email }}</div>
       <div>Адрес: {{ contacts.address }}</div>
       <div>{{ contacts.workTime }}</div>
@@ -49,27 +47,35 @@ footer {
 
   & .socials {
     display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 15px;
+    width: 30px;
 
     & .social {
       width: 30px;
       height: 30px;
-      margin: 115px 3px 0 3px;
+      margin: 5px 3px 0 3px;
     }
   }
 
+  & .phone {
+    font-size: 20px;
+    text-wrap: nowrap;
+  }
+
   & .contacts {
-    margin: 16px 0 0 120px;
+    margin: 16px 0 0 20px;
 
     & div + div {
-      margin-top: 13px;
+      margin-top: 5px;
     }
   }
 
   & .links {
-    margin: 16px 0 0 120px;
+    margin: 16px 0 0 10px;
 
     & div + div {
-      margin-top: 13px;
+      margin-top: 5px;
     }
   }
 }

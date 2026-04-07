@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { CompanyPhone, CompanyLogo, BackgroundWithSelection } from "./ui"
-import { MainMenu } from "~/features"
+import { MainMenu, GoToFlats } from "~/features"
+
+const { isMobile } = useDevice()
 
 const isUI = ref(false)
 const isLoaded = ref<boolean>(false)
@@ -15,11 +17,14 @@ const imgLoaded = () => {
 
 <template>
   <div class="hero-block">
-    <BackgroundWithSelection @img-loaded="imgLoaded" />
+    <BackgroundWithSelection :isMobile="isMobile" @img-loaded="imgLoaded" />
     <CompanyLogo :isLoaded="isLoaded" />
     <template v-if="isUI">
       <MainMenu />
       <CompanyPhone />
+    </template>
+    <template v-if="isMobile">
+      <GoToFlats />
     </template>
   </div>
 </template>

@@ -18,7 +18,7 @@ const props = defineProps<Props>()
 }
 .link-background::before {
   content: "";
-  background: var(--color-blur);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: var(--radius-md);
   position: absolute;
   inset: 0;
