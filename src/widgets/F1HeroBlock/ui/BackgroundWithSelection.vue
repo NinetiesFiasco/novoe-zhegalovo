@@ -51,16 +51,29 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("resize", update)
 })
-function getStyle(x: number) {
-  //const { renderedW, renderedH, offsetX, offsetY } = offsets.value
-  const { renderedW, offsetX } = offsets.value
+function getStyle(x: number, y: number) {
+  const { renderedW, renderedH, offsetX, offsetY } = offsets.value
 
   const xPx = (x / 100) * renderedW - offsetX
-  //const yPx = (y / 100) * renderedH - offsetY
+  const yPx = (y / 100) * renderedH - offsetY
 
   return {
     left: xPx + "px",
-    //top: yPx + "px",
+    top: yPx + "px",
+    //transform: "translate(-50%, -50%)",
+  }
+}
+function getSize(x1: number, y1: number, x2: number, y2: number) {
+  const { renderedW, renderedH, offsetX, offsetY } = offsets.value
+
+  const x1Px = (x1 / 100) * renderedW - offsetX
+  const y1Px = (y1 / 100) * renderedH - offsetY
+  const x2Px = (x2 / 100) * renderedW - offsetX
+  const y2Px = (y2 / 100) * renderedH - offsetY
+
+  return {
+    width: x2Px - x1Px + "px",
+    height: y2Px - y1Px + "px",
     //transform: "translate(-50%, -50%)",
   }
 }
@@ -81,35 +94,29 @@ const initSelectors = () => {
     />
     <template v-if="isSelectors && !isMobile">
       <EntranceSelectionUI
-        :style="getStyle(42.5)"
+        :position="getStyle(42.5, 16)"
         :entrance-number="1"
-        :top="120"
         :entrance-adaptive="{
           transform: 'skew(-3deg)',
           left: '14px',
-          width: '72px',
+          ...getSize(42.5, 16, 47, 80),
         }"
       />
       <EntranceSelectionUI
-        :style="getStyle(53)"
+        :position="getStyle(53, 14)"
         :entrance-number="2"
-        :top="90"
         :entrance-adaptive="{
           transform: 'skew(-2deg)',
-          height: '475px',
-          width: '70px',
-          left: '8px',
+          ...getSize(53, 14, 58, 80),
         }"
       />
       <EntranceSelectionUI
-        :style="getStyle(65)"
+        :position="getStyle(65, 8)"
         :entrance-number="3"
-        :top="55"
         :entrance-adaptive="{
           transform: 'skew(1deg)',
-          height: '515px',
           left: '7px',
-          width: '88px',
+          ...getSize(65, 8, 70, 80),
         }"
       />
     </template>

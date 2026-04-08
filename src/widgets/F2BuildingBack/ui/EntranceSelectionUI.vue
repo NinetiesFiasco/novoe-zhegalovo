@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-const { entranceNumber, top, entranceAdaptive } = defineProps<{
+const { entranceNumber, entranceAdaptive } = defineProps<{
   entranceNumber: number
-  top: number
   entranceAdaptive: any
+  position: any
 }>()
 
 const goTo = () => {
@@ -15,7 +15,7 @@ const goTo = () => {
 </script>
 
 <template>
-  <div class="entrance-link" :style="{ top: `${top}px` }" @click="goTo">
+  <div class="entrance-link" :style="position" @click="goTo">
     <div class="link-balloon">
       <div class="bg-transparency" />
       <span>{{ entranceNumber }}</span>
