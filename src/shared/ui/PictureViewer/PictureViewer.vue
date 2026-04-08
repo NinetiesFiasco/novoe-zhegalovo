@@ -50,8 +50,10 @@ const props = defineProps<Props>()
         </div>
       </swiper-slide>
 
-      <div class="next-el nav-button"><div class="arrow"></div></div>
-      <div class="prev-el nav-button"><div class="arrow"></div></div>
+      <div class="next-el nav-button">
+        <div class="arrow arrow-right"></div>
+      </div>
+      <div class="prev-el nav-button"><div class="arrow arrow-left"></div></div>
       <div class="close" @click="close">X</div>
     </swiper>
   </div>
@@ -119,11 +121,16 @@ const props = defineProps<Props>()
     left: 0;
   }
   .arrow {
-    background-image: url("/icon/arrow.svg");
-    width: 50px;
+    background: url("/icons/arrow.svg") center center / cover no-repeat;
+    width: 30px;
     height: 50px;
     z-index: 200;
     position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 15px);
+  }
+  .arrow-left {
+    transform: rotate(180deg);
   }
 }
 
