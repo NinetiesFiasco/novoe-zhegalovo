@@ -91,6 +91,7 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .map-container {
   height: 100%;
+  width: 100%;
 
   & .left-info {
     grid-area: left;
@@ -105,7 +106,7 @@ onUnmounted(() => {
     grid-area: map;
     width: 100%;
     height: 100%;
-    min-width: 0;
+    min-width: 600px;
     min-height: 0;
     border-radius: 200px;
     overflow: hidden;

@@ -3,7 +3,7 @@
 <template>
   <div class="info-environment">
     <div class="sivash"></div>
-    <h2 class="font-default">
+    <h2 class="header font-default">
       Глоток <span class="font-bold">свежести</span> среди величия природы
     </h2>
     <div class="info-text">
@@ -51,9 +51,14 @@
   display: flex;
   flex-direction: column;
 
+  & .header {
+    font-size: 20px;
+  }
+
   & .sivash {
     background: url("/images/ViewFromLake.webp") center 70% / cover no-repeat;
     flex: 1;
+    border-radius: 15px;
   }
 
   & > h2 {
@@ -67,6 +72,8 @@
   & .info-text {
     overflow-y: auto;
     flex: 1;
+    scrollbar-width: thin;
+    font-size: 15px;
   }
 }
 </style>

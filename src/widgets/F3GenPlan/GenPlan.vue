@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 import { PageLink } from "~/shared/ui/links"
+import { BackgroundWithMarks } from "./ui"
 import { GoToFlats, GoodPrices } from "~/features"
 import { SectionSelector } from "~/shared/ui"
 const { isMobile } = useDevice()
 </script>
 
 <template>
-  <div class="building-back">
+  <div class="gen-plan">
+    <BackgroundWithMarks />
     <GoodPrices />
     <template v-if="isMobile">
       <GoToFlats />
@@ -20,11 +22,7 @@ const { isMobile } = useDevice()
 </template>
 
 <style scoped lang="scss">
-.building-back {
-  @include bg-picture;
-
-  background: url("/images/GenPlan.webp") 80% center / cover no-repeat;
-
+.gen-plan {
   width: inherit;
   height: inherit;
   position: relative;

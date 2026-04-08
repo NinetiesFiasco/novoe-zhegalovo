@@ -33,7 +33,6 @@ const { isMobile } = useDevice()
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
   margin-top: 30px;
-  min-height: calc(100dvh - 30px);
 
   grid-template-areas:
     "picture content"

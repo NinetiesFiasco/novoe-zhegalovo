@@ -3,7 +3,7 @@
 <template>
   <div class="info-transport">
     <div class="voronok"></div>
-    <h2 class="font-default">
+    <h2 class="header font-default">
       <span class="header-size font-bold">транспортная</span> доступность
     </h2>
     <div class="info-text">
@@ -44,9 +44,14 @@
   display: flex;
   flex-direction: column;
 
+  & .header {
+    font-size: 20px;
+  }
+
   & .voronok {
     background: url("/images/voronok.webp") center center / cover no-repeat;
     flex: 1;
+    border-radius: 15px;
   }
 
   & > h2 {
@@ -55,19 +60,14 @@
     text-transform: uppercase;
     margin-top: 12px;
     height: 50px;
-
-    & .header-size {
-      font-size: clamp(20px, 3vw, 40px);
-    }
-  }
-  & .accent {
-    font-size: 20px;
   }
 
   & > .info-text {
     height: 100%;
     overflow-y: auto;
     flex: 1;
+    scrollbar-width: thin;
+    font-size: 15px;
   }
 }
 </style>

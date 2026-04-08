@@ -4,7 +4,7 @@ import { OpacityLink } from "~/shared/ui"
 
 <template>
   <OpacityLink class="mobile-link" link="choose-flat">
-    <span class="link-text">Выбрать недвижимость</span>
+    <span class="link-text">Выбрать квартиру</span>
   </OpacityLink>
 </template>
 

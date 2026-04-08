@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { EntranceSelectionUI } from "./"
-
-const { isMobile } = useDevice()
+import { GenPlanMarks } from "./"
 
 const imgRef = ref<HTMLImageElement | null>(null)
 const containerRef = ref<HTMLDivElement | null>(null)
@@ -63,73 +61,45 @@ function getStyle(x: number, y: number) {
     //transform: "translate(-50%, -50%)",
   }
 }
-function getSize(x1: number, y1: number, x2: number, y2: number) {
-  const { renderedW, renderedH, offsetX, offsetY } = offsets.value
-
-  const x1Px = (x1 / 100) * renderedW - offsetX
-  const y1Px = (y1 / 100) * renderedH - offsetY
-  const x2Px = (x2 / 100) * renderedW - offsetX
-  const y2Px = (y2 / 100) * renderedH - offsetY
-
-  return {
-    width: x2Px - x1Px + "px",
-    height: y2Px - y1Px + "px",
-    //transform: "translate(-50%, -50%)",
-  }
-}
 const initSelectors = () => {
   update()
-
-  window.setTimeout(() => {
-    isSelectors.value = true
-  }, 500)
+  isSelectors.value = true
   emit("imgLoaded")
 }
 </script>
 
 <template>
-  <div ref="containerRef" class="bg-container">
+  <div ref="containerRef" class="background-with-marks">
     <img
       ref="imgRef"
-      src="/images/HeroBG.webp"
       @load="initSelectors"
+      src="/images/GenPlan.webp"
       alt="Изображение здания"
     />
-    <template v-if="isSelectors && !isMobile">
-      <EntranceSelectionUI
-        :position="getStyle(42.5, 16)"
-        :entrance-number="1"
-        :entrance-adaptive="{
-          transform: 'skew(-3deg)',
-          left: '14px',
-          ...getSize(42.5, 16, 47, 80),
-        }"
-      />
-      <EntranceSelectionUI
-        :position="getStyle(53, 14)"
-        :entrance-number="2"
-        :entrance-adaptive="{
-          transform: 'skew(-2deg)',
-          ...getSize(53, 14, 58, 80),
-        }"
-      />
-      <EntranceSelectionUI
-        :position="getStyle(65, 8)"
-        :entrance-number="3"
-        :entrance-adaptive="{
-          transform: 'skew(1deg)',
-          left: '7px',
-          ...getSize(65, 8, 70, 80),
-        }"
-      />
-    </template>
+
+    <GenPlanMarks
+      :position="getStyle(35, 35)"
+      text="Школа №16 на 1200 мест"
+      :entrance-adaptive="{}"
+    />
+    <GenPlanMarks
+      :position="getStyle(10, 35)"
+      text="Детский сад"
+      :entrance-adaptive="{}"
+    />
+    <GenPlanMarks
+      :position="getStyle(55, 90)"
+      text="Детский сад"
+      :entrance-adaptive="{}"
+    />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.bg-container {
+.background-with-marks {
   width: 100%;
   height: 100%;
+  position: relative;
 
   & > img {
     width: 100%;

@@ -3,6 +3,7 @@ import { AppSection } from "~/shared/ui"
 import {
   HeroBlock,
   BuildingBack,
+  YandexMap,
   MainInfo,
   ApartmentSelector,
   DroneVideo,
@@ -22,11 +23,14 @@ import {
     <AppSection id="gen-plan">
       <GenPlan />
     </AppSection>
-    <AppSection padding id="main-info">
-      <MainInfo />
+    <AppSection>
+      <YandexMap />
     </AppSection>
     <AppSection padding id="choose-flat">
       <ApartmentSelector />
+    </AppSection>
+    <AppSection padding id="main-info">
+      <MainInfo />
     </AppSection>
     <AppSection>
       <DroneVideo />
@@ -45,7 +49,7 @@ import {
 .app-main {
   height: 100dvh;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
   color: var(--color-grey-accent);
 }

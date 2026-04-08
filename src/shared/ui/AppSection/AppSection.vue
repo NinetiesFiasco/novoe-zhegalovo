@@ -24,14 +24,16 @@ const props = defineProps<Props>()
 .app-section {
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0 auto 75px;
   min-height: 600px;
-  height: clamp(600px, 100dvh, 900px);
-
+  height: clamp(600px, 100dvh, 1200px);
   display: flex;
 
   scroll-snap-align: start;
   overflow-y: auto;
+}
+.app-section:last-child {
+  margin: 0 auto;
 }
 .desktop-specials {
   padding: 0 40px;

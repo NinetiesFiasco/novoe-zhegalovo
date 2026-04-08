@@ -3,7 +3,7 @@
 <template>
   <div class="about-infrastructure">
     <div class="school" />
-    <h2 class="font-default">
+    <h2 class="header font-default">
       <span class="font-bold">Продуманная</span> инфраструктура для счастливой
       жизни
     </h2>
@@ -46,9 +46,14 @@
   display: flex;
   flex-direction: column;
 
+  & .header {
+    font-size: 20px;
+  }
+
   & .school {
     background: url("/images/school.webp") center 75% / cover no-repeat;
     flex: 1;
+    border-radius: 15px;
   }
 
   & > h2 {
@@ -62,6 +67,8 @@
   & .info-text {
     overflow-y: auto;
     flex: 1;
+    scrollbar-width: thin;
+    font-size: 15px;
   }
 }
 </style>
