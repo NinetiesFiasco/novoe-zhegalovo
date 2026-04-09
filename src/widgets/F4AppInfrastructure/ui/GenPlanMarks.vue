@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-const { position, text, entranceAdaptive } = defineProps<{
+const { position, text } = defineProps<{
   text: string
-  entranceAdaptive: any
   position: any
 }>()
 

@@ -48,8 +48,6 @@
   height: 100%;
   font-size: 20px;
   margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
 
   & .header {
     font-size: 20px;
@@ -57,7 +55,7 @@
 
   & .sivash {
     background: url("/images/ViewFromLake.webp") center 70% / cover no-repeat;
-    flex: 1;
+    height: 300px;
     border-radius: 15px;
   }
 

@@ -1,45 +1,42 @@
 <script lang="ts" setup>
 import { AppSection } from "~/shared/ui"
 import {
+  MainMenu,
   HeroBlock,
-  BuildingBack,
-  YandexMap,
+  AboutProject,
   MainInfo,
+  AppInfrastructure,
+  YandexMap,
   ApartmentSelector,
+  UndergroundParking,
+  MortgageCalculator,
   DroneVideo,
   AboutCompany,
-  GenPlan,
 } from "~/widgets"
+
 const { isMobile } = useDevice()
 </script>
 
 <template>
-  <main class="app-main">
-    <AppSection id="hero-block">
+  <div class="app-container">
+    <header>
+      <MainMenu />
+    </header>
+    <main>
       <HeroBlock />
-    </AppSection>
-    <AppSection v-if="!isMobile">
-      <BuildingBack />
-    </AppSection>
-    <AppSection id="gen-plan">
-      <GenPlan />
-    </AppSection>
-    <AppSection>
-      <YandexMap />
-    </AppSection>
-    <AppSection padding full-height id="choose-flat">
-      <ApartmentSelector />
-    </AppSection>
-    <AppSection padding id="main-info">
+      <AboutProject />
       <MainInfo />
-    </AppSection>
-    <AppSection>
+      <AppInfrastructure />
+      <YandexMap />
+      <ApartmentSelector />
+      <UndergroundParking />
+      <MortgageCalculator />
       <DroneVideo />
-    </AppSection>
-    <AppSection id="about-company">
+    </main>
+    <footer>
       <AboutCompany />
-    </AppSection>
-  </main>
+    </footer>
+  </div>
 </template>
 
 <style>
@@ -47,12 +44,13 @@ const { isMobile } = useDevice()
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 
-.app-main {
-  height: 100dvh;
-  overflow-y: scroll;
-  scroll-snap-type: y proximity;
+.app-container {
   scroll-behavior: smooth;
   color: var(--color-grey-accent);
   scrollbar-width: thin;
+
+  & > main > * {
+    margin-bottom: 50px;
+  }
 }
 </style>

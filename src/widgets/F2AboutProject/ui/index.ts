@@ -1,0 +1,4 @@
+export { default as CompanyPhone } from "./CompanyPhone.vue"
+export { default as CompanyLogo } from "./CompanyLogo.vue"
+export { default as BackgroundWithSelection } from "./BackgroundWithSelection.vue"
+export { default as RequestCall } from "./RequestCall.vue"

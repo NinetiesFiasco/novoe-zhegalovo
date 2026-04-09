@@ -3,17 +3,22 @@ const { isMobile } = useDevice()
 </script>
 
 <template>
-  <div :class="isMobile ? 'left-info-mobile' : 'left-info'">
+  <div class="map-infographic">
     <img class="pedestrian" src="/icons/pedestrian.svg" alt="Иконка пешехода" />
-    <p>15 минут пешком до Ж/Д станции Воронок</p>
+    <p>
+      15 минут пешком до Ж/Д станции Воронок или 5 минут до автобусной остановки
+    </p>
     <img class="train" src="/icons/train.svg" alt="Иконка поезда" />
     <p>До Ярославского вокзала можно проехать за 40 минут на электропоезде</p>
+    <img class="bus" src="/icons/bus.svg" alt="Иконка поезда" />
+    <p>Автобус едет 20 минут до станции метро Щёлковская</p>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.left-info {
-  grid-area: left;
+.map-infographic {
+  display: flex;
+  flex-direction: column;
   width: 150px;
   text-align: center;
   padding: 10px;

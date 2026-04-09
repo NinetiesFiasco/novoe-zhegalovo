@@ -14,8 +14,6 @@ const { isMobile } = useDevice()
       :modules="modules"
       :slides-per-view="isMobile ? 1 : 3"
       :space-between="20"
-      :loop="true"
-      :pagination="{ clickable: true }"
     >
       <swiper-slide> <InfoTransport /> </swiper-slide>
       <swiper-slide> <AboutInfrastructure /> </swiper-slide>
@@ -42,7 +40,7 @@ const { isMobile } = useDevice()
   }
   & .swiper-slide {
     padding-bottom: 50px;
-    height: 600px;
+    height: auto;
     width: 600px;
   }
 }

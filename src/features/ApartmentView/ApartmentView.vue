@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useSectionsStore } from "~/entities"
-import { ApartmentFinishing, UndergroundParking } from "./ui"
+import { ApartmentFinishing } from "./ui"
 
 const sectionsStore = useSectionsStore()
 
@@ -49,7 +49,6 @@ const { currentFlat } = storeToRefs(sectionsStore)
     <hr />
     <div class="additional-features">
       <ApartmentFinishing />
-      <UndergroundParking />
     </div>
   </div>
 </template>

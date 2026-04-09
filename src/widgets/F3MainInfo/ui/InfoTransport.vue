@@ -41,8 +41,6 @@
   width: 100%;
   height: 100%;
   font-size: 20px;
-  display: flex;
-  flex-direction: column;
 
   & .header {
     font-size: 20px;
@@ -50,7 +48,7 @@
 
   & .voronok {
     background: url("/images/voronok.webp") center center / cover no-repeat;
-    flex: 1;
+    height: 300px;
     border-radius: 15px;
   }
 
@@ -64,7 +62,6 @@
 
   & > .info-text {
     height: 100%;
-    overflow-y: auto;
     flex: 1;
     scrollbar-width: thin;
     font-size: 15px;

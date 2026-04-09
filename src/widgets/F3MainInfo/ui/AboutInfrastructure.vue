@@ -43,8 +43,6 @@
   width: 100%;
   height: 100%;
   font-size: 18px;
-  display: flex;
-  flex-direction: column;
 
   & .header {
     font-size: 20px;
@@ -52,7 +50,7 @@
 
   & .school {
     background: url("/images/school.webp") center 75% / cover no-repeat;
-    flex: 1;
+    height: 300px;
     border-radius: 15px;
   }
 

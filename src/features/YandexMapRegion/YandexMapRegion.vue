@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue"
 import { createYaMapObjects } from "./ymaps"
-import { LeftInfo, RightInfo } from "./ui"
+import { MapInfographic } from "./ui"
 const { isMobile } = useDevice()
 
 const mapEl = ref<HTMLElement | null>(null)
@@ -62,9 +62,8 @@ onUnmounted(() => {
       'map-container-desktop': !isMobile,
     }"
   >
-    <LeftInfo />
+    <MapInfographic />
     <div ref="mapEl" class="ya-map" />
-    <RightInfo />
   </div>
 </template>
 
@@ -85,7 +84,7 @@ onUnmounted(() => {
 }
 .map-container-desktop {
   display: grid;
-  grid-template-columns: 150px 1fr 150px;
+  grid-template-columns: 200px 1fr;
   grid-template-areas: "left map right";
 }
 .map-container-mobile {

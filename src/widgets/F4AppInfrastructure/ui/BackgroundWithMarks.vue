@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { EntranceSelectionUI } from "./"
-
-const { isMobile } = useDevice()
+import { GenPlanMarks } from "./"
 
 const imgRef = ref<HTMLImageElement | null>(null)
 const containerRef = ref<HTMLDivElement | null>(null)
 const isSelectors = ref<boolean>(false)
+
+const { isMobile } = useDevice()
 
 const emit = defineEmits<{
   (e: "imgLoaded"): void
@@ -63,20 +63,6 @@ function getStyle(x: number, y: number) {
     //transform: "translate(-50%, -50%)",
   }
 }
-function getSize(x1: number, y1: number, x2: number, y2: number) {
-  const { renderedW, renderedH, offsetX, offsetY } = offsets.value
-
-  const x1Px = (x1 / 100) * renderedW - offsetX
-  const y1Px = (y1 / 100) * renderedH - offsetY
-  const x2Px = (x2 / 100) * renderedW - offsetX
-  const y2Px = (y2 / 100) * renderedH - offsetY
-
-  return {
-    width: x2Px - x1Px + "px",
-    height: y2Px - y1Px + "px",
-    //transform: "translate(-50%, -50%)",
-  }
-}
 const initSelectors = () => {
   update()
   isSelectors.value = true
@@ -85,53 +71,65 @@ const initSelectors = () => {
 </script>
 
 <template>
-  <div ref="containerRef" class="bg-container">
+  <div ref="containerRef" class="background-with-marks">
+    <div class="portrait-notification">
+      Удобнее смотреть в горизонтальном режиме
+    </div>
     <img
       ref="imgRef"
-      src="/images/BuildingBack.webp"
+      :class="{ 'mobile-img': isMobile }"
       @load="initSelectors"
+      src="/images/GenPlan.webp"
       alt="Изображение здания"
     />
-    <template v-if="isSelectors && !isMobile">
-      <EntranceSelectionUI
-        :position="getStyle(61, 17)"
-        :entrance-number="1"
-        :entrance-adaptive="{
-          left: '26px',
-          ...getSize(53, 17, 55.5, 80),
-        }"
+    <template v-if="!isMobile">
+      <GenPlanMarks
+        :position="getStyle(35, 35)"
+        text="Школа №16 на 1200 мест 50 метров"
       />
-      <EntranceSelectionUI
-        :position="getStyle(53, 14)"
-        :entrance-number="2"
-        :top="95"
-        :entrance-adaptive="{
-          transform: 'skew(0deg)',
-          left: '19px',
-          ...getSize(53, 14, 55.5, 80),
-        }"
+      <GenPlanMarks
+        :position="getStyle(10, 35)"
+        text="Детский сад №30 Ладушки 300 метров"
       />
-      <EntranceSelectionUI
-        :position="getStyle(44, 12)"
-        :entrance-number="3"
-        :entrance-adaptive="{
-          left: '29px',
-          ...getSize(53, 12, 56, 80),
-        }"
+      <GenPlanMarks
+        :position="getStyle(55, 90)"
+        text="Детский сад №20 Щелкунчик 200 метров"
       />
+      <GenPlanMarks :position="getStyle(75, 50)" text="Магазины" />
+      <GenPlanMarks :position="getStyle(5, 80)" text="Магазины" />
+      <GenPlanMarks :position="getStyle(55, 50)" text="Подземный паркинг" />
+      <GenPlanMarks :position="getStyle(75, 25)" text="Выбрать квартиру" />
+      <GenPlanMarks :position="getStyle(5, 50)" text="Автобусная остановка" />
     </template>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.bg-container {
+.background-with-marks {
   width: 100%;
   height: 100%;
+  position: relative;
+
+  & .portrait-notification {
+    display: none;
+  }
+
+  @media screen and (orientation: portrait) {
+    & .portrait-notification {
+      display: block;
+    }
+  }
 
   & > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 58%;
+  }
+  & > .mobile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     object-position: 58%;
   }
 }

@@ -1,44 +1,40 @@
 <script lang="ts" setup>
-import {
-  CompanyPhone,
-  CompanyLogo,
-  BackgroundWithSelection,
-  // RequestCall,
-} from "./ui"
-import { MainMenu, GoToFlats } from "~/features"
-
-const { isMobile } = useDevice()
-
-const isUI = ref(false)
-const isLoaded = ref<boolean>(false)
-
-const imgLoaded = () => {
-  isLoaded.value = true
-  window.setTimeout(() => {
-    isUI.value = true
-  }, 500)
-}
+import { MainOffer } from "./ui"
 </script>
 
 <template>
-  <div class="hero-block">
-    <BackgroundWithSelection :isMobile="isMobile" @img-loaded="imgLoaded" />
-    <CompanyLogo :isLoaded="isLoaded" />
-    <template v-if="isUI">
-      <MainMenu />
-      <CompanyPhone />
-      <!-- <RequestCall /> -->
-    </template>
-    <template v-if="isMobile">
-      <GoToFlats />
-    </template>
+  <div class="building-back">
+    <img
+      ref="imgRef"
+      src="/images/BuildingBack.webp"
+      alt="Изображение здания"
+    />
+    <div class="offer-container">
+      <MainOffer />
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.hero-block {
+.building-back {
   width: inherit;
-  height: inherit;
+  height: 100vh;
+  height: 100dvh;
   position: relative;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58%;
+  }
+
+  & > .offer-container {
+    position: absolute;
+    width: 200px;
+    background: white;
+    bottom: 200px;
+    left: 200px;
+  }
 }
 </style>
