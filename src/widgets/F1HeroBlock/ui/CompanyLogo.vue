@@ -54,7 +54,7 @@ const { isLoaded } = defineProps<{ isLoaded: boolean }>()
 .logo-image-loaded-mobile {
   left: 20px;
   top: 20px;
-  width: 100px;
+  width: 106px;
   height: 100px;
   transform: scale(1);
 }

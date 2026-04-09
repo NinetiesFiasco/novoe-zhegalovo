@@ -10,10 +10,7 @@ const { isMobile } = useDevice()
   <div class="gen-plan">
     <BackgroundWithMarks />
     <GoodPrices />
-    <template v-if="isMobile">
-      <GoToFlats />
-    </template>
-    <template v-else>
+    <template v-if="!isMobile">
       <PageLink link="choose-flat">
         <section-selector class="selector" />
       </PageLink>

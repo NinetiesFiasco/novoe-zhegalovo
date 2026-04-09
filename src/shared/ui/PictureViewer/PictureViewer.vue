@@ -64,6 +64,7 @@ const props = defineProps<Props>()
   position: fixed;
   inset: 0;
   user-select: none;
+  z-index: 1000;
 
   & .background {
     position: fixed;

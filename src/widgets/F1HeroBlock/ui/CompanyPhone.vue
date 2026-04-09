@@ -5,7 +5,9 @@ const contacts = useContactsStore()
 
 <template>
   <div class="contact-phone font-bold">
-    <div>{{ contacts.phone }}</div>
+    <div>
+      <a href="tel:+79999999999">{{ contacts.phone }}</a>
+    </div>
   </div>
 </template>
 
@@ -16,5 +18,10 @@ const contacts = useContactsStore()
   right: 25px;
   font-size: 30px;
   color: var(--color-white);
+
+  & > div > a {
+    color: var(--color-white);
+    text-decoration: none;
+  }
 }
 </style>

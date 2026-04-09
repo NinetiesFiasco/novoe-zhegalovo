@@ -5,7 +5,7 @@
     <!-- <div class="box unrenovated"></div>
     - без ремонта<br /> -->
     <div class="box unfinished"></div>
-    - черновая<br />
+    - черновая
     <div class="box finished"></div>
     - чистовая
   </div>
@@ -13,10 +13,12 @@
 
 <style lang="scss" scoped>
 .color-description {
+  display: flex;
+
   .box {
     width: 23px;
     height: 23px;
-    display: inline-block;
+    margin: 0 5px;
   }
   .unrenovated {
     background: var(--color-unrenovated);
@@ -26,6 +28,7 @@
   }
   .finished {
     background: var(--color-fully-finished);
+    margin-left: 15px;
   }
 }
 </style>

@@ -10,6 +10,7 @@ import {
   AboutCompany,
   GenPlan,
 } from "~/widgets"
+const { isMobile } = useDevice()
 </script>
 
 <template>
@@ -17,7 +18,7 @@ import {
     <AppSection id="hero-block">
       <HeroBlock />
     </AppSection>
-    <AppSection>
+    <AppSection v-if="!isMobile">
       <BuildingBack />
     </AppSection>
     <AppSection id="gen-plan">
@@ -26,7 +27,7 @@ import {
     <AppSection>
       <YandexMap />
     </AppSection>
-    <AppSection padding id="choose-flat">
+    <AppSection padding full-height id="choose-flat">
       <ApartmentSelector />
     </AppSection>
     <AppSection padding id="main-info">
@@ -52,5 +53,6 @@ import {
   scroll-snap-type: y proximity;
   scroll-behavior: smooth;
   color: var(--color-grey-accent);
+  scrollbar-width: thin;
 }
 </style>

@@ -1,5 +1,10 @@
 <script lang="ts" setup>
-import { CompanyPhone, CompanyLogo, BackgroundWithSelection } from "./ui"
+import {
+  CompanyPhone,
+  CompanyLogo,
+  BackgroundWithSelection,
+  // RequestCall,
+} from "./ui"
 import { MainMenu, GoToFlats } from "~/features"
 
 const { isMobile } = useDevice()
@@ -22,6 +27,7 @@ const imgLoaded = () => {
     <template v-if="isUI">
       <MainMenu />
       <CompanyPhone />
+      <!-- <RequestCall /> -->
     </template>
     <template v-if="isMobile">
       <GoToFlats />

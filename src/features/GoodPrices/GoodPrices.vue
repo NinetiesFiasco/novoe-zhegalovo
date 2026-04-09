@@ -10,7 +10,7 @@ const { isMobile } = useDevice()
     }"
   >
     <div class="background" />
-    <h2>Цены от застройщика!</h2>
+    <h2>Инфраструктура</h2>
   </div>
 </template>
 

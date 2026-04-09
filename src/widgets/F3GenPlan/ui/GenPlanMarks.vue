@@ -34,5 +34,6 @@ const goTo = () => {
   background: white;
   padding: 5px;
   border-radius: 10px;
+  text-align: center;
 }
 </style>

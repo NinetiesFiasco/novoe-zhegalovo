@@ -3,6 +3,7 @@ const { isMobile } = useDevice()
 
 type Props = {
   padding?: boolean
+  fullHeight?: boolean
 }
 const props = defineProps<Props>()
 </script>
@@ -14,6 +15,7 @@ const props = defineProps<Props>()
       'app-section': true,
       'desktop-specials': props.padding && !isMobile,
       'mobile-specials': props.padding && isMobile,
+      'full-height': props.fullHeight,
     }"
   >
     <slot />
@@ -23,7 +25,7 @@ const props = defineProps<Props>()
 <style lang="scss" scoped>
 .app-section {
   width: 100%;
-  max-width: 1440px;
+  max-width: 2000px;
   margin: 0 auto 75px;
   min-height: 600px;
   height: clamp(600px, 100dvh, 1200px);
@@ -40,6 +42,9 @@ const props = defineProps<Props>()
 }
 .mobile-specials {
   padding: 5px 5px;
+  height: auto;
+}
+.full-height {
   height: auto;
 }
 </style>

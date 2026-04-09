@@ -52,6 +52,7 @@ const sectionUI = (section: SectionNames): string => {
   & > h2 {
     color: var(--color-grey-accent);
     white-space: nowrap;
+    font-size: clamp(18px, 3vw, 25px);
   }
 
   & .floor {

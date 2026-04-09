@@ -5,6 +5,8 @@ const imgRef = ref<HTMLImageElement | null>(null)
 const containerRef = ref<HTMLDivElement | null>(null)
 const isSelectors = ref<boolean>(false)
 
+const { isMobile } = useDevice()
+
 const emit = defineEmits<{
   (e: "imgLoaded"): void
 }>()
@@ -70,28 +72,33 @@ const initSelectors = () => {
 
 <template>
   <div ref="containerRef" class="background-with-marks">
+    <div class="portrait-notification">
+      Удобнее смотреть в горизонтальном режиме
+    </div>
     <img
       ref="imgRef"
+      :class="{ 'mobile-img': isMobile }"
       @load="initSelectors"
       src="/images/GenPlan.webp"
       alt="Изображение здания"
     />
-
-    <GenPlanMarks
-      :position="getStyle(35, 35)"
-      text="Школа №16 на 1200 мест"
-      :entrance-adaptive="{}"
-    />
-    <GenPlanMarks
-      :position="getStyle(10, 35)"
-      text="Детский сад"
-      :entrance-adaptive="{}"
-    />
-    <GenPlanMarks
-      :position="getStyle(55, 90)"
-      text="Детский сад"
-      :entrance-adaptive="{}"
-    />
+    <template v-if="!isMobile">
+      <GenPlanMarks
+        :position="getStyle(35, 35)"
+        text="Школа №16 на 1200 мест 50 метров"
+        :entrance-adaptive="{}"
+      />
+      <GenPlanMarks
+        :position="getStyle(10, 35)"
+        text="Детский сад №30 Ладушки 300 метров"
+        :entrance-adaptive="{}"
+      />
+      <GenPlanMarks
+        :position="getStyle(55, 90)"
+        text="Детский сад №20 Щелкунчик 200 метров"
+        :entrance-adaptive="{}"
+      />
+    </template>
   </div>
 </template>
 
@@ -101,10 +108,26 @@ const initSelectors = () => {
   height: 100%;
   position: relative;
 
+  & .portrait-notification {
+    display: none;
+  }
+
+  @media screen and (orientation: portrait) {
+    & .portrait-notification {
+      display: block;
+    }
+  }
+
   & > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 58%;
+  }
+  & > .mobile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     object-position: 58%;
   }
 }

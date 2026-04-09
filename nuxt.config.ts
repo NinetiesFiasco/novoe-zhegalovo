@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     ],
   },
 
-  plugins: ["~/app/plugins/yandex-maps.client.ts"],
+  plugins: ["~/app/plugins/yandex-maps.client.ts", "~/app/plugins/maska.ts"],
 
   css: [
     "~/app/css/reset.css",

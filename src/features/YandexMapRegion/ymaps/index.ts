@@ -1,0 +1,1 @@
+export { createYaMapObjects } from "./ymaps"

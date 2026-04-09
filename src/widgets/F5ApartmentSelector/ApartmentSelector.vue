@@ -66,7 +66,7 @@ onMounted(async () => {
       margin: 25px 0 50px 0;
 
       & > div {
-        margin: 0 15px;
+        margin: 0 clamp(5px, 2vw, 15px);
       }
     }
   }

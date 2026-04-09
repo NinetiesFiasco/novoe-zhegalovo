@@ -4,6 +4,7 @@
   <div class="video-container">
     <video controls autoplay muted loop>
       <source src="/video/drone-video.webm" type="video/webm" />
+      <source src="/video/drone-video.mp4" type="video/mp4" />
       Ваш браузер не поддерживает видео.
     </video>
   </div>

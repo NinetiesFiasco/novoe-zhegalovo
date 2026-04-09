@@ -42,9 +42,8 @@ const { currentFlat } = storeToRefs(sectionsStore)
         Цена: <strong>{{ currentFlat.priceTotal }}</strong> ₽
       </h4>
       <p>
-        Цена за метр: <strong>{{ currentFlat.priceMeter }}</strong> ₽ за м<sup
-          >2</sup
-        >
+        Цена за метр: <strong>{{ currentFlat.priceMeter }}</strong> ₽ за м
+        <sup>2</sup>
       </p>
     </div>
     <hr />
@@ -62,13 +61,14 @@ const { currentFlat } = storeToRefs(sectionsStore)
   border-radius: var(--radius-md);
 
   & .img-plan {
-    height: 300px;
+    max-width: 100%;
+    height: auto;
   }
 
   & > h3 {
     color: var(--color-blue);
     font-size: 25px;
-    margin-top: 10px;
+    margin: 10px 0;
   }
 
   & .prices {
@@ -85,13 +85,16 @@ const { currentFlat } = storeToRefs(sectionsStore)
   & .params {
     border-spacing: clamp(5px, 2vw, 40px) 8px;
     margin: 5px 0 5px 0;
+    width: 100%;
+    text-align: center;
+
     & th {
       color: var(--color-blue);
-      font-size: clamp(10px, 2vw, 25px);
+      font-size: clamp(15px, 2vw, 25px);
       text-wrap: nowrap;
     }
     & td {
-      font-size: clamp(10px, 2vw, 25px);
+      font-size: clamp(15px, 2vw, 25px);
     }
   }
 
