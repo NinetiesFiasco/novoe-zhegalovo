@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const props = defineProps<{
+  text?: string
+}>()
+</script>
 
 <template>
   <button class="primary-button" type="button">

@@ -8,12 +8,13 @@ import {
 import { createPedestrianPlacemark } from "./pedestrianPlacemark"
 import { createBus } from "./busPlacemark"
 import { createTrain } from "./trainPlacemark"
+import { createMetro } from "./metroPlacemark"
+import { createYarick } from "./yarickPlacemark"
 
-const createYaMapObjects = (zoom: number): any => {
+const createYaMapObjects = (): any => {
   const mapObjects = []
 
-  let buildingSize = zoom === 11 ? 96 : zoom === 10 ? 64 : 32
-  mapObjects.push(createBuildingPlacemark(zoom, buildingSize))
+  mapObjects.push(createBuildingPlacemark())
 
   mapObjects.push(
     pedestrianTrainRoute(),
@@ -22,12 +23,12 @@ const createYaMapObjects = (zoom: number): any => {
     busRoute(),
   )
 
-  if (zoom !== 9) {
-    mapObjects.push(...createPedestrianPlacemark(zoom))
-  }
+  mapObjects.push(...createPedestrianPlacemark())
 
-  mapObjects.push(createBus(zoom))
-  mapObjects.push(createTrain(zoom))
+  mapObjects.push(createBus())
+  mapObjects.push(createTrain())
+  mapObjects.push(createMetro())
+  mapObjects.push(createYarick())
 
   return mapObjects
 }

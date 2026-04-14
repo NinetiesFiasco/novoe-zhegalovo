@@ -1,17 +1,18 @@
-<script lang="ts" setup>
-const { isMobile } = useDevice()
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="map-infographic">
     <img class="pedestrian" src="/icons/pedestrian.svg" alt="Иконка пешехода" />
     <p>
-      15 минут пешком до Ж/Д станции Воронок или 5 минут до автобусной остановки
+      <b>15 минут</b> пешком до Ж/Д станции Воронок или <b>5 минут</b> до
+      автобусной остановки
     </p>
     <img class="train" src="/icons/train.svg" alt="Иконка поезда" />
-    <p>До Ярославского вокзала можно проехать за 40 минут на электропоезде</p>
+    <p>
+      До Ярославского вокзала можно проехать за <b>40 минут</b> на электропоезде
+    </p>
     <img class="bus" src="/icons/bus.svg" alt="Иконка поезда" />
-    <p>Автобус едет 20 минут до станции метро Щёлковская</p>
+    <p>Автобус едет <b>20 минут</b> до станции метро Щёлковская</p>
   </div>
 </template>
 
@@ -19,11 +20,11 @@ const { isMobile } = useDevice()
 .map-infographic {
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 250px;
   text-align: center;
   padding: 10px;
   & > img {
-    margin: 40px auto 10px auto;
+    margin: 10px auto 10px auto;
   }
 }
 
@@ -38,7 +39,7 @@ const { isMobile } = useDevice()
     width: 40px;
   }
   & > .pedestrian {
-    width: 25px;
+    width: 20px;
   }
   & > p {
     font-size: 12px;

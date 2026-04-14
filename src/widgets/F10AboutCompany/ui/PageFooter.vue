@@ -1,13 +1,16 @@
 <script lang="ts" setup>
 import { PageLink } from "~/shared/ui/links"
 import { useContactsStore } from "~/entities"
+import { JKLogo } from "~/shared/ui"
 
 const contacts = useContactsStore()
 </script>
 
 <template>
   <footer>
-    <img class="jk-logo" src="/images/Logo.svg" alt="Логотип ЖК" />
+    <div class="jk-logo">
+      <JKLogo :color="'#ffffff'" />
+    </div>
 
     <div class="socials">
       <img class="social" src="/icons/social-1.png" alt="" />

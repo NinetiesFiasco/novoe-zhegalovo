@@ -13,15 +13,11 @@ import {
   DroneVideo,
   AboutCompany,
 } from "~/widgets"
-
-const { isMobile } = useDevice()
 </script>
 
 <template>
   <div class="app-container">
-    <header>
-      <MainMenu />
-    </header>
+    <MainMenu />
     <main>
       <HeroBlock />
       <AboutProject />
@@ -31,7 +27,6 @@ const { isMobile } = useDevice()
       <ApartmentSelector />
       <UndergroundParking />
       <MortgageCalculator />
-      <DroneVideo />
     </main>
     <footer>
       <AboutCompany />
@@ -45,7 +40,6 @@ const { isMobile } = useDevice()
 @import "swiper/css/pagination";
 
 .app-container {
-  scroll-behavior: smooth;
   color: var(--color-grey-accent);
   scrollbar-width: thin;
 

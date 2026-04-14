@@ -10,7 +10,9 @@ const { isMobile } = useDevice()
 
 <template>
   <div
+    id="about-company"
     :class="{
+      'spy-section': true,
       'about-company': true,
       'about-company-mobile': isMobile,
     }"
@@ -32,7 +34,9 @@ const { isMobile } = useDevice()
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
-  margin-top: 30px;
+  margin: auto;
+  margin-top: 50px;
+  max-width: 1600px;
 
   grid-template-areas:
     "picture content"

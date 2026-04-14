@@ -19,7 +19,8 @@ onMounted(async () => {
 
 <template>
   <div
-    class="apartments"
+    id="apartment-selector"
+    class="apartments spy-section"
     :style="{ flexDirection: isMobile ? 'column' : 'row' }"
   >
     <div class="apartment-selector">
@@ -45,6 +46,9 @@ onMounted(async () => {
 .apartments {
   display: flex;
   width: 100%;
+  margin-top: 150px;
+  max-width: 1600px;
+  margin: 100px auto 0;
 
   & .apartment-selector {
     margin-right: clamp(10px, 5vw, 100px);

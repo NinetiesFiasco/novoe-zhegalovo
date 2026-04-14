@@ -1,11 +1,30 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { GetCall } from "~/features"
+
+const isModalCallOpened = ref<boolean>(false)
+</script>
 
 <template>
   <div class="main-offer">
-    <p>Готовые квартиры по семейной ипотеке от 130 000 р. за м<sup>2</sup></p>
-    <button>Получить консультацию</button>
-    <p>Ключи в день сделки!</p>
+    <h5>Готовые квартиры по семейной ипотеке от 130 000 р. за м<sup>2</sup></h5>
+    <GetCall
+      :is-open="isModalCallOpened"
+      @toggle="isModalCallOpened = !isModalCallOpened"
+      text="Получить консультацию"
+      status="Получить консультацию"
+    />
+    <h3>Ключи в день сделки!</h3>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main-offer {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: white;
+  padding: 24px;
+  border-radius: 20px;
+  width: 100%;
+}
+</style>

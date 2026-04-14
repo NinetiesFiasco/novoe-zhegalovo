@@ -1,5 +1,4 @@
 export const defaultPlacemark = (
-  zoom: number,
   coords: Array<number>,
   hint: string,
   balloon: string,

@@ -1,26 +1,61 @@
 <script lang="ts" setup>
 import { BackgroundWithSelection } from "./ui"
+import { DroneVideo, YandexPanorama } from "./ui"
+const isVideo = ref<boolean>(false)
+const toggle = () => {
+  isVideo.value = !isVideo.value
+}
 </script>
 
 <template>
-  <div class="hero-block">
-    <h2>О проекте</h2>
-    <button>Выбрать квартиру</button>
+  <div class="about-project">
+    <h2 class="about-title">О проекте</h2>
     <BackgroundWithSelection />
-    <button>Видео комплекса</button>
-    <button>Панорама из яндекса</button>
-    <p>
-      Подарите своей семье квартиру о которой мечтали! ЖК "Новое Жегалово" -<br />
-      место, где растут счастливые дети и крепнут семейные традиции. Успейте<br />
-      забронировать квартиру на выгодных условиях.
-    </p>
+    <div class="about-buttons">
+      <button class="btn-video" @click="toggle">Видео комплекса</button>
+      <YandexPanorama />
+    </div>
+    <DroneVideo v-if="isVideo" v-model="isVideo" />
+    <!-- <button @click="openYandexPanorama">Панорама из яндекса</button> -->
   </div>
 </template>
 
 <style scoped lang="scss">
-.hero-block {
+.about-project {
   width: inherit;
   height: inherit;
   position: relative;
+  max-width: 1600px;
+  margin: auto;
+
+  & .about-title {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  & .about-buttons {
+    position: absolute;
+    bottom: 200px;
+    left: 100px;
+
+    & > * {
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 24px;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s;
+    }
+    & .btn-video {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      margin-right: 30px;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
 }
 </style>

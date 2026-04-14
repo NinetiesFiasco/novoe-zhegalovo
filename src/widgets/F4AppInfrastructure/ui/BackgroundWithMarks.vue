@@ -84,22 +84,37 @@ const initSelectors = () => {
     />
     <template v-if="!isMobile">
       <GenPlanMarks
-        :position="getStyle(35, 35)"
+        :position="getStyle(40, 37)"
         text="Школа №16 на 1200 мест 50 метров"
+        arrow="bottom"
       />
       <GenPlanMarks
-        :position="getStyle(10, 35)"
+        :position="getStyle(9, 31)"
         text="Детский сад №30 Ладушки 300 метров"
+        arrow="bottom"
       />
       <GenPlanMarks
-        :position="getStyle(55, 90)"
+        :position="getStyle(57, 90)"
         text="Детский сад №20 Щелкунчик 200 метров"
+        arrow="bottom"
       />
-      <GenPlanMarks :position="getStyle(75, 50)" text="Магазины" />
-      <GenPlanMarks :position="getStyle(5, 80)" text="Магазины" />
-      <GenPlanMarks :position="getStyle(55, 50)" text="Подземный паркинг" />
-      <GenPlanMarks :position="getStyle(75, 25)" text="Выбрать квартиру" />
-      <GenPlanMarks :position="getStyle(5, 50)" text="Автобусная остановка" />
+      <GenPlanMarks :position="getStyle(80, 60)" text="Магазины" arrow="left" />
+      <GenPlanMarks :position="getStyle(3, 90)" text="Магазины" arrow="left" />
+      <GenPlanMarks
+        :position="getStyle(53, 55)"
+        text="Подземный паркинг"
+        arrow="right"
+      />
+      <GenPlanMarks
+        :position="getStyle(77, 23)"
+        text="Выбрать квартиру"
+        arrow="bottom"
+      />
+      <GenPlanMarks
+        :position="getStyle(2, 50)"
+        text="Автобусная остановка"
+        arrow="left"
+      />
     </template>
   </div>
 </template>
@@ -109,6 +124,7 @@ const initSelectors = () => {
   width: 100%;
   height: 100%;
   position: relative;
+  user-select: none;
 
   & .portrait-notification {
     display: none;

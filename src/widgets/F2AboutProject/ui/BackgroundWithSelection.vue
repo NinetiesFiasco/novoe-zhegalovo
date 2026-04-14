@@ -10,6 +10,9 @@
 .bg-container {
   width: 100%;
   height: 100%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
 
   & > img {
     width: 100%;

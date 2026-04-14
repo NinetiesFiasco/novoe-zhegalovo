@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { PictureViewer, PrimaryButton } from "~/shared/ui"
 import { useSectionsStore } from "~/entities"
+import { GetCall } from "~/features"
+
+const isModalCallOpened = ref<boolean>(false)
 
 const sectionsStore = useSectionsStore()
 const { isFinished } = storeToRefs(sectionsStore)
@@ -14,9 +17,16 @@ const preFinishedPictures = Array.from({ length: 4 }, (_, i) => `${i + 1}.webp`)
 <template>
   <div>
     <template v-if="isFinished">
-      <PrimaryButton @click="isPictures = true"
-        >Пример чистовой отделки</PrimaryButton
-      >
+      <PrimaryButton @click="isPictures = true">
+        Пример чистовой отделки
+      </PrimaryButton>
+
+      <GetCall
+        :is-open="isModalCallOpened"
+        @toggle="isModalCallOpened = !isModalCallOpened"
+        text="Забронировать"
+        status="Забронировать квартиру"
+      />
       <PictureViewer
         v-if="isPictures"
         @close="isPictures = false"

@@ -1,9 +1,8 @@
 import { defaultPlacemark } from "./defaultPlacemark"
 
-export const createPedestrianPlacemark = (zoom: number) => {
+export const createPedestrianPlacemark = () => {
   return [
     defaultPlacemark(
-      zoom,
       [55.902248, 37.998059],
       "Пешком до автобусной остановки 5 минут",
       "Пешком до автобусной остановки 5 минут",
@@ -13,7 +12,6 @@ export const createPedestrianPlacemark = (zoom: number) => {
     ),
 
     defaultPlacemark(
-      zoom,
       [55.925617, 37.959522],
       `15 минут до ж/д станции "Воронок" `,
       "Пешком до ЖД станции воронок 15 минут",

@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from "swiper/vue"
 import { Navigation, Pagination } from "swiper/modules"
+import { GetCall } from "~/features"
+
+const isModalCallOpened = ref<boolean>(false)
 
 //const { isMobile } = useDevice()
 const pictures = Array.from({ length: 3 }, (_, i) => `${i + 1}.webp`)
@@ -9,6 +12,7 @@ const modules = [Navigation, Pagination]
 
 <template>
   <div class="underground-parking">
+    <h2>Подземная парковка</h2>
     <swiper
       :modules="modules"
       :slides-per-view="1"
@@ -22,12 +26,26 @@ const modules = [Navigation, Pagination]
         </div>
       </swiper-slide>
     </swiper>
+    <div class="get-call">
+      <GetCall
+        :is-open="isModalCallOpened"
+        @toggle="isModalCallOpened = !isModalCallOpened"
+        text="Забронировать"
+        status="Забронировать парковку"
+      />
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .underground-parking {
   width: 100%;
+  margin: auto;
+  max-width: 1600px;
+
+  & > h2 {
+    margin: 40px 0;
+  }
 
   & .slide {
     height: 100%;
@@ -48,6 +66,10 @@ const modules = [Navigation, Pagination]
     margin: 50px 100px;
     height: calc(100% - 100px);
     z-index: 100;
+  }
+
+  & > .get-call {
+    width: 200px;
   }
 }
 </style>

@@ -2,7 +2,7 @@
 
 <template>
   <div class="company-info font-default">
-    <h2 class="font-extra-bold">застройщик</h2>
+    <h2 class="font-extra-bold">О компании</h2>
     <div class="sm-logo" />
     <p>
       ООО "Строймонтаж" работает с 2005 года в Московской области и

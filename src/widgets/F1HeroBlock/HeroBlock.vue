@@ -1,40 +1,45 @@
 <script lang="ts" setup>
-import { MainOffer } from "./ui"
+import { MainOffer, ChooseFlat } from "./ui"
 </script>
 
 <template>
-  <div class="building-back">
-    <img
-      ref="imgRef"
-      src="/images/BuildingBack.webp"
-      alt="Изображение здания"
-    />
-    <div class="offer-container">
-      <MainOffer />
+  <div id="hero-block" class="hero-block spy-section">
+    <div class="hero-section">
+      <div class="offer-container">
+        <MainOffer />
+      </div>
+      <div class="choose-flat">
+        <ChooseFlat />
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.building-back {
+.hero-block {
   width: inherit;
   height: 100vh;
   height: 100dvh;
   position: relative;
+  background: url("/images/BuildingBack.webp") center center / cover no-repeat;
 
-  & > img {
-    width: 100%;
+  & > .hero-section {
     height: 100%;
-    object-fit: cover;
-    object-position: 58%;
-  }
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
 
-  & > .offer-container {
-    position: absolute;
-    width: 200px;
-    background: white;
-    bottom: 200px;
-    left: 200px;
+    & > .choose-flat {
+      position: absolute;
+      bottom: 100px;
+      right: 50px;
+    }
+    & > .offer-container {
+      position: absolute;
+      width: 400px;
+      bottom: 100px;
+      left: 25px;
+    }
   }
 }
 </style>

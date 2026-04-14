@@ -1,2 +1,2 @@
-export { getSections } from "./api"
+export * from "./api"
 export type { SectionsDTO, FlatDTO, SectionNames } from "./types/flats.dto"

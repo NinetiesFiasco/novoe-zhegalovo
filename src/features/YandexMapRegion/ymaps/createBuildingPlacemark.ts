@@ -1,15 +1,16 @@
-export default (zoom: number, size: number) => {
+export default () => {
+  const size: number = 96
   return new window.ymaps.Placemark(
-    zoom === 11 ? [55.883, 37.94] : [55.87, 37.92],
+    [55.906894, 37.982083],
     {
-      hintContent: "Дом",
-      balloonContent: "Мой дом",
+      hintContent: "ЖК Новое Жегалово",
+      balloonContent: "ЖК Новое Жегалово",
     },
     {
       iconLayout: "default#image",
       iconImageHref: `icons/building.svg`,
       iconImageSize: [size, size],
-      iconImageOffset: [-size / 2, -size],
+      iconImageOffset: [-size * 1.1, -size * 0.4],
     },
   )
 }

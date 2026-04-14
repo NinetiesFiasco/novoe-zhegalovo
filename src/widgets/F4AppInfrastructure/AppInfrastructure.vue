@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 import { BackgroundWithMarks } from "./ui"
-import { GoodPrices } from "~/features"
 </script>
 
 <template>
-  <div class="gen-plan">
+  <div id="app-infrastructure" class="gen-plan spy-section">
+    <h2>Инфраструктура</h2>
     <BackgroundWithMarks />
-    <GoodPrices />
   </div>
 </template>
 
@@ -15,6 +14,12 @@ import { GoodPrices } from "~/features"
   width: inherit;
   height: inherit;
   position: relative;
+  max-width: 1600px;
+  margin: auto;
+
+  & > h2 {
+    padding-bottom: 40px;
+  }
 
   & .selector {
     position: absolute;
