@@ -60,7 +60,7 @@ const { currentFlat } = storeToRefs(sectionsStore)
   border-radius: var(--radius-md);
 
   & .img-plan {
-    max-width: 100%;
+    max-width: 600px;
     height: auto;
   }
 
@@ -82,10 +82,10 @@ const { currentFlat } = storeToRefs(sectionsStore)
   }
 
   & .params {
-    border-spacing: clamp(5px, 2vw, 40px) 8px;
     margin: 5px 0 5px 0;
     width: 100%;
     text-align: center;
+    max-width: 600px;
 
     & th {
       color: var(--color-blue);

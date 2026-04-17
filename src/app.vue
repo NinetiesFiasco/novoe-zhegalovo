@@ -6,7 +6,7 @@ import {
   AboutProject,
   MainInfo,
   AppInfrastructure,
-  YandexMap,
+  TransportConnectivity,
   ApartmentSelector,
   UndergroundParking,
   MortgageCalculator,
@@ -23,7 +23,7 @@ import {
       <AboutProject />
       <MainInfo />
       <AppInfrastructure />
-      <YandexMap />
+      <TransportConnectivity />
       <ApartmentSelector />
       <UndergroundParking />
       <MortgageCalculator />

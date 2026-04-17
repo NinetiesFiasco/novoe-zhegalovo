@@ -1,6 +1,10 @@
 <script lang="ts" setup>
-import { BackgroundWithSelection } from "./ui"
-import { DroneVideo, YandexPanorama } from "./ui"
+import {
+  BackgroundWithSelection,
+  DroneVideo,
+  YandexPanorama,
+  YandexMap,
+} from "./ui"
 const isVideo = ref<boolean>(false)
 const toggle = () => {
   isVideo.value = !isVideo.value
@@ -14,6 +18,7 @@ const toggle = () => {
     <div class="about-buttons">
       <button class="btn-video" @click="toggle">Видео комплекса</button>
       <YandexPanorama />
+      <YandexMap />
     </div>
     <DroneVideo v-if="isVideo" v-model="isVideo" />
     <!-- <button @click="openYandexPanorama">Панорама из яндекса</button> -->
@@ -35,8 +40,8 @@ const toggle = () => {
 
   & .about-buttons {
     position: absolute;
-    bottom: 200px;
-    left: 100px;
+    bottom: 50px;
+    left: 50px;
 
     & > * {
       padding: 12px 18px;

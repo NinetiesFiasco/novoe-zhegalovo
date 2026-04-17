@@ -115,6 +115,7 @@ const initSelectors = () => {
         text="Автобусная остановка"
         arrow="left"
       />
+      <GenPlanMarks :position="getStyle(72, 12)" text="Озеро" arrow="bottom" />
     </template>
   </div>
 </template>

@@ -13,9 +13,7 @@ onMounted(async () => {
   window.ymaps.ready(() => {
     const map = new window.ymaps.Map(mapEl.value, {
       controls: [],
-      center: [55.8, 37.5],
-
-      zoom: 10,
+      center: [55, 37],
     })
 
     map.setBounds(
@@ -26,7 +24,9 @@ onMounted(async () => {
         // [56, 37.9], // северо-восток
       ],
       {
-        checkZoomRange: true,
+        duration: 0,
+        checkZoomRange: false,
+        zoomMargin: 20,
       },
     )
 

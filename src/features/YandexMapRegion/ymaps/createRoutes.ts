@@ -7,7 +7,7 @@ export const pedestrianTrainRoute = () => {
     {},
     {
       strokeColor: "#22C55E",
-      strokeWidth: 2,
+      strokeWidth: 3,
     },
   )
 }
@@ -35,7 +35,7 @@ export const trainRoute = () => {
     {},
     {
       strokeColor: "#2563EB",
-      strokeWidth: 2,
+      strokeWidth: 4,
     },
   )
 }
@@ -84,7 +84,7 @@ export const busRoute = () => {
     {},
     {
       strokeColor: "#2563EB",
-      strokeWidth: 2,
+      strokeWidth: 4,
     },
   )
 }

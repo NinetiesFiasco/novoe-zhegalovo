@@ -7,7 +7,7 @@ const { entranceNumber, entranceAdaptive } = defineProps<{
 
 const goTo = () => {
   if (document) {
-    document.getElementById("choose-flat")?.scrollIntoView({
+    document.getElementById("apartment-selector")?.scrollIntoView({
       behavior: "smooth",
     })
   }

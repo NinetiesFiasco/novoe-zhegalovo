@@ -25,8 +25,8 @@ const createYaMapObjects = (): any => {
 
   mapObjects.push(...createPedestrianPlacemark())
 
-  mapObjects.push(createBus())
-  mapObjects.push(createTrain())
+  // mapObjects.push(createBus())
+  // mapObjects.push(createTrain())
   mapObjects.push(createMetro())
   mapObjects.push(createYarick())
 

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { EntranceSelectionUI } from "./"
+import EntranceSelectionUI from "../EntranceSelectionUI.vue"
 
 const { isMobile } = useDevice()
 

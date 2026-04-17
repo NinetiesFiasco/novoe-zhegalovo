@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-useHead({
-  script: [
-    {
-      src: "https://ipoteka.domclick.ru/calc-reg/calculator-injector.js",
-    },
-  ],
-})
+// useHead({
+//   script: [
+//     {
+//       src: "https://ipoteka.domclick.ru/calc-reg/calculator-injector.js",
+//     },
+//   ],
+// })
 </script>
 
 <template>
   <div id="mortgage-calculator" class="mortgage-calculator spy-section">
-    <h2>Ипотечный калькулятор</h2>
+    <!-- <h2>Ипотечный калькулятор</h2>
     <ClientOnly>
       <iframe
         id="calculator-iframe"
@@ -20,7 +20,7 @@ useHead({
         width="100%"
         height="600"
       />
-    </ClientOnly>
+    </ClientOnly> -->
   </div>
 </template>
 

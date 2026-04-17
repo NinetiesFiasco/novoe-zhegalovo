@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from "swiper/vue"
 import { Navigation, Pagination } from "swiper/modules"
+import { NavigationButtons } from "./ui"
 import { GetCall } from "~/features"
 
 const isModalCallOpened = ref<boolean>(false)
@@ -12,6 +13,9 @@ const modules = [Navigation, Pagination]
 
 <template>
   <div class="underground-parking">
+    <div class="nav-container">
+      <NavigationButtons />
+    </div>
     <h2>Подземная парковка</h2>
     <swiper
       :modules="modules"
@@ -19,6 +23,10 @@ const modules = [Navigation, Pagination]
       :space-between="20"
       :loop="true"
       :pagination="{ clickable: true }"
+      :navigation="{
+        nextEl: '.parking-next',
+        prevEl: '.parking-prev',
+      }"
     >
       <swiper-slide v-for="picture in pictures" :key="picture">
         <div class="slide">
@@ -30,7 +38,7 @@ const modules = [Navigation, Pagination]
       <GetCall
         :is-open="isModalCallOpened"
         @toggle="isModalCallOpened = !isModalCallOpened"
-        text="Забронировать"
+        text="Забронировать место"
         status="Забронировать парковку"
       />
     </div>
@@ -42,7 +50,14 @@ const modules = [Navigation, Pagination]
   width: 100%;
   margin: auto;
   max-width: 1600px;
+  position: relative;
 
+  & .nav-container {
+    position: absolute;
+    height: 50px;
+    right: 200px;
+    top: 70px;
+  }
   & > h2 {
     margin: 40px 0;
   }
@@ -70,6 +85,10 @@ const modules = [Navigation, Pagination]
 
   & > .get-call {
     width: 200px;
+    position: absolute;
+    bottom: 50px;
+    left: 200px;
+    z-index: 9999;
   }
 }
 </style>

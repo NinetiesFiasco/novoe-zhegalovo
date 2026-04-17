@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { YandexMapRegion } from "~/features"
+import { BackgroundWithMarks } from "./ui"
 </script>
 <template>
   <div class="map-container">
     <h2>Транспортная доступность</h2>
-    <YandexMapRegion />
+    <BackgroundWithMarks />
   </div>
 </template>
 <style lang="scss" scoped>

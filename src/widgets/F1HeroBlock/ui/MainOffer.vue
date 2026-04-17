@@ -19,9 +19,9 @@ const isModalCallOpened = ref<boolean>(false)
 
 <style lang="scss" scoped>
 .main-offer {
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   color: white;
   padding: 24px;
   border-radius: 20px;

@@ -17,16 +17,18 @@ const preFinishedPictures = Array.from({ length: 4 }, (_, i) => `${i + 1}.webp`)
 <template>
   <div>
     <template v-if="isFinished">
-      <PrimaryButton @click="isPictures = true">
-        Пример чистовой отделки
-      </PrimaryButton>
+      <div class="button-list">
+        <PrimaryButton @click="isPictures = true">
+          Пример чистовой отделки
+        </PrimaryButton>
 
-      <GetCall
-        :is-open="isModalCallOpened"
-        @toggle="isModalCallOpened = !isModalCallOpened"
-        text="Забронировать"
-        status="Забронировать квартиру"
-      />
+        <GetCall
+          :is-open="isModalCallOpened"
+          @toggle="isModalCallOpened = !isModalCallOpened"
+          text="Забронировать"
+          status="Забронировать квартиру"
+        />
+      </div>
       <PictureViewer
         v-if="isPictures"
         @close="isPictures = false"
@@ -44,4 +46,12 @@ const preFinishedPictures = Array.from({ length: 4 }, (_, i) => `${i + 1}.webp`)
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.button-list {
+  display: flex;
+
+  & > * {
+    margin-left: 10px;
+  }
+}
+</style>

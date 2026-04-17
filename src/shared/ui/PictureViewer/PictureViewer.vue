@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from "swiper/vue"
-
 import { Navigation, Pagination } from "swiper/modules"
+import { CloseButton } from "../buttons"
 
 const { isMobile } = useDevice()
 
@@ -54,7 +54,7 @@ const props = defineProps<Props>()
         <div class="arrow arrow-right"></div>
       </div>
       <div class="prev-el nav-button"><div class="arrow arrow-left"></div></div>
-      <div class="close" @click="close">X</div>
+      <close-button @click="close" :top="20" :right="40" />
     </swiper>
   </div>
 </template>
@@ -70,20 +70,6 @@ const props = defineProps<Props>()
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.7);
-  }
-
-  & .close {
-    position: absolute;
-    font-size: 100px;
-    top: 0px;
-    line-height: 100%;
-    right: 190px;
-    height: 50px;
-    width: 50px;
-    color: var(--color-grey);
-    z-index: 11000;
-    user-select: none;
-    cursor: pointer;
   }
 
   & .slide {

@@ -77,6 +77,7 @@ onMounted(async () => {
 
   .apartment-view {
     flex: 1;
+    max-width: 650px;
   }
 }
 </style>

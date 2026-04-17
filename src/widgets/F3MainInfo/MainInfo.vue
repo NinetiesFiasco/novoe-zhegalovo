@@ -54,7 +54,7 @@ const { isMobile } = useDevice()
         </SwiperElement>
       </swiper-slide>
       <swiper-slide>
-        <SwiperElement src="images/slider/center.jpg">
+        <SwiperElement src="images/slider/center.webp">
           <template #header>Центр города Щёлково</template>
           <template #text>
             <p>
