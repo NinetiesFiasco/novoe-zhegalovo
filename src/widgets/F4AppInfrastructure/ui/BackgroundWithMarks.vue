@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { GenPlanMarks } from "./"
+import { GenPlanMark } from "./"
 
 const { isMobile } = useDevice()
 
@@ -28,47 +28,47 @@ const { imgRef, containerRef, getPositionOffset, initSelectors } =
       alt="Изображение здания"
     />
     <template v-if="!isMobile">
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(40, 37)"
         text="Школа №16 на 1200 мест 50 метров"
         arrow="bottom"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(9, 31)"
         text="Детский сад №30 Ладушки 300 метров"
         arrow="bottom"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(57, 90)"
         text="Детский сад №20 Щелкунчик 200 метров"
         arrow="bottom"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(80, 60)"
         text="Магазины"
         arrow="left"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(3, 90)"
         text="Магазины"
         arrow="left"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(53, 55)"
         text="Подземный паркинг"
         arrow="right"
       />
-      <GenPlanMarks
+      <!-- <GenPlanMark
         :position="getPositionOffset(77, 23)"
         text="Выбрать квартиру"
         arrow="bottom"
-      />
-      <GenPlanMarks
+      /> -->
+      <GenPlanMark
         :position="getPositionOffset(2, 50)"
         text="Автобусная остановка"
         arrow="left"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(72, 12)"
         text="Озеро"
         arrow="bottom"

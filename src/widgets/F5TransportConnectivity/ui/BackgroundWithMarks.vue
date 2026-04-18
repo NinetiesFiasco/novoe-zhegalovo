@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { GenPlanMarks } from "./"
-
-const isSelectors = ref<boolean>(false)
+import { GenPlanMark } from "./"
 
 const { isMobile } = useDevice()
 
@@ -35,27 +33,27 @@ const {
       alt="Транспортная доступность"
     />
     <template v-if="!isMobile">
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(30, 15)"
         text="Пешком до ЖД станции Воронок 15 минут"
         arrow="top"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(40, 55)"
         text="Школа №16 на 1200 мест 50 метров"
         arrow="left"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(37, 85)"
         text="Детский сад №30 Ладушки 300 метров"
         arrow="bottom"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(62, 35)"
         text="Детский сад №20 Щелкунчик 200 метров"
         arrow="left"
       />
-      <GenPlanMarks
+      <GenPlanMark
         :position="getPositionOffset(58, 90)"
         text="Автобусная остановка, 3 минуты пешком"
         arrow="bottom"

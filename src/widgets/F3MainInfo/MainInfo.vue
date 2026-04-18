@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { TitleText, NavigationButtons } from "./ui"
-
 import { Swiper, SwiperSlide } from "swiper/vue"
 import { Navigation, Pagination } from "swiper/modules"
-import SwiperElement from "./ui/SwiperElement.vue"
+import { TitleText, NavigationButtons, SwiperElement } from "./ui"
+
 const modules = [Navigation, Pagination]
 
 const { isMobile } = useDevice()

@@ -1,6 +1,3 @@
-export { default as InfoTransport } from "./InfoTransport.vue"
-export { default as AboutInfrastructure } from "./AboutInfrastructure.vue"
-export { default as InfoEnvironment } from "./InfoEnvironment.vue"
 export { default as SwiperElement } from "./SwiperElement.vue"
 export { default as TitleText } from "./TitleText.vue"
 export { default as NavigationButtons } from "./NavigationButtons.vue"
