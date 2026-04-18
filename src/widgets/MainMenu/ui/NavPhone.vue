@@ -23,6 +23,7 @@
   text-decoration: none;
 
   transition: all 0.2s ease;
+  text-wrap: nowrap;
 
   &:hover {
     transform: translateY(-1px);
