@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { YandexMapRegion } from "~/features"
 import { CloseButton } from "~/shared/ui"
+const { isMobile } = useDevice()
 
 const isOpen = ref(false)
 const toggle = () => {
@@ -14,7 +15,7 @@ const toggle = () => {
   <Teleport to="body">
     <div v-if="isOpen" class="overlay">
       <div class="overlay__content">
-        <CloseButton @click="toggle" :top="-30" :right="180" />
+        <CloseButton @click="toggle" :top="-30" :right="isMobile ? 10 : 180" />
         <YandexMapRegion />
       </div>
     </div>
@@ -37,10 +38,5 @@ const toggle = () => {
   width: 90%;
   height: 80%;
   position: relative;
-}
-
-.pano {
-  width: 100%;
-  height: 100%;
 }
 </style>

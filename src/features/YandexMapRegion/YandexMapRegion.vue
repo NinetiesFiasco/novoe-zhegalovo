@@ -3,6 +3,8 @@ import { ref } from "vue"
 import { createYaMapObjects } from "./ymaps"
 import { MapInfographic } from "./ui"
 
+const { isMobile } = useDevice()
+
 const mapEl = ref<HTMLElement | null>(null)
 
 onMounted(async () => {
@@ -42,7 +44,7 @@ onMounted(async () => {
 <template>
   <div class="map-container">
     <div ref="mapEl" class="ya-map" />
-    <MapInfographic />
+    <MapInfographic v-if="!isMobile" />
   </div>
 </template>
 
@@ -57,6 +59,15 @@ onMounted(async () => {
     min-height: 600px;
     border-radius: 20px;
     overflow: hidden;
+  }
+
+  @media screen and (max-width: 600px) {
+    & .ya-map {
+      width: 100%;
+      height: 100%;
+      min-width: 300px;
+      min-height: 300px;
+    }
   }
 }
 </style>
