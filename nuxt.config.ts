@@ -7,6 +7,12 @@ export default defineNuxtConfig({
 
   app: {
     baseURL: "/",
+    head: {
+      title: "ЖК Новое Жегалово",
+      meta: [
+        { name: "description", content: "Продажа квартир в ЖК Новое Жегалово" },
+      ],
+    },
   },
 
   srcDir: "src/",
