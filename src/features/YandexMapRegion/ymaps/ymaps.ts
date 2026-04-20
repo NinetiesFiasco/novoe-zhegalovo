@@ -11,10 +11,10 @@ import { createTrain } from "./trainPlacemark"
 import { createMetro } from "./metroPlacemark"
 import { createYarick } from "./yarickPlacemark"
 
-const createYaMapObjects = (): any => {
+const createYaMapObjects = (isMobile: boolean): any => {
   const mapObjects = []
 
-  mapObjects.push(createBuildingPlacemark())
+  mapObjects.push(createBuildingPlacemark(isMobile))
 
   mapObjects.push(
     pedestrianTrainRoute(),
@@ -22,8 +22,9 @@ const createYaMapObjects = (): any => {
     pedestrianBusRoute(),
     busRoute(),
   )
-
-  mapObjects.push(...createPedestrianPlacemark())
+  if (!isMobile) {
+    mapObjects.push(...createPedestrianPlacemark())
+  }
 
   // mapObjects.push(createBus())
   // mapObjects.push(createTrain())

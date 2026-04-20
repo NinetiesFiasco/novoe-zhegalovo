@@ -34,7 +34,7 @@ onMounted(async () => {
 
     map.behaviors.disable(["scrollZoom", "drag", "dblClickZoom", "multiTouch"])
 
-    createYaMapObjects().forEach((yaMapObject: any) => {
+    createYaMapObjects(isMobile.value).forEach((yaMapObject: any) => {
       map.geoObjects.add(yaMapObject)
     })
   })
