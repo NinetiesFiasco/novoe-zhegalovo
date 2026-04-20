@@ -56,6 +56,28 @@ const goTo = () => {
       transition: opacity 0.3s ease;
     }
   }
+
+  @media screen and (max-width: 1400px) {
+    & .link-balloon {
+      position: absolute;
+      top: -40px;
+      width: 40px;
+      height: 40px;
+      font-size: 25px;
+      line-height: 35px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    & .link-balloon {
+      position: absolute;
+      top: -30px;
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+
   & .selection-area {
     position: absolute;
     height: 450px;
