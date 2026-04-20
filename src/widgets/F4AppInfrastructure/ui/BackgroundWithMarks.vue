@@ -36,7 +36,7 @@ const { imgRef, containerRef, getPositionOffset, initSelectors } =
         arrow="bottom"
       />
       <GenPlanMark
-        :position="getPositionOffset(57, 90)"
+        :position="getPositionOffset(57, 85)"
         text="Детский сад №20 Щелкунчик 200 метров"
         arrow="bottom"
       />
@@ -46,7 +46,7 @@ const { imgRef, containerRef, getPositionOffset, initSelectors } =
         arrow="left"
       />
       <GenPlanMark
-        :position="getPositionOffset(3, 90)"
+        :position="getPositionOffset(3, 85)"
         text="Магазины"
         arrow="left"
       />
@@ -86,6 +86,7 @@ const { imgRef, containerRef, getPositionOffset, initSelectors } =
     height: 100%;
     object-fit: cover;
     object-position: 58%;
+    border-radius: 40px;
   }
   & > .mobile-img {
     width: 100%;

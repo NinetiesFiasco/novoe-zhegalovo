@@ -49,6 +49,7 @@ onMounted(async () => {
   margin-top: 150px;
   max-width: 1600px;
   margin: 100px auto 0;
+  justify-content: space-around;
 
   @media screen and (max-width: 900px) {
     margin: auto;

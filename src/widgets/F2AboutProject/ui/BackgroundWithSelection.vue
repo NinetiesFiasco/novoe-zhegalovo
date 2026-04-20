@@ -64,6 +64,7 @@ const {
   height: 100%;
   position: relative;
   overflow: hidden;
+  border-radius: 40px;
 
   & > img {
     width: 100%;

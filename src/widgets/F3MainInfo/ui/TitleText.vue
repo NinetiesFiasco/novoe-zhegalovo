@@ -2,13 +2,15 @@
 
 <template>
   <div class="features__header">
-    <h2 class="features__title">
-      Подарите своей семье квартиру,<br />
-      о которой мечтали
-    </h2>
+    <h2 class="features__title">Жилой комплекс «Новое Жегалово»</h2>
     <p class="features__subtitle">
-      ЖК «Новое Жегалово» — место, где растут счастливые дети и крепнут семейные
-      традиции
+      — это идеальное место для комфортной жизни в окружении природы!<br />
+      <br />
+      Расположенный в живописном месте недалеко от национального парка Лосиный
+      остров, этот проект предлагает современные дома, развитую инфраструктуру и
+      выгодное расположение. Здесь представлены новые квартиры от застройщика в
+      г. Щелково, сочетающие комфорт и разные варианты покупки: с готовой
+      отделкой и без отделки.
     </p>
   </div>
 </template>
@@ -18,20 +20,18 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin: 40px 0;
+  margin: 40px;
   position: relative;
 }
 
 .features__title {
   font-size: 36px;
   font-weight: 700;
-  max-width: 700px;
 }
 
 .features__subtitle {
   font-size: 26px;
   color: #666;
-  max-width: 600px;
 }
 
 @media screen and (max-width: 900px) {

@@ -22,6 +22,7 @@ const goTo = () => {
       'text-mark--bottom': arrow === 'bottom',
       'text-mark--left': arrow === 'left',
       'text-mark--top': arrow === 'top',
+      'text-mark--bottom-right': arrow === 'bottom-right',
     }"
     :style="position"
     @click="goTo"
@@ -68,6 +69,12 @@ const goTo = () => {
   &--bottom::after {
     bottom: -11px;
     left: 20px;
+    transform: rotate(90deg);
+  }
+  /* вниз */
+  &--bottom-right::after {
+    bottom: -11px;
+    right: 20px;
     transform: rotate(90deg);
   }
 

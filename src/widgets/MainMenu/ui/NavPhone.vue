@@ -1,7 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useContactsStore } from "~/entities"
+
+const contacts = useContactsStore()
+</script>
 
 <template>
-  <a href="tel:+79991234567" class="nav__phone"> +7 (999) 123-45-67 </a>
+  <a href="tel:+79991234567" class="nav__phone">{{ contacts.phone }}</a>
 </template>
 
 <style lang="scss" scoped>

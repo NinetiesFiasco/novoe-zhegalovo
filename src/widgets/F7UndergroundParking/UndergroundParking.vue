@@ -78,7 +78,7 @@ const modules = [Navigation, Pagination]
 
   .swiper {
     border-radius: var(--radius-swiper);
-    margin: 50px 100px;
+    margin: 50px 0;
     height: calc(100% - 100px);
     z-index: 100;
   }

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue"
 import { createYaMapObjects } from "./ymaps"
-import { MapInfographic } from "./ui"
 
 const { isMobile } = useDevice()
 
@@ -44,7 +43,6 @@ onMounted(async () => {
 <template>
   <div class="map-container">
     <div ref="mapEl" class="ya-map" />
-    <MapInfographic v-if="!isMobile" />
   </div>
 </template>
 
