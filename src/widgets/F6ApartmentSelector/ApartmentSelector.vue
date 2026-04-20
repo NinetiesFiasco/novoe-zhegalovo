@@ -50,8 +50,18 @@ onMounted(async () => {
   max-width: 1600px;
   margin: 100px auto 0;
 
+  @media screen and (max-width: 900px) {
+    margin: auto;
+  }
+
   & .apartment-selector {
     margin-right: clamp(10px, 5vw, 100px);
+
+    @media screen and (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     & .head-p {
       color: var(--color-blue);

@@ -14,7 +14,7 @@ const { link, text } = defineProps<{
 .nav__link {
   position: relative;
 
-  padding: 8px 14px;
+  padding: 8px clamp(6px, 1vw, 14px);
   border: none;
   background: none;
 

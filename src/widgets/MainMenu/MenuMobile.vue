@@ -1,119 +1,116 @@
 <script lang="ts" setup>
-import { NavPhone, GetCall } from "./ui"
+import { JKLogo } from "~/shared/ui"
+import { NavPhone, NavLink, BurgerButton } from "./ui"
+import { GetCall } from "~/features"
+import { useMenuObserver } from "./composables/useMenuObserver"
 
-const isModalCallOpened = ref<boolean>(false)
+useMenuObserver()
 
-const toggle = () => {
-  isModalCallOpened.value = !isModalCallOpened.value
+const isOpen = ref(false)
+
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value
 }
+
+const closeMenu = () => {
+  isOpen.value = false
+}
+const isModalCallOpened = ref<boolean>(false)
 </script>
 
 <template>
   <header>
     <nav>
-      <div class="nav__links">
-        <a href="#hero-block" class="nav__link active"> Главная </a>
-        <a href="#about-project" class="nav__link">О проекте</a>
-        <a href="#app-infrastructure" class="nav__link">Инфраструктура</a>
-        <a href="#apartment-selector" class="nav__link">Квартиры</a>
-        <a href="#mortgage-calculator" class="nav__link">Ипотека</a>
-        <a href="#about-company" class="nav__link">О компании</a>
+      <BurgerButton :is-open="isOpen" @toggle="toggleMenu" />
+
+      <div v-if="isOpen" class="overlay" @click="closeMenu"></div>
+
+      <div :class="['menu', { open: isOpen }]">
+        <div class="nav__links" @click="toggleMenu">
+          <NavLink link="#hero-block" text="Главная" />
+          <NavLink link="#about-project" text="О проекте" />
+          <!-- <NavLink link="#app-infrastructure" text="Инфраструктура" /> -->
+          <NavLink link="#apartment-selector" text="Квартиры" />
+          <NavLink link="#about-company" text="О компании" />
+        </div>
+        <div class="nav__logo">
+          <JKLogo />
+        </div>
+        <NavPhone />
+        <GetCall
+          :is-open="isModalCallOpened"
+          @toggle="isModalCallOpened = !isModalCallOpened"
+          text="Заказать звонок"
+          status="Главное меню"
+        />
       </div>
-      <div class="nav__logo">
-        <img src="/images/Logo.svg" alt="Логотип компании" />
-      </div>
-      <NavPhone />
-      mobile
-      <!-- <GetCall @toggle="toggle" />
-      <ModalGetCall :is-open="isModalCallOpened" @close="toggle" /> -->
+
+      <!--  -->
     </nav>
   </header>
 </template>
 
 <style lang="scss" scoped>
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+header > nav {
+  z-index: 200;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid grey;
 
-  nav {
-    max-width: 1600px;
-    margin: auto;
-
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: white;
+    transition: 0.3s;
+    z-index: 1000;
+    padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 
-    padding: 12px 24px;
-
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-
-    /* логотип */
-    & .nav__logo {
-      font-weight: 600;
-      font-size: 18px;
-
-      & > img {
-        height: 70px;
-      }
+    & > * {
+      margin-top: 20px;
     }
 
-    /* контейнер ссылок */
     & .nav__links {
       display: flex;
-      gap: 8px;
-      text-wrap: nowrap;
+      flex-direction: column;
     }
 
-    /* кнопки */
-    & .nav__link {
-      position: relative;
-
-      padding: 8px 14px;
-      border: none;
-      background: none;
-
-      font-size: 14px;
-      font-weight: 500;
-      color: #333;
-      text-decoration: none;
-
-      border-radius: 8px;
-      cursor: pointer;
-
-      transition: all 0.2s ease;
-    }
-    & .nav__link:hover {
-      background: rgba(0, 0, 0, 0.05);
+    & .nav__logo {
+      display: flex;
+      justify-content: center;
     }
 
-    /* активная страница */
-    & .nav__link.active {
-      color: #000;
+    &.open {
+      right: 0;
     }
 
-    /* underline анимация */
-    & .nav__link::after {
-      content: "";
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      bottom: 4px;
-
-      height: 2px;
-      background: black;
-
-      transform: scaleX(0);
-      transform-origin: center;
-
-      transition: transform 0.2s ease;
+    & ul {
+      list-style: none;
+      padding: 0;
     }
 
-    & .nav__link.active::after {
-      transform: scaleX(1);
+    & li {
+      margin: 20px 0;
     }
+  }
+
+  /* Затемнение */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
   }
 }
 </style>

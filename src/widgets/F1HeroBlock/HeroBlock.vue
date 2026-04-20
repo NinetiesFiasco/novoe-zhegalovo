@@ -5,11 +5,13 @@ import { MainOffer, ChooseFlat } from "./ui"
 <template>
   <div id="hero-block" class="hero-block spy-section">
     <div class="hero-section">
-      <div class="offer-container">
-        <MainOffer />
-      </div>
-      <div class="choose-flat">
-        <ChooseFlat />
+      <div class="hero-interaction">
+        <div class="offer-container">
+          <MainOffer />
+        </div>
+        <div class="choose-flat">
+          <ChooseFlat />
+        </div>
       </div>
     </div>
   </div>
@@ -29,16 +31,44 @@ import { MainOffer, ChooseFlat } from "./ui"
     margin: 0 auto;
     position: relative;
 
-    & > .choose-flat {
+    & > .hero-interaction {
       position: absolute;
+      width: 100%;
       bottom: 100px;
-      right: 50px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      & > .choose-flat {
+        margin-right: 50px;
+      }
+      & > .offer-container {
+        width: 400px;
+        margin-left: 25px;
+      }
     }
-    & > .offer-container {
-      position: absolute;
-      width: 400px;
-      bottom: 100px;
-      left: 25px;
+
+    @media screen and (max-width: 900px) {
+      & > .hero-interaction {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & > .choose-flat {
+          margin: 0;
+          margin-top: 50px;
+        }
+        & > .offer-container {
+          margin: 0;
+        }
+      }
+    }
+    @media screen and (max-width: 450px) {
+      & > .hero-interaction {
+        & > .offer-container {
+          max-width: 300px;
+        }
+      }
     }
   }
 }

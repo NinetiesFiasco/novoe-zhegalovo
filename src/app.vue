@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { AppSection } from "~/shared/ui"
 import {
   MainMenu,
   HeroBlock,
@@ -10,9 +9,10 @@ import {
   ApartmentSelector,
   UndergroundParking,
   MortgageCalculator,
-  DroneVideo,
   AboutCompany,
 } from "~/widgets"
+
+const { isMobile } = useDevice()
 </script>
 
 <template>
@@ -22,8 +22,11 @@ import {
       <HeroBlock />
       <AboutProject />
       <MainInfo />
-      <AppInfrastructure />
-      <TransportConnectivity />
+      <template v-if="!isMobile">
+        <AppInfrastructure />
+        <TransportConnectivity />
+      </template>
+
       <ApartmentSelector />
       <UndergroundParking />
       <MortgageCalculator />

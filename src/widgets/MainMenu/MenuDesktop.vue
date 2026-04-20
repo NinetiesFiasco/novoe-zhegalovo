@@ -57,6 +57,7 @@ header {
       font-weight: 600;
       font-size: 18px;
       height: 70px;
+      min-width: 80px;
 
       & > img {
         height: 70px;
@@ -66,7 +67,6 @@ header {
     /* контейнер ссылок */
     & .nav__links {
       display: flex;
-      gap: 8px;
       text-wrap: nowrap;
     }
   }

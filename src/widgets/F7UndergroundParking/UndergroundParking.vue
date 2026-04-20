@@ -88,7 +88,20 @@ const modules = [Navigation, Pagination]
     position: absolute;
     bottom: 50px;
     left: 200px;
-    z-index: 9999;
+    z-index: 1000;
+  }
+
+  @media screen and (max-width: 900px) {
+    .swiper {
+      border-radius: 24px;
+      margin: auto;
+      height: calc(100% - 100px);
+      z-index: 100;
+    }
+    & > .get-call {
+      bottom: 15px;
+      left: 15px;
+    }
   }
 }
 </style>

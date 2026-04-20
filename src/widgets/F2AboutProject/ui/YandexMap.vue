@@ -22,11 +22,6 @@ const toggle = () => {
 </template>
 
 <style lang="scss" scoped>
-.button-map-open {
-  position: absolute;
-  margin-left: 20px;
-}
-
 .overlay {
   position: fixed;
   inset: 0;

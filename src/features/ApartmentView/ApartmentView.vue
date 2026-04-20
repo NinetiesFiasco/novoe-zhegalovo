@@ -61,6 +61,7 @@ const { currentFlat } = storeToRefs(sectionsStore)
 
   & .img-plan {
     max-width: 600px;
+    width: 100%;
     height: auto;
   }
 

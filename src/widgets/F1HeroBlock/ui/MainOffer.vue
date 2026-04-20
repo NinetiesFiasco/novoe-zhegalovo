@@ -27,4 +27,10 @@ const isModalCallOpened = ref<boolean>(false)
   border-radius: 20px;
   width: 100%;
 }
+
+@media screen and (max-width: 450px) {
+  .main-offer {
+    padding: 6px;
+  }
+}
 </style>

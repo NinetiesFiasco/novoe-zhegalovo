@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import EntranceSelectionUI from "./EntranceSelectionUI.vue"
 
+const { isMobile } = useDevice()
+
 const emit = defineEmits<{
   (e: "imgLoaded"): void
 }>()
@@ -26,31 +28,33 @@ const {
       alt="Изображение здания"
       @load="initSelectors"
     />
-    <EntranceSelectionUI
-      :position="getPositionOffset(43.9, 16.7)"
-      :entrance-number="1"
-      :entrance-adaptive="{
-        transform: 'skew(-3deg)',
-        ...getSubDimensions(42.7, 16, 47, 80),
-      }"
-    />
-    <EntranceSelectionUI
-      :position="getPositionOffset(53.5, 14)"
-      :entrance-number="2"
-      :entrance-adaptive="{
-        transform: 'skew(-2deg)',
-        ...getSubDimensions(53, 14, 58, 80),
-      }"
-    />
-    <EntranceSelectionUI
-      :position="getPositionOffset(65, 8)"
-      :entrance-number="3"
-      :entrance-adaptive="{
-        transform: 'skew(1deg)',
-        left: '7px',
-        ...getSubDimensions(65, 8, 70.5, 80),
-      }"
-    />
+    <template v-if="!isMobile">
+      <EntranceSelectionUI
+        :position="getPositionOffset(43.9, 16.7)"
+        :entrance-number="1"
+        :entrance-adaptive="{
+          transform: 'skew(-3deg)',
+          ...getSubDimensions(42.7, 16, 47, 80),
+        }"
+      />
+      <EntranceSelectionUI
+        :position="getPositionOffset(53.5, 14)"
+        :entrance-number="2"
+        :entrance-adaptive="{
+          transform: 'skew(-2deg)',
+          ...getSubDimensions(53, 14, 58, 80),
+        }"
+      />
+      <EntranceSelectionUI
+        :position="getPositionOffset(65, 8)"
+        :entrance-number="3"
+        :entrance-adaptive="{
+          transform: 'skew(1deg)',
+          left: '7px',
+          ...getSubDimensions(65, 8, 70.5, 80),
+        }"
+      />
+    </template>
   </div>
 </template>
 

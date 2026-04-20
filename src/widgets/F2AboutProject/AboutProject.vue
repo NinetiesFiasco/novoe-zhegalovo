@@ -50,15 +50,51 @@ const toggle = () => {
       cursor: pointer;
       border: none;
       transition: 0.3s;
+      margin-left: 20px;
     }
     & .btn-video {
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
       color: #fff;
-      margin-right: 30px;
 
       &:hover {
         background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    & .about-buttons {
+      bottom: 15px;
+      left: 0;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+
+      & > * {
+        padding: 6px 6px;
+        border-radius: 999px;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s;
+      }
+      & .btn-video {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: #fff;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 450px) {
+    & .about-buttons {
+      & > * {
+        padding: 3px 6px;
+        font-size: 12px;
       }
     }
   }

@@ -17,9 +17,6 @@ const { imgRef, containerRef, getPositionOffset, initSelectors } =
 
 <template>
   <div ref="containerRef" class="background-with-marks">
-    <div class="portrait-notification">
-      Удобнее смотреть в горизонтальном режиме
-    </div>
     <img
       ref="imgRef"
       :class="{ 'mobile-img': isMobile }"
@@ -83,16 +80,6 @@ const { imgRef, containerRef, getPositionOffset, initSelectors } =
   height: 100%;
   position: relative;
   user-select: none;
-
-  & .portrait-notification {
-    display: none;
-  }
-
-  @media screen and (orientation: portrait) {
-    & .portrait-notification {
-      display: block;
-    }
-  }
 
   & > img {
     width: 100%;

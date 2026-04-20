@@ -145,6 +145,11 @@ const { isMobile } = useDevice()
 <style lang="scss">
 .info-swiper {
   margin: 30px 50px;
+
+  @media screen and (max-width: 900px) {
+    margin: 0;
+  }
+
   & .swiper-pagination-bullet {
     width: 20px;
     height: 20px;

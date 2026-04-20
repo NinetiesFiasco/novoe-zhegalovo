@@ -33,4 +33,14 @@
   color: #666;
   max-width: 600px;
 }
+
+@media screen and (max-width: 900px) {
+  .features__title {
+    font-size: 24px;
+  }
+
+  .features__subtitle {
+    font-size: 18px;
+  }
+}
 </style>

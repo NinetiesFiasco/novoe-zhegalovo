@@ -18,6 +18,7 @@ const emit = defineEmits<{
   font-weight: 500;
   color: #1a1a1a;
   text-decoration: none;
+  white-space: nowrap;
 
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
