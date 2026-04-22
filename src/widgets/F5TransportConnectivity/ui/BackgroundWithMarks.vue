@@ -20,7 +20,7 @@ const {
 } = useImageOffsets(emitLoaded)
 
 const busPosition = computed(() => {
-  const standard = getPositionOffset(5, 50)
+  const standard = getPositionOffset(5, 42)
   return {
     top: standard.top,
     right: standard.left,
@@ -34,35 +34,45 @@ const busPosition = computed(() => {
       ref="imgRef"
       :class="{ 'mobile-img': isMobile }"
       @load="initSelectors"
-      src="/images/transport.png"
+      src="/images/transport2.png"
       alt="Транспортная доступность"
     />
     <template v-if="!isMobile">
-      <GenPlanMark
-        :position="getPositionOffset(50, 20)"
-        text="До ЖД станции Воронок 15 минут пешком, электричка следует до Ярославского вокзала 40 минут"
-        arrow="top"
-      />
-      <GenPlanMark
-        :position="busPosition"
-        text="До автобусная остановки 3 минуты пешком, автобус проезжает до метро Щёлковская за 20 минут"
-        arrow="bottom-right"
-      />
-      <!-- <GenPlanMark
-        :position="getPositionOffset(40, 55)"
-        text="Школа №16 на 1200 мест 50 метров"
-        arrow="left"
-      /> -->
-      <!-- <GenPlanMark
-        :position="getPositionOffset(37, 85)"
-        text="Детский сад №30 Ладушки 300 метров"
-        arrow="bottom"
-      /> -->
-      <!-- <GenPlanMark
-        :position="getPositionOffset(62, 35)"
-        text="Детский сад №20 Щелкунчик 200 метров"
-        arrow="left"
-      /> -->
+      <GenPlanMark :position="getPositionOffset(43, 25)">
+        <img
+          src="/icons/pedestrian.svg"
+          class="info-icon"
+          width="35"
+          height="35"
+        />
+        <p>
+          До ЖД станции Воронок<br />
+          <b>15 минут</b> пешком
+        </p>
+      </GenPlanMark>
+      <GenPlanMark :position="getPositionOffset(13, 15)">
+        <img src="/icons/train.svg" class="info-icon" width="35" height="35" />
+        <p>Электричка следует до Ярославского вокзала <b>40 минут</b></p>
+      </GenPlanMark>
+      <GenPlanMark :position="getPositionOffset(53, 63)">
+        <img
+          src="/icons/pedestrian.svg"
+          class="info-icon"
+          width="35"
+          height="35"
+        />
+        <p>
+          До автобусной остановки<br />
+          <b>3 минуты</b> пешком
+        </p>
+      </GenPlanMark>
+      <GenPlanMark :position="busPosition">
+        <img src="/icons/bus.svg" class="info-icon" width="50" height="50" />
+        <p>
+          Автобус проезжает до метро Щёлковская<br />
+          за <b>20 минут</b>
+        </p>
+      </GenPlanMark>
     </template>
   </div>
 </template>
@@ -86,6 +96,9 @@ const busPosition = computed(() => {
     height: 100%;
     object-fit: contain;
     object-position: 58%;
+  }
+  & .info-icon {
+    float: left;
   }
 }
 </style>

@@ -38,9 +38,10 @@ const modules = [Navigation, Pagination]
       <GetCall
         :is-open="isModalCallOpened"
         @toggle="isModalCallOpened = !isModalCallOpened"
-        text="Забронировать место"
         status="Забронировать парковку"
-      />
+      >
+        <span class="order-place">Забронировать место</span>
+      </GetCall>
     </div>
   </div>
 </template>
@@ -84,11 +85,16 @@ const modules = [Navigation, Pagination]
   }
 
   & > .get-call {
-    width: 200px;
+    width: 450px;
     position: absolute;
     bottom: 50px;
-    left: 200px;
+    left: 100px;
     z-index: 1000;
+
+    & .order-place {
+      font-size: 30px;
+      font-weight: 700;
+    }
   }
 
   @media screen and (max-width: 900px) {

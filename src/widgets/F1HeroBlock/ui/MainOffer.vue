@@ -6,14 +6,17 @@ const isModalCallOpened = ref<boolean>(false)
 
 <template>
   <div class="main-offer">
-    <h5>Готовые квартиры по семейной ипотеке от 130 000 р. за м<sup>2</sup></h5>
+    <h4>Готовые квартиры</h4>
+    <h5>по семейной ипотеке<br /></h5>
+    <h3>от <strong>130 000 р.</strong> за м<sup>2</sup></h3>
     <GetCall
       :is-open="isModalCallOpened"
       @toggle="isModalCallOpened = !isModalCallOpened"
-      text="Получить консультацию"
       status="Получить консультацию"
-    />
-    <h3>Ключи в день сделки!</h3>
+    >
+      <span class="get-call">Получить консультацию</span>
+    </GetCall>
+    <h4>Ключи в день сделки!</h4>
   </div>
 </template>
 

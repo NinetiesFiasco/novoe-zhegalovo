@@ -58,4 +58,15 @@ const { link, text } = defineProps<{
     transform: scaleX(1);
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .nav__link {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .nav__link {
+    font-size: 20px;
+  }
+}
 </style>

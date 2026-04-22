@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-const { position, text, arrow } = defineProps<{
-  text: string
+const { position } = defineProps<{
   position: any
-  arrow: string
 }>()
 
 const goTo = () => {
@@ -15,20 +13,9 @@ const goTo = () => {
 </script>
 
 <template>
-  <div
-    :class="{
-      'text-mark': true,
-      'text-mark--right': arrow === 'right',
-      'text-mark--bottom': arrow === 'bottom',
-      'text-mark--left': arrow === 'left',
-      'text-mark--top': arrow === 'top',
-      'text-mark--bottom-right': arrow === 'bottom-right',
-    }"
-    :style="position"
-    @click="goTo"
-  >
+  <div class="text-mark" :style="position" @click="goTo">
     <div class="bg-transparency" />
-    <span>{{ text }}</span>
+    <slot />
   </div>
 </template>
 
@@ -37,7 +24,7 @@ const goTo = () => {
   position: absolute;
 
   padding: 10px 14px;
-  max-width: 260px;
+  width: 350px;
 
   font-size: 14px;
   line-height: 1.4;
@@ -54,49 +41,6 @@ const goTo = () => {
 
   &:hover {
     transform: scale(1.05);
-  }
-
-  /* ХВОСТИК */
-  &::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.6);
-  }
-
-  /* вниз */
-  &--bottom::after {
-    bottom: -11px;
-    left: 20px;
-    transform: rotate(90deg);
-  }
-  /* вниз */
-  &--bottom-right::after {
-    bottom: -11px;
-    right: 20px;
-    transform: rotate(90deg);
-  }
-
-  /* вверх */
-  &--top::after {
-    top: -11px;
-    left: 20px;
-    transform: rotate(90deg);
-  }
-
-  /* влево */
-  &--left::after {
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  /* вправо */
-  &--right::after {
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
   }
 }
 </style>

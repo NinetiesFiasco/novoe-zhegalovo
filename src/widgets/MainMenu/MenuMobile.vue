@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { JKLogo } from "~/shared/ui"
-import { NavPhone, NavLink, BurgerButton } from "./ui"
+import { NavPhoneButton, NavLink, BurgerButton } from "./ui"
 import { GetCall } from "~/features"
 import { useMenuObserver } from "./composables/useMenuObserver"
 
@@ -36,7 +36,7 @@ const isModalCallOpened = ref<boolean>(false)
         <div class="nav__logo">
           <JKLogo />
         </div>
-        <NavPhone />
+        <NavPhoneButton />
         <GetCall
           :is-open="isModalCallOpened"
           @toggle="isModalCallOpened = !isModalCallOpened"

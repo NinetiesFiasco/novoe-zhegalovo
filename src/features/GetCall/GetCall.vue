@@ -4,7 +4,7 @@ import { getCall } from "~/shared/api"
 const props = withDefaults(
   defineProps<{
     isOpen?: boolean
-    text: string
+    text?: string
     status: string
   }>(),
   {
@@ -38,7 +38,7 @@ const submitForm = () => {
 </script>
 
 <template>
-  <div @click="emit('toggle')" class="get-call">{{ text }}</div>
+  <div @click="emit('toggle')" class="get-call"><slot />{{ text }}</div>
   <!-- OVERLAY -->
   <Teleport to="body">
     <div
@@ -83,12 +83,14 @@ const submitForm = () => {
   border-radius: 999px;
   cursor: pointer;
   user-select: none;
-  font-size: 14px;
+  font-size: 18px;
+  text-align: center;
   font-weight: 500;
   color: #1a1a1a;
   text-decoration: none;
 
   background: rgba(255, 255, 255, 0.6);
+
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 

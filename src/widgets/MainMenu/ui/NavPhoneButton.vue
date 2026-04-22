@@ -5,9 +5,7 @@ const contacts = useContactsStore()
 </script>
 
 <template>
-  <div class="nav__phone">
-    {{ contacts.phone }}<br />{{ contacts.mobilePhone }}
-  </div>
+  <a href="tel:+74959267795" class="nav__phone">{{ contacts.phone }}</a>
 </template>
 
 <style lang="scss" scoped>
@@ -21,7 +19,8 @@ const contacts = useContactsStore()
   font-size: 14px;
   font-weight: 500;
 
-  color: black;
+  color: white;
+  background: black;
 
   border-radius: 999px;
 
@@ -32,17 +31,7 @@ const contacts = useContactsStore()
 
   &:hover {
     transform: translateY(-1px);
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .nav__phone {
-    font-size: 18px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .nav__phone {
-    font-size: 20px;
+    background: #222;
   }
 }
 </style>
