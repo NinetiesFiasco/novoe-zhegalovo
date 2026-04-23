@@ -27,9 +27,9 @@ const contacts = useContactsStore()
 
     <div class="links">
       <div><PageLink text="В начало" link="hero-block" /></div>
+      <div><PageLink text="О проекте" link="about-project" /></div>
       <div><PageLink text="Квартиры" link="apartment-selector" /></div>
-      <div><PageLink text="Преимущества" link="about-project" /></div>
-      <div><PageLink text="Генплан" link="app-infrastructure" /></div>
+      <div><PageLink text="Инфраструктура" link="app-infrastructure" /></div>
     </div>
   </footer>
 </template>

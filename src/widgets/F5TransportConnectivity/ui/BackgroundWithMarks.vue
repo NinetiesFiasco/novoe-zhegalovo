@@ -51,7 +51,7 @@ const busPosition = computed(() => {
         </p>
       </GenPlanMark>
       <GenPlanMark :position="getPositionOffset(13, 15)">
-        <img src="/icons/train.svg" class="info-icon" width="35" height="35" />
+        <img src="/icons/train.svg" class="info-icon" width="50" height="50" />
         <p>Электричка следует до Ярославского вокзала <b>40 минут</b></p>
       </GenPlanMark>
       <GenPlanMark :position="getPositionOffset(53, 63)">
@@ -99,6 +99,7 @@ const busPosition = computed(() => {
   }
   & .info-icon {
     float: left;
+    margin: 5px;
   }
 }
 </style>
