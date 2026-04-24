@@ -34,7 +34,7 @@ const busPosition = computed(() => {
       ref="imgRef"
       :class="{ 'mobile-img': isMobile }"
       @load="initSelectors"
-      src="/images/transport.png"
+      src="/images/transport.webp"
       alt="Транспортная доступность"
     />
     <template v-if="!isMobile">
