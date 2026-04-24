@@ -37,7 +37,7 @@ onBeforeUnmount(() => {
 
         <video ref="videoRef" class="overlay__video" controls autoplay muted>
           <source src="/video/drone-video.webm" type="video/webm" />
-          <!-- <source src="/video/drone-video.mp4" type="video/mp4" /> -->
+          <source src="/video/drone-video.mp4" type="video/mp4" />
           Ваш браузер не поддерживает видео.
         </video>
       </div>
