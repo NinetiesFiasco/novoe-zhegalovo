@@ -12,7 +12,7 @@ export function useMenuObserver() {
             links.forEach((l) => l.classList.remove("active"))
 
             const id = entry.target.id
-            const link = document.querySelector(`.nav__link[href="#${id}"]`)
+            const link = document.querySelector(`.nav__link[data-link="${id}"]`)
 
             link?.classList.add("active")
           }

@@ -5,16 +5,23 @@ type Props = {
 }
 const props = defineProps<Props>()
 
-const scrollToSection = () => {}
+const goTo = () => {
+  if (document) {
+    document.getElementById(props.link)?.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
+}
 </script>
 
 <template>
-  <a :href="`#${props.link}`" class="link"><slot /> {{ props.text }} </a>
+  <div @click="goTo" class="link"><slot /> {{ props.text }}</div>
 </template>
 
 <style lang="scss" scoped>
 .link {
   color: var(--color-white);
   text-decoration: none;
+  cursor: pointer;
 }
 </style>

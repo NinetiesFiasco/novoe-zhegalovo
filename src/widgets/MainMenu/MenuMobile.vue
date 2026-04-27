@@ -15,7 +15,6 @@ const toggleMenu = () => {
 const closeMenu = () => {
   isOpen.value = false
 }
-const isModalCallOpened = ref<boolean>(false)
 </script>
 
 <template>
@@ -27,22 +26,17 @@ const isModalCallOpened = ref<boolean>(false)
 
       <div :class="['menu', { open: isOpen }]">
         <div class="nav__links" @click="toggleMenu">
-          <NavLink link="#hero-block" text="Главная" />
-          <NavLink link="#about-project" text="О проекте" />
+          <NavLink link="hero-block" text="Главная" />
+          <NavLink link="about-project" text="О проекте" />
           <!-- <NavLink link="#app-infrastructure" text="Инфраструктура" /> -->
-          <NavLink link="#apartment-selector" text="Квартиры" />
-          <NavLink link="#about-company" text="О компании" />
+          <NavLink link="apartment-selector" text="Квартиры" />
+          <NavLink link="about-company" text="О компании" />
         </div>
         <div class="nav__logo">
           <JKLogo />
         </div>
         <NavPhoneButton />
-        <GetCall
-          :is-open="isModalCallOpened"
-          @toggle="isModalCallOpened = !isModalCallOpened"
-          text="Заказать звонок"
-          status="Главное меню"
-        />
+        <GetCall status="Главное меню"> Заказать звонок </GetCall>
       </div>
 
       <!--  -->

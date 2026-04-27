@@ -4,7 +4,6 @@ import { NavPhone, NavLink } from "./ui"
 import { GetCall } from "~/features"
 import { useMenuObserver } from "./composables/useMenuObserver"
 
-const isModalCallOpened = ref<boolean>(false)
 useMenuObserver()
 </script>
 
@@ -12,22 +11,17 @@ useMenuObserver()
   <header>
     <nav>
       <div class="nav__links">
-        <NavLink link="#hero-block" text="Главная" />
-        <NavLink link="#about-project" text="О проекте" />
-        <NavLink link="#app-infrastructure" text="Инфраструктура" />
-        <NavLink link="#apartment-selector" text="Квартиры" />
-        <NavLink link="#about-company" text="О компании" />
+        <NavLink link="hero-block" text="Главная" />
+        <NavLink link="about-project" text="О проекте" />
+        <NavLink link="app-infrastructure" text="Инфраструктура" />
+        <NavLink link="apartment-selector" text="Квартиры" />
+        <NavLink link="about-company" text="О компании" />
       </div>
       <div class="nav__logo">
         <JKLogo />
       </div>
       <NavPhone />
-      <GetCall
-        :is-open="isModalCallOpened"
-        @toggle="isModalCallOpened = !isModalCallOpened"
-        text="Заказать звонок"
-        status="Главное меню"
-      />
+      <GetCall status="Главное меню"> Заказать звонок </GetCall>
     </nav>
   </header>
 </template>

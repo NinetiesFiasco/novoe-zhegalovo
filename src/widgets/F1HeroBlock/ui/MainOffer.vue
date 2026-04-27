@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import { GetCall } from "~/features"
-
-const isModalCallOpened = ref<boolean>(false)
 </script>
 
 <template>
@@ -9,11 +7,7 @@ const isModalCallOpened = ref<boolean>(false)
     <h4>Готовые квартиры</h4>
     <h5>по семейной ипотеке<br /></h5>
     <h3>от <strong>130 000 р.</strong> за м<sup>2</sup></h3>
-    <GetCall
-      :is-open="isModalCallOpened"
-      @toggle="isModalCallOpened = !isModalCallOpened"
-      status="Получить консультацию"
-    >
+    <GetCall status="Получить консультацию">
       <span class="get-call">Получить консультацию</span>
     </GetCall>
     <h4>Ключи в день сделки!</h4>

@@ -3,16 +3,25 @@ const { link, text } = defineProps<{
   link: string
   text: string
 }>()
+
+const goTo = () => {
+  if (document) {
+    document.getElementById(link)?.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
+}
 </script>
 
 <template>
-  <a :href="link" class="nav__link">{{ text }}</a>
+  <div @click="goTo" :data-link="link" class="nav__link">{{ text }}</div>
 </template>
 
 <style lang="scss" scoped>
 /* кнопки */
 .nav__link {
   position: relative;
+  user-select: none;
 
   padding: 8px clamp(6px, 1vw, 14px);
   border: none;

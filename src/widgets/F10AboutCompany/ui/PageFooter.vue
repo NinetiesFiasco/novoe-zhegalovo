@@ -30,6 +30,7 @@ const contacts = useContactsStore()
       <div><PageLink text="О проекте" link="about-project" /></div>
       <div><PageLink text="Квартиры" link="apartment-selector" /></div>
       <div><PageLink text="Инфраструктура" link="app-infrastructure" /></div>
+      <div><NuxtLink to="/privacy">Политика конфиденциальности</NuxtLink></div>
     </div>
   </footer>
 </template>
@@ -73,6 +74,11 @@ footer {
 
     & div + div {
       margin-top: 13px;
+    }
+
+    & > div > * {
+      color: white;
+      text-decoration: none;
     }
   }
 }

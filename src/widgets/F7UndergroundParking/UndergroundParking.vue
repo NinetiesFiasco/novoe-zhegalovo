@@ -4,9 +4,6 @@ import { Navigation, Pagination } from "swiper/modules"
 import { NavigationButtons } from "./ui"
 import { GetCall } from "~/features"
 
-const isModalCallOpened = ref<boolean>(false)
-
-//const { isMobile } = useDevice()
 const pictures = Array.from({ length: 3 }, (_, i) => `${i + 1}.webp`)
 const modules = [Navigation, Pagination]
 </script>
@@ -35,11 +32,7 @@ const modules = [Navigation, Pagination]
       </swiper-slide>
     </swiper>
     <div class="get-call">
-      <GetCall
-        :is-open="isModalCallOpened"
-        @toggle="isModalCallOpened = !isModalCallOpened"
-        status="Забронировать парковку"
-      >
+      <GetCall status="Забронировать парковку">
         <span class="order-place">Забронировать место</span>
       </GetCall>
     </div>
@@ -94,6 +87,15 @@ const modules = [Navigation, Pagination]
     & .order-place {
       font-size: 30px;
       font-weight: 700;
+    }
+    @media screen and (max-width: 900px) {
+      & {
+        width: 250px;
+
+        & .order-place {
+          font-size: 18px;
+        }
+      }
     }
   }
 

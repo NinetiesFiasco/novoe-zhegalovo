@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-const { position, text, arrow } = defineProps<{
-  text: string
+const { position, arrow } = defineProps<{
   position: any
   arrow: string
 }>()
@@ -26,7 +25,7 @@ const goTo = () => {
     @click="goTo"
   >
     <div class="bg-transparency" />
-    <span>{{ text }}</span>
+    <slot />
   </div>
 </template>
 

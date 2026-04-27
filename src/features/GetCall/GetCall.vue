@@ -1,36 +1,24 @@
 <script lang="ts" setup>
 import { getCall } from "~/shared/api"
+import PrivacyCheckbox from "./ui/PrivacyCheckbox.vue"
 
-const props = withDefaults(
-  defineProps<{
-    isOpen?: boolean
-    text?: string
-    status: string
-  }>(),
-  {
-    isOpen: false,
-  },
-)
-
-const emit = defineEmits<{
-  (e: "toggle"): void
+const props = defineProps<{
+  status: string
 }>()
+
+const isActive = ref<boolean>(false)
+const isPolitic = ref<boolean>(false)
 
 const name = ref("")
 const phone = ref("")
 
 const closeModal = () => {
-  emit("toggle")
+  isActive.value = false
+  isPolitic.value = false
 }
 
 const submitForm = () => {
-  console.log({
-    name: name.value,
-    phone: phone.value,
-    status: props.status,
-    phoneLength: phone.value.length,
-  })
-  if (phone.value.length === 18) {
+  if (phone.value.length === 18 && isPolitic.value) {
     getCall(name.value, phone.value)
     closeModal()
   }
@@ -38,16 +26,16 @@ const submitForm = () => {
 </script>
 
 <template>
-  <div @click="emit('toggle')" class="get-call"><slot />{{ text }}</div>
-  <!-- OVERLAY -->
+  <div @click="isActive = true" class="get-call"><slot /></div>
   <Teleport to="body">
     <div
-      class="modal-overlay"
-      :class="{ active: props.isOpen }"
+      :class="{
+        'modal-overlay': true,
+        active: isActive,
+      }"
       @click.self="closeModal"
     >
       <div class="modal-window">
-        <!-- КРЕСТИК -->
         <button class="modal-close" @click="closeModal">✕</button>
 
         <h2>Заказать звонок</h2>
@@ -71,6 +59,9 @@ const submitForm = () => {
           />
 
           <button type="submit" class="modal-submit">Отправить</button>
+          <div>
+            <PrivacyCheckbox v-model="isPolitic" />
+          </div>
         </form>
       </div>
     </div>
