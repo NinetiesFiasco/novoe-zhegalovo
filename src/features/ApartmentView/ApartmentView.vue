@@ -50,6 +50,9 @@ const { currentFlat } = storeToRefs(sectionsStore)
     <div class="additional-features">
       <ApartmentFinishing />
     </div>
+    <div class="non-public-offer">
+      * предложение не является публичной офертой
+    </div>
   </div>
 </template>
 
@@ -106,6 +109,11 @@ const { currentFlat } = storeToRefs(sectionsStore)
     & > * {
       margin: 5px 0 0 5px;
     }
+  }
+
+  & .non-public-offer {
+    padding: 10px 0 0 40px;
+    font-size: 12px;
   }
 }
 </style>

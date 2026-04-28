@@ -33,7 +33,9 @@ const props = defineProps<{
   & .image {
     user-select: none;
     & > img {
-      background: url("/images/voronok.webp") center center / cover no-repeat;
+      background-position: center / center;
+      background-repeat: no-repeat;
+      background-size: cover;
       height: 300px;
       width: 100%;
       border-radius: 15px;

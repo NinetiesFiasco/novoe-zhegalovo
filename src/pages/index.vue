@@ -11,6 +11,7 @@ import {
   MortgageCalculator,
   AboutCompany,
 } from "~/widgets"
+import { CookieNotification } from "~/features"
 
 const { isMobile } = useDevice()
 </script>
@@ -18,6 +19,7 @@ const { isMobile } = useDevice()
 <template>
   <div class="app-container">
     <MainMenu />
+    <CookieNotification />
     <main>
       <HeroBlock />
       <AboutProject />

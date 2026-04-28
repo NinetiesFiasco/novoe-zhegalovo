@@ -25,28 +25,28 @@ const { imgRef, containerRef, getPositionOffset, initSelectors } =
       alt="Изображение здания"
     />
     <template v-if="!isMobile">
-      <GenPlanMark :position="getPositionOffset(40, 37)" arrow="bottom">
+      <GenPlanMark :position="getPositionOffset(43, 45)" arrow="bottom">
         Школа №16 на 1200 мест 50 метров
       </GenPlanMark>
-      <GenPlanMark :position="getPositionOffset(78, 20)" arrow="bottom">
+      <GenPlanMark :position="getPositionOffset(80, 32)" arrow="bottom">
         <span class="compass"
           >Окна во двор выходят на восток<br />
           снаружи дома — на запад</span
         >
       </GenPlanMark>
-      <GenPlanMark :position="getPositionOffset(9, 31)" arrow="bottom">
+      <GenPlanMark :position="getPositionOffset(12, 40)" arrow="bottom">
         Детский сад №30 Ладушки 300 метров
       </GenPlanMark>
-      <GenPlanMark :position="getPositionOffset(57, 85)" arrow="bottom">
+      <GenPlanMark :position="getPositionOffset(57, 90)" arrow="bottom-right">
         Детский сад №20 Щелкунчик 200 метров
       </GenPlanMark>
-      <GenPlanMark :position="getPositionOffset(80, 60)" arrow="left">
+      <GenPlanMark :position="getPositionOffset(78, 62)" arrow="left">
         Магазины
       </GenPlanMark>
-      <GenPlanMark :position="getPositionOffset(3, 85)" arrow="left">
+      <GenPlanMark :position="getPositionOffset(5, 90)" arrow="left">
         Магазины
       </GenPlanMark>
-      <GenPlanMark :position="getPositionOffset(53, 55)" arrow="right">
+      <GenPlanMark :position="getPositionOffset(67, 60)" arrow="right">
         Подземный паркинг
       </GenPlanMark>
       <!-- <GenPlanMark
@@ -54,10 +54,10 @@ const { imgRef, containerRef, getPositionOffset, initSelectors } =
         text="Выбрать квартиру"
         arrow="bottom"
       /> -->
-      <GenPlanMark :position="getPositionOffset(2, 50)" arrow="left">
+      <GenPlanMark :position="getPositionOffset(2, 57)" arrow="left">
         Автобусная остановка
       </GenPlanMark>
-      <GenPlanMark :position="getPositionOffset(72, 12)" arrow="bottom">
+      <GenPlanMark :position="getPositionOffset(72, 25)" arrow="bottom-middle">
         Озеро
       </GenPlanMark>
     </template>
@@ -86,6 +86,12 @@ const { imgRef, containerRef, getPositionOffset, initSelectors } =
   }
   & .compass {
     font-size: 13px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    & .compass {
+      font-size: 10px;
+    }
   }
 }
 </style>

@@ -24,7 +24,7 @@ const goTo = () => {
   position: absolute;
 
   padding: 10px 14px;
-  width: 350px;
+  width: 290px;
 
   font-size: 14px;
   line-height: 1.4;

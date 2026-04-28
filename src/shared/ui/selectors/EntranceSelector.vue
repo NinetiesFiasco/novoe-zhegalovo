@@ -13,7 +13,6 @@ const props = defineProps({
       viewBox="0 0 200 100"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <!-- Кружок -->
       <circle
         class="circle"
         cx="20"
@@ -24,7 +23,6 @@ const props = defineProps({
         stroke-width="2"
       />
 
-      <!-- Диагональная линия вверх вправо -->
       <line
         class="line"
         x1="30"
@@ -35,7 +33,6 @@ const props = defineProps({
         stroke-width="2"
       />
 
-      <!-- Горизонтальная линия -->
       <line
         class="line"
         x1="50"
@@ -46,7 +43,6 @@ const props = defineProps({
         stroke-width="2"
       />
 
-      <!-- Текст -->
       <text class="text" x="50" y="20" font-size="16" fill="white">
         Подъезд №{{ props.entrance }}
       </text>

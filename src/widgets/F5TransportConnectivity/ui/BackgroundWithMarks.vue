@@ -45,14 +45,17 @@ const busPosition = computed(() => {
           width="35"
           height="35"
         />
-        <p>
+        <p class="text-mark">
           До ЖД станции Воронок<br />
           <b>15 минут</b> пешком
         </p>
       </GenPlanMark>
       <GenPlanMark :position="getPositionOffset(13, 15)">
         <img src="/icons/train.svg" class="info-icon" width="50" height="50" />
-        <p>Электричка следует до Ярославского вокзала <b>40 минут</b></p>
+        <p class="text-mark">
+          До Ярославского вокзала<br />
+          <b>40 минут</b> на электричке
+        </p>
       </GenPlanMark>
       <GenPlanMark :position="getPositionOffset(53, 63)">
         <img
@@ -61,16 +64,16 @@ const busPosition = computed(() => {
           width="35"
           height="35"
         />
-        <p>
+        <p class="text-mark">
           До автобусной остановки<br />
           <b>3 минуты</b> пешком
         </p>
       </GenPlanMark>
       <GenPlanMark :position="busPosition">
         <img src="/icons/bus.svg" class="info-icon" width="50" height="50" />
-        <p>
-          Автобус проезжает до метро Щёлковская<br />
-          за <b>20 минут</b>
+        <p class="text-mark">
+          До метро Щёлковская<br />
+          <b>20 минут</b> на автобусе
         </p>
       </GenPlanMark>
     </template>
@@ -100,6 +103,9 @@ const busPosition = computed(() => {
   & .info-icon {
     float: left;
     margin: 5px;
+  }
+  & .text-mark {
+    text-wrap: nowrap;
   }
 }
 </style>

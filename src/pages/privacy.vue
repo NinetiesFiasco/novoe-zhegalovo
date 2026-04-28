@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useContactsStore } from "~/entities"
+
+const contacts = useContactsStore()
+</script>
 
 <template>
   <div class="privacy-policy">
@@ -9,12 +13,12 @@
     <p>
       Настоящая политика конфиденциальности определяет порядок обработки и
       защиты персональных данных пользователей сайта. Оператор персональных
-      данных: [Название/ФИО] Контактный email: [email]
+      данных: ООО "Строй монтаж" Контактный email: {{ contacts.email }}
     </p>
 
     <h3>Персональные данные, которые обрабатываются</h3>
-    <p>
-      Оператор может обрабатывать следующие данные пользователей:
+    <div>
+      <p>Оператор может обрабатывать следующие данные пользователей:</p>
       <ul>
         <li>имя</li>
         <li>номер телефона</li>
@@ -22,27 +26,30 @@
         <li>данные файлов cookie</li>
         <li>информация о действиях на сайте</li>
       </ul>
-    </p>
+    </div>
 
     <h3>Цели обработки персональных данных</h3>
-    <p>
-      Персональные данные используются для:
-        <ul>
-          <li>обработки заявок через форму обратной связи</li>
-          <li>связи с пользователем</li>
-          <li>улучшения работы сайта</li>
-          <li>анализа поведения пользователей Для анализа используется сервис Яндекс Метрика.</li>
-        </ul>
-    </p>
+    <div>
+      <p>Персональные данные используются для:</p>
+      <ul>
+        <li>обработки заявок через форму обратной связи</li>
+        <li>связи с пользователем</li>
+        <li>улучшения работы сайта</li>
+        <li>
+          анализа поведения пользователей Для анализа используется сервис Яндекс
+          Метрика.
+        </li>
+      </ul>
+    </div>
 
-    <h3>Правовые основания обработки</h3>
-    <p>
-      Обработка персональных данных осуществляется на основании:
+    <div>
+      <h3>Правовые основания обработки</h3>
+      <p>Обработка персональных данных осуществляется на основании:</p>
       <ul>
         <li>согласия пользователя</li>
         <li>требований законодательства РФ</li>
       </ul>
-    </p>
+    </div>
 
     <h3>Условия обработки и хранения данных</h3>
     <p>
@@ -53,25 +60,29 @@
     </p>
 
     <h3>Передача данных третьим лицам</h3>
-    <p>
-      Персональные данные могут передаваться третьим лицам только в следующих
-      случаях:
+    <div>
+      <p>
+        Персональные данные могут передаваться третьим лицам только в следующих
+        случаях:
+      </p>
       <ul>
         <li>если это необходимо для работы сервисов аналитики</li>
         <li>по требованию законодательства</li>
       </ul>
-    </p>
+    </div>
 
     <h3>Права пользователя</h3>
-    <p>
-      Пользователь имеет право:
+    <div>
+      <p>Пользователь имеет право:</p>
       <ul>
         <li>получать информацию о своих данных</li>
         <li>требовать их уточнения или удаления</li>
-        <li>отозвать согласие на обработку Для этого необходимо написать на email: [email]</li>
-        <li></li>
+        <li>
+          отозвать согласие на обработку Для этого необходимо написать на email:
+          {{ contacts.email }}
+        </li>
       </ul>
-    </p>
+    </div>
 
     <h3>Файлы cookie</h3>
     <p>
@@ -93,7 +104,7 @@
 .privacy-policy {
   max-width: 1280px;
   padding: 30px 0 100px 50px;
-  
+
   @media screen and (max-width: 900px) {
     & {
       padding: 25px;
@@ -107,59 +118,59 @@
   & > p {
     padding: 20px 0 0 0;
   }
-  
+
   & > ul {
     padding-left: 40px;
   }
 
   .link {
-  margin-top: 28px;
+    margin-top: 28px;
 
-  a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
 
-    font-size: 14px;
-    font-weight: 500;
-
-    color: var(--color-blue);
-    text-decoration: none;
-
-    padding: 8px 14px;
-    border-radius: 8px;
-
-    background: rgba(97, 184, 238, 0.1);
-    border: 1px solid rgba(97, 184, 238, 0.3);
-
-    transition: all 0.25s ease;
-
-    // стрелка через псевдоэлемент
-    &::before {
-      content: "←";
       font-size: 14px;
-      transition: transform 0.25s ease;
-    }
+      font-weight: 500;
 
-    &:hover {
-      background: var(--color-blue);
-      color: #fff;
-      border-color: var(--color-blue);
+      color: var(--color-blue);
+      text-decoration: none;
 
+      padding: 8px 14px;
+      border-radius: 8px;
+
+      background: rgba(97, 184, 238, 0.1);
+      border: 1px solid rgba(97, 184, 238, 0.3);
+
+      transition: all 0.25s ease;
+
+      // стрелка через псевдоэлемент
       &::before {
-        transform: translateX(-3px);
+        content: "←";
+        font-size: 14px;
+        transition: transform 0.25s ease;
+      }
+
+      &:hover {
+        background: var(--color-blue);
+        color: #fff;
+        border-color: var(--color-blue);
+
+        &::before {
+          transform: translateX(-3px);
+        }
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--color-blue);
+        outline-offset: 2px;
       }
     }
-
-    &:active {
-      transform: translateY(1px);
-    }
-
-    &:focus-visible {
-      outline: 2px solid var(--color-blue);
-      outline-offset: 2px;
-    }
   }
-}  
 }
 </style>

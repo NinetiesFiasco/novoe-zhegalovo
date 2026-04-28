@@ -106,8 +106,8 @@ const submitForm = () => {
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
+  display: none;
 
-  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -117,6 +117,7 @@ const submitForm = () => {
 }
 
 .modal-overlay.active {
+  display: flex;
   opacity: 1;
   pointer-events: all;
 }
