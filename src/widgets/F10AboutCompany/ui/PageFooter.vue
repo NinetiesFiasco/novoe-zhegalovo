@@ -12,12 +12,6 @@ const contacts = useContactsStore()
       <JKLogo :color="'#ffffff'" />
     </div>
 
-    <div class="socials">
-      <img class="social" src="/icons/social-1.png" alt="" />
-      <img class="social" src="/icons/social-email.png" alt="" />
-      <img class="social" src="/icons/social-telegram.png" alt="" />
-    </div>
-
     <div class="contacts">
       <div class="font-medium">{{ contacts.phone }}</div>
       <div>Email: {{ contacts.email }}</div>
