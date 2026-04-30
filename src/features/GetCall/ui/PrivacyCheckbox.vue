@@ -3,10 +3,10 @@ const { modelValue } = defineProps<{
   modelValue: boolean
 }>()
 const emit = defineEmits<{
-  (e: "update:modelValue"): void
+  (e: "update:modelValue", value: boolean): void
 }>()
 const val = computed({
-  set: (val) => emit("update:modelValue"),
+  set: (val) => emit("update:modelValue", val),
   get: () => modelValue,
 })
 </script>
@@ -16,7 +16,9 @@ const val = computed({
     <input type="checkbox" v-model="val" label="policy" />
     <label for="policy"
       >Согласен с
-      <NuxtLink to="/privacy"> политикой конфиденциальности</NuxtLink></label
+      <NuxtLink to="/privacy" target="_blank">
+        политикой конфиденциальности</NuxtLink
+      ></label
     >
   </div>
 </template>

@@ -48,7 +48,6 @@ const submitForm = () => {
             placeholder="Ваше имя"
             required
           />
-
           <input
             v-model="phone"
             v-maska="'+7 (###) ###-##-##'"
@@ -58,7 +57,7 @@ const submitForm = () => {
             required
           />
 
-          <button type="submit" class="modal-submit">Отправить</button>
+          <button @click="submitForm" class="modal-submit">Отправить</button>
           <div>
             <PrivacyCheckbox v-model="isPolitic" />
           </div>
