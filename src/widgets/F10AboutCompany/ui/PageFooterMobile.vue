@@ -7,12 +7,6 @@ const contacts = useContactsStore()
 
 <template>
   <footer>
-    <div class="socials">
-      <img class="social" src="/icons/social-1.png" alt="" />
-      <img class="social" src="/icons/social-email.png" alt="" />
-      <img class="social" src="/icons/social-telegram.png" alt="" />
-    </div>
-
     <div class="contacts">
       <div class="phone">{{ contacts.phone }}</div>
       <div>Email: {{ contacts.email }}</div>
