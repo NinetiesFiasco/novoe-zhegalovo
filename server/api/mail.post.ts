@@ -63,7 +63,7 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  if (!body.name || !body.phone || body.phone.length !== 18) {
+  if (!body.phone || body.phone.length !== 18) {
     return {
       status: 0,
       message: "Некорректные данные",
