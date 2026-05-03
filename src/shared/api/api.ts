@@ -14,12 +14,17 @@ type MailAnswer = {
   error?: any
 }
 
-export async function getCall(name: string, phone: string): Promise<boolean> {
+export async function getCall(
+  name: string,
+  phone: string,
+  company: string,
+): Promise<boolean> {
   const data = await $fetch<MailAnswer>("api/mail", {
     method: "POST",
     body: JSON.stringify({
       name,
       phone,
+      company,
     }),
   })
 

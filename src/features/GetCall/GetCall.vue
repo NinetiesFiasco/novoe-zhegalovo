@@ -11,6 +11,7 @@ const isPolitic = ref<boolean>(false)
 
 const name = ref("")
 const phone = ref("")
+const company = ref("")
 
 const closeModal = () => {
   isActive.value = false
@@ -19,7 +20,7 @@ const closeModal = () => {
 
 const submitForm = () => {
   if (phone.value.length === 18 && isPolitic.value) {
-    getCall(name.value, phone.value)
+    getCall(name.value, phone.value, company.value)
     closeModal()
   }
 }
@@ -54,6 +55,13 @@ const submitForm = () => {
             name="phone"
             type="tel"
             placeholder="Телефон"
+            required
+          />
+          <input
+            v-model="phone"
+            name="company"
+            placeholder="Компания"
+            style="display: none"
             required
           />
 
