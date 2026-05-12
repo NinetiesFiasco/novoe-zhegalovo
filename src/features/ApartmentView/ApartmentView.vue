@@ -9,7 +9,9 @@ const { currentFlat } = storeToRefs(sectionsStore)
 
 <template>
   <div v-if="currentFlat" class="apartment-container">
-    <h3 class="font-default">{{ currentFlat.rooms }}-комнатная квартира</h3>
+    <h3 class="font-default">
+      {{ currentFlat.rooms }}-комнатная квартира № {{ currentFlat.number }}
+    </h3>
     <div class="floor-plan">
       <img
         class="img-plan"
