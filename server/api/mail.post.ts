@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer"
 import type { SendMailOptions } from "nodemailer"
 
+const config = useRuntimeConfig()
+
 const rateMap = new Map()
 const lastRequests = new Map()
 
@@ -43,8 +45,8 @@ const transport = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: process.env.YANDEX_MAIL_USER,
-    pass: process.env.YANDEX_MAIL_PASSWORD,
+    user: config.mailUser,
+    pass: config.mailPassword,
   },
 })
 
@@ -71,8 +73,8 @@ export default defineEventHandler(async (event) => {
   }
 
   const mailOptions: SendMailOptions = {
-    from: process.env.YANDEX_MAIL_FROM,
-    to: process.env.YANDEX_MAIL_TO,
+    from: config.mailFrom,
+    to: config.mailTo,
     subject: "Новая заявка!",
     html: `
 <h2>Новая заявка</h2>
@@ -80,8 +82,8 @@ export default defineEventHandler(async (event) => {
 <p><b>Телефон:</b> ${body.phone}</p>
 `,
   }
-  if (process.env.YANDEX_MAIL_TO_BCC1) {
-    mailOptions.bcc = [process.env.YANDEX_MAIL_TO_BCC1]
+  if (config.mailToBCC1) {
+    mailOptions.bcc = [config.mailToBCC1]
   }
 
   if (lastRequests.has(body.phone)) {
