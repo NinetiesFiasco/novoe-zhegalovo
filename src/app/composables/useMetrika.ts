@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-const METRIKA_ID = process.env.YANDEX_METRIKA
+const YANDEX_METRIKA = process.env.YANDEX_METRIKA
 
 export const useMetrika = () => {
   const initMetrika = () => {
@@ -25,7 +25,7 @@ export const useMetrika = () => {
 
             window.ym.l = Date.now();
 
-            ym(${METRIKA_ID}, "init", {
+            ym(${YANDEX_METRIKA}, "init", {
               clickmap: true,
               trackLinks: true,
               accurateTrackBounce: true,
@@ -40,7 +40,7 @@ export const useMetrika = () => {
           innerHTML: `
             <div>
               <img
-                src="https://mc.yandex.ru/watch/${METRIKA_ID}"
+                src="https://mc.yandex.ru/watch/${YANDEX_METRIKA}"
                 style="position:absolute; left:-9999px;"
                 alt=""
               />
@@ -53,13 +53,13 @@ export const useMetrika = () => {
 
   const hit = (url: string) => {
     if (process.client && window.ym) {
-      window.ym(METRIKA_ID, "hit", url)
+      window.ym(YANDEX_METRIKA, "hit", url)
     }
   }
 
   const reachGoal = (goal: string, params?: Record<string, any>) => {
     if (process.client && window.ym) {
-      window.ym(METRIKA_ID, "reachGoal", goal, params)
+      window.ym(YANDEX_METRIKA, "reachGoal", goal, params)
     }
   }
 
