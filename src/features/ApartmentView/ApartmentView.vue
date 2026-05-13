@@ -55,6 +55,9 @@ const { currentFlat } = storeToRefs(sectionsStore)
     <div class="non-public-offer">
       * предложение не является публичной офертой
     </div>
+    <div :class="{ reserved: currentFlat.status === 'reserved' }">
+      ЗАБРОНИРОВАНО
+    </div>
   </div>
 </template>
 
@@ -63,6 +66,8 @@ const { currentFlat } = storeToRefs(sectionsStore)
   padding: 20px;
   border: 2px solid var(--color-grey-bright);
   border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
 
   & .img-plan {
     max-width: 600px;
@@ -116,6 +121,16 @@ const { currentFlat } = storeToRefs(sectionsStore)
   & .non-public-offer {
     padding: 10px 0 0 40px;
     font-size: 12px;
+  }
+
+  & .reserved {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    background: yellow;
+    border-radius: 40px;
+    padding: 5px 20px;
+    transform: rotate(-45deg) translate(15%, -50%);
   }
 }
 </style>
