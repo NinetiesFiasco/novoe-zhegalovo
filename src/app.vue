@@ -1,4 +1,17 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useMetrika } from "./app/composables"
+const { initMetrika, hit } = useMetrika()
+
+initMetrika()
+
+const router = useRouter()
+
+onMounted(() => {
+  router.afterEach((to) => {
+    hit(to.fullPath)
+  })
+})
+</script>
 
 <template>
   <NuxtPage />
