@@ -9,6 +9,12 @@ const props = defineProps<{
 const isActive = ref<boolean>(false)
 const isPolitic = ref<boolean>(false)
 
+const errors = ref<{ isPhone: boolean; isName: boolean; isPolicy: boolean }>({
+  isPhone: false,
+  isName: false,
+  isPolicy: false,
+})
+
 const name = ref("")
 const phone = ref("")
 const company = ref("")
@@ -18,12 +24,37 @@ const closeModal = () => {
   isPolitic.value = false
 }
 
-const submitForm = () => {
-  if (phone.value.length === 18 && isPolitic.value) {
-    getCall(name.value, phone.value, company.value)
-    closeModal()
-  }
+const resetErrors = () => {
+  errors.value.isName = false
+  errors.value.isPhone = false
+  errors.value.isPolicy = false
 }
+
+const submitForm = () => {
+  if (!name.value) {
+    errors.value.isName = true
+    return
+  }
+  if (phone.value.length !== 18) {
+    errors.value.isPhone = true
+    return
+  }
+  if (!isPolitic.value) {
+    errors.value.isPolicy = true
+    return
+  }
+  getCall(name.value, phone.value, company.value)
+
+  name.value = ""
+  phone.value = ""
+  isPolitic.value = false
+
+  closeModal()
+}
+
+watch([name, phone, isPolitic], () => {
+  resetErrors()
+})
 </script>
 
 <template>
@@ -49,6 +80,9 @@ const submitForm = () => {
             placeholder="Ваше имя"
             required
           />
+          <div v-if="errors.isName" class="error-notification">
+            * Укажите имя
+          </div>
           <input
             v-model="phone"
             v-maska="'+7 (###) ###-##-##'"
@@ -57,6 +91,9 @@ const submitForm = () => {
             placeholder="Телефон"
             required
           />
+          <div v-if="errors.isPhone" class="error-notification">
+            * Неверно введён номер телефона
+          </div>
           <input
             v-model="phone"
             name="company"
@@ -68,6 +105,9 @@ const submitForm = () => {
           <button @click="submitForm" class="modal-submit">Отправить</button>
           <div>
             <PrivacyCheckbox v-model="isPolitic" />
+            <div class="error-notification" v-if="errors.isPolicy">
+              * Требуется согласие с политикой конфиденциальности
+            </div>
           </div>
         </form>
       </div>
@@ -182,5 +222,9 @@ const submitForm = () => {
 
 .modal-submit:hover {
   background: #333;
+}
+
+.error-notification {
+  color: red;
 }
 </style>
