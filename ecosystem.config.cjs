@@ -18,6 +18,7 @@ module.exports = {
         YANDEX_MAIL_FROM: process.env.YANDEX_MAIL_FROM,
         YANDEX_MAIL_TO: process.env.YANDEX_MAIL_TO,
         YANDEX_MAIL_TO_BCC1: process.env.YANDEX_MAIL_TO_BCC1,
+        YANDEX_METRIKA: process.env.YANDEX_METRIKA,
       },
     },
   ],
