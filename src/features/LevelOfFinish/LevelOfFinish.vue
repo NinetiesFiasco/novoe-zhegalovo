@@ -8,6 +8,8 @@
     - черновая
     <div class="box finished"></div>
     - чистовая
+    <div class="box reserved"></div>
+    - забронировано
   </div>
 </template>
 
@@ -20,6 +22,9 @@
     height: 23px;
     margin: 0 5px;
   }
+  .box + .box {
+    margin-left: 15px;
+  }
   .unrenovated {
     background: var(--color-unrenovated);
   }
@@ -28,7 +33,9 @@
   }
   .finished {
     background: var(--color-fully-finished);
-    margin-left: 15px;
+  }
+  .reserved {
+    background: var(--color-reserved);
   }
 }
 </style>

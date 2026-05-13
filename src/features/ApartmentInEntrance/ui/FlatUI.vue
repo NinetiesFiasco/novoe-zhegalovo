@@ -32,6 +32,7 @@ const handleClick = () => {
         box: true,
         finished: flat.priceMeter > 150000,
         unfinished: flat.priceMeter < 150000,
+        reserved: flat.status === 'reserved',
         selected: flat.number === sectionsStore.currentFlat?.number,
       }"
     >
@@ -82,5 +83,8 @@ const handleClick = () => {
 }
 .finished {
   background: var(--color-fully-finished);
+}
+.reserved {
+  background: var(--color-reserved);
 }
 </style>

@@ -99,7 +99,8 @@
         "priceTotal": 12183000,
         "rooms": 2,
         "plan": "plan2",
-        "position": 2
+        "position": 2,
+        "status": "reserved"
       }
     ],
     "10": [
