@@ -7,9 +7,10 @@ declare global {
   }
 }
 
-const YANDEX_METRIKA = process.env.YANDEX_METRIKA
-
 export const useMetrika = () => {
+  const config = useRuntimeConfig()
+  const YANDEX_METRIKA = config.public.yandexMetrika
+
   const initMetrika = () => {
     useHead({
       script: [

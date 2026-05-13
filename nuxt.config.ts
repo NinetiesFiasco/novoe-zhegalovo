@@ -49,9 +49,16 @@ export default defineNuxtConfig({
 
   alias: {},
   runtimeConfig: {
+    mailUser: process.env.YANDEX_MAIL_USER,
+    mailPassword: process.env.YANDEX_MAIL_PASSWORD,
+    mailFrom: process.env.YANDEX_MAIL_FROM,
+    mailTo: process.env.YANDEX_MAIL_TO,
+    mailToBCC1: process.env.YANDEX_MAIL_TO_BCC1,
+
     public: {
       yandexMapsKey: process.env.YANDEX_MAPS_API_KEY,
-      baseURL: "/",
+      baseURL: process.env.BASE_URL,
+      yandexMetrika: process.env.YANDEX_METRIKA,
     },
   },
 
