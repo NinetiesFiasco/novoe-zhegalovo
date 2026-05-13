@@ -159,7 +159,8 @@
         "priceTotal": 9410500,
         "rooms": 2,
         "plan": "plan3",
-        "position": 1
+        "position": 1,
+        "status": "sold"
       }
     ],
     "13": [

@@ -21,20 +21,24 @@ const sectionUI = (section: SectionNames): string => {
   }
   return ui[section]
 }
+
+const floors = computed(() => sectionsStore.getFloors(section).reverse())
+const isFloorHasFlats = (floorIndex: number) => {
+  return sectionsStore.sections[section][Number(floorIndex)]?.some(
+    (flat) => flat.status !== "sold",
+  )
+}
 </script>
 
 <template>
   <div class="apartment-in-entrance">
     <h2>{{ sectionUI(section) }}</h2>
     <template v-if="section !== 'section3'">
-      <div
-        class="floor"
-        v-for="floor of sectionsStore.getFloors(section).reverse()"
-        :key="floor"
-      >
+      <div class="floor" v-for="floorIndex of floors" :key="floorIndex">
         <FloorUI
-          :flats="sectionsStore.sections[section][Number(floor)]"
-          :floor="Number(floor)"
+          v-if="isFloorHasFlats(Number(floorIndex))"
+          :flats="sectionsStore.sections[section][Number(floorIndex)]"
+          :floor="Number(floorIndex)"
           :section="section"
         />
       </div>

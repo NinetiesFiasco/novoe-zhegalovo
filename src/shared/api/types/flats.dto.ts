@@ -7,6 +7,7 @@ export type FlatDTO = {
   rooms: number
   plan: string
   position: number
+  status?: string
 }
 
 type NumberKeyedArray<T> = {
