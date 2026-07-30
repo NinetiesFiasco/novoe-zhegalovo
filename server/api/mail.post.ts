@@ -77,7 +77,7 @@ export default defineEventHandler(async (event) => {
     to: config.mailTo,
     subject: "Новая заявка!",
     html: `
-<h2>Новая заявка</h2>
+<h2>Новая заявка "ЖК Новое Жегалово" жилая недвижимость</h2>
 <p><b>Имя:</b> ${body.name}</p>
 <p><b>Телефон:</b> ${body.phone}</p>
 `,
