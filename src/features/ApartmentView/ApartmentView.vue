@@ -55,7 +55,7 @@ const { currentFlat } = storeToRefs(sectionsStore)
     <div class="non-public-offer">
       * предложение не является публичной офертой
     </div>
-    <div :class="{ reserved: currentFlat.status === 'reserved' }">
+    <div v-if="currentFlat.status === 'reserved'" class="reserved">
       ЗАБРОНИРОВАНО
     </div>
   </div>
